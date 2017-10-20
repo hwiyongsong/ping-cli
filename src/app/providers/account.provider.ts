@@ -8,10 +8,12 @@ import { StringUtils } from "../utils/string-utils";
 @Injectable()
 export class AccountProvider {
     
+  public currentAccount: Account;
   private mockAccounts: Array<Account> = [];
   
   constructor() { 
     this.initMockAccounts();
+    this.initCurrentAccount();
   }
   
   getAccountByAccountUrn(accountUrn: string): Account {
@@ -28,31 +30,46 @@ export class AccountProvider {
     return this.mockAccounts; 
   }
   
-  private initMockAccounts() {
-    this.initMockAccount("urn:member:albert-liao",
-                         "Albert",
-                         "Liao",
-                         "Building the best teams to build the best self-driving vehicles",
-                         "https://media.licdn.com/mpr/mpr/shrinknp_100_100/AAEAAQAAAAAAAA3kAAAAJGRlZmQxMzhkLWFlNjQtNDBiYy05ZjE2LTg0ODQ0NjVmMzUzOA.jpg");
-
-    this.initMockAccount("urn:member:lily-lapcokova",
-                         "Lily",
-                         "Lapcokova",
-                         "My passion lies in finding exceptional talent, building candidate and client relationships and thinking outside the box to solve challenges.",
-                         "https://media.licdn.com/mpr/mpr/shrinknp_100_100/AAEAAQAAAAAAAATfAAAAJGRiMWQxOTcyLTUxZTYtNGVlZC1iYzEyLTNhYmU5YzhlNGVlNw.jpg");
-
-    this.initMockAccount("urn:member:kim-kamitani",
-                         "Kim",
-                         "Kamitani",
-                         "A fun loving talent builder in the Silicon Valley",
-                         "https://media.licdn.com/mpr/mpr/shrinknp_100_100/AAEAAQAAAAAAAAMiAAAAJDhjMDRkZTRlLTk1Y2YtNDhlYS05NmE4LTA2NTRlODk4MDU1NQ.jpg");
+  private initCurrentAccount() {
+    this.currentAccount = this.getAccountByAccountUrn("urn:member:albert-einstein");
   }
   
-  private initMockAccount(accountUrn: string,
+  private initMockAccounts() {
+    let albertEinstein = this.createMockAccount("urn:member:albert-einstein",
+                                                "Albert",
+                                                "Einstein",
+                                                "Imagination is more important than knowledge.",
+                                                "https://pbs.twimg.com/profile_images/879355674957926400/VSGZHGib.jpg");
+    
+    let albertLiao = this.createMockAccount("urn:member:albert-liao",
+                                            "Albert",
+                                            "Liao",
+                                            "Building the best teams to build the best self-driving vehicles",
+                                            "https://media.licdn.com/mpr/mpr/shrinknp_100_100/AAEAAQAAAAAAAA3kAAAAJGRlZmQxMzhkLWFlNjQtNDBiYy05ZjE2LTg0ODQ0NjVmMzUzOA.jpg");
+
+    let lilyLapcokova = this.createMockAccount("urn:member:lily-lapcokova",
+                                               "Lily",
+                                               "Lapcokova",
+                                               "My passion lies in finding exceptional talent, building candidate and client relationships and thinking outside the box to solve challenges.",
+                                               "https://media.licdn.com/mpr/mpr/shrinknp_100_100/AAEAAQAAAAAAAATfAAAAJGRiMWQxOTcyLTUxZTYtNGVlZC1iYzEyLTNhYmU5YzhlNGVlNw.jpg");
+
+    let kimKamitani = this.createMockAccount("urn:member:kim-kamitani",
+                                             "Kim",
+                                             "Kamitani",
+                                             "A fun loving talent builder in the Silicon Valley",
+                                             "https://media.licdn.com/mpr/mpr/shrinknp_100_100/AAEAAQAAAAAAAAMiAAAAJDhjMDRkZTRlLTk1Y2YtNDhlYS05NmE4LTA2NTRlODk4MDU1NQ.jpg");
+    
+    this.mockAccounts.push(albertEinstein);
+    this.mockAccounts.push(albertLiao);
+    this.mockAccounts.push(lilyLapcokova);
+    this.mockAccounts.push(kimKamitani);
+  }
+  
+  private createMockAccount(accountUrn: string,
                             firstName: string, 
                             lastName: string,
                             description: string,
-                            profileImageUrl: string) {
+                            profileImageUrl: string): Account {
     let account = new Account();
     
     account.urn = accountUrn;
@@ -63,7 +80,7 @@ export class AccountProvider {
     account.profileImage.urn = "urn:image:" + StringUtils.generateUUID();
     account.profileImage.url = profileImageUrl;
     
-    this.mockAccounts.push(account);
+    return account;
   }
     
 }

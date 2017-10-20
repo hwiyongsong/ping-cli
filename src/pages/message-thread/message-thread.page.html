@@ -29,7 +29,7 @@
 
 <ion-footer padding>
 	<div flex>
-	  <ion-textarea autosize autofocus placeholder="Write a message"></ion-textarea>
-    <button ion-button auto-height clear (click)="onSend()">Send</button>	
+	  <ion-textarea autosize autofocus [(ngModel)]="reply" placeholder="Write a message"></ion-textarea>
+    <button ion-button auto-height clear (click)="onReply()">Reply</button>	
 	</div>
 </ion-footer>
