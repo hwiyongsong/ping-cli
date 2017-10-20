@@ -1,14 +1,83 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+    <ion-buttons start>
+      <button ion-button>
+        <ion-icon name="md-ionic" color="secondary"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button small-right-margin>
+        <ion-icon name="md-text" color="gray"></ion-icon>
+      </button>
+    	<button ion-button>
+        <ion-icon name="md-contact" color="gray"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+	<ion-section>
+		<ion-section-header>
+			<h4>New Messages</h4>
+		</ion-section-header>
+		<ion-section-content>
+			<ion-list>
+			  <ion-item>
+			    <ion-avatar item-start>
+			      <img src="https://media.licdn.com/mpr/mpr/shrinknp_100_100/AAEAAQAAAAAAAA3kAAAAJGRlZmQxMzhkLWFlNjQtNDBiYy05ZjE2LTg0ODQ0NjVmMzUzOA.jpg">
+			    </ion-avatar>
+			    <h6>Albert Liao</h6>
+			    <p>Senior role at new Uber self-driving project</p>
+			    <ion-note item-end>
+			    	<p tiny-bottom-margin class="meta">Yesterday</p>
+			    	<p class="lead">$5</p>
+			    </ion-note>
+			  </ion-item>
+			  <ion-item>
+			    <ion-avatar item-start>
+			      <img src="https://media.licdn.com/mpr/mpr/shrinknp_100_100/AAEAAQAAAAAAAATfAAAAJGRiMWQxOTcyLTUxZTYtNGVlZC1iYzEyLTNhYmU5YzhlNGVlNw.jpg">
+			    </ion-avatar>
+			    <h6>Lily Lapcakova</h6>
+			    <p>A Look into Facebook Payments Team</p>
+			    <ion-note item-end>
+			    	<p tiny-bottom-margin class="meta">Sep 21</p>
+			    	<p class="lead">$5</p>
+			    </ion-note>
+			  </ion-item>
+			  <ion-item>
+			    <ion-avatar item-start>
+			      <img src="https://media.licdn.com/mpr/mpr/shrinknp_100_100/AAEAAQAAAAAAAAMiAAAAJDhjMDRkZTRlLTk1Y2YtNDhlYS05NmE4LTA2NTRlODk4MDU1NQ.jpg">
+			    </ion-avatar>
+			    <h6>Kim Kamitaki</h6>
+			    <p>Feedback on Kafka Whitepaper</p>
+			    <ion-note item-end>
+			    	<p tiny-bottom-margin class="meta">Sep 19</p>
+			    	<p class="lead">$7.50</p>
+			    </ion-note>
+			  </ion-item>
+			</ion-list>
+		</ion-section-content>
+	</ion-section>
+	
+  <ion-section>
+  	<ion-section-header>
+  	  <h3>Invitations</h3>
+  	</ion-section-header>
+  	<ion-section-content>
+      <ion-card>
+      	<ion-card-header>
+      	
+      	</ion-card-header>
+      </ion-card>
+  	</ion-section-content>
+  </ion-section>
+  <ion-section>
+  	<ion-section-header>
+  	  <h3>Trending Lists</h3>
+  	</ion-section-header>
+  	<ion-section-content>
+      <p>Ipsum Dolor</p>
+  	</ion-section-content>
+  </ion-section>
 </ion-content>

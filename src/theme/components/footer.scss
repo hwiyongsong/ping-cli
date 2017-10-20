@@ -1,0 +1,20 @@
+ion-footer {
+	border-top: $hairlines-width solid $border-color;
+	
+	&[clear] {
+		border-top: none;
+  }
+	
+	.text-input-ios {
+		margin: 0;
+		height: 20px;
+	}
+	
+	textarea {
+	 	height: 20px;
+	}
+	
+	ion-button {
+		
+	}
+}

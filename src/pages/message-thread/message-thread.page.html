@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{thread.from.getFullName()}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-section class="thread-section">
+  	<ion-section-header text-center>
+  		<p class="lead">{{thread.subject}}</p>
+			<p class="caption">Respond to {{thread.from.firstName}} to earn <strong color="primary">{{thread.bounty}}</strong>.</p>
+  	</ion-section-header>
+  	<ion-section-content>
+  		<div class="chat-thread">
+  			<div class="chat-message left" *ngFor="let message of thread.messages">
+  				<ion-avatar>
+			      <img [src]="message.from.profileImage.url">
+			    </ion-avatar>
+  				<div class="chat-bubble">
+			  		<div class="message-body">{{message.body}}</div>  				
+  					<div class="message-meta">{{message.createdAt}}</div>
+  				</div>
+  			</div>
+  		</div>
+  	</ion-section-content>
+  </ion-section>
+</ion-content>
+
+<ion-footer padding>
+	<div flex>
+	  <ion-textarea autosize autofocus placeholder="Write a message"></ion-textarea>
+    <button ion-button auto-height clear (click)="onSend()">Send</button>	
+	</div>
+</ion-footer>

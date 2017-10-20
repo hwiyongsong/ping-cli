@@ -1,0 +1,24 @@
+ion-section {
+  display: block;
+  position: relative;
+
+  ion-section-header {
+    display: block;
+    padding: $content-padding;
+    font-weight: 700;
+    font-size: 1.6rem;
+
+    + ion-section-content {
+      padding-top: 0;
+    }
+  }
+
+  ion-section-content {
+    display: block;
+    padding: $content-padding;
+
+    + ion-section-content {
+      padding-top: 0 !important;
+    }
+  }
+}

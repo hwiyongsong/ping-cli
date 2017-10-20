@@ -1,88 +1,81 @@
-// Ionic Variables and Theming. For more info, please see:
-// http://ionicframework.com/docs/theming/
-
-// Font path is used to include ionicons,
-// roboto, and noto sans fonts
 $font-path: "../assets/fonts";
-
-
-// The app direction is used to include
-// rtl styles in your app. For more info, please see:
-// http://ionicframework.com/docs/theming/rtl-support/
 $app-direction: ltr;
-
 
 @import "ionic.globals";
 
-
-// Shared Variables
-// --------------------------------------------------
-// To customize the look and feel of this app, you can override
-// the Sass variables found in Ionic's source scss files.
-// To view all the possible Ionic variables, see:
-// http://ionicframework.com/docs/theming/overriding-ionic-variables/
-
-
-
-
-// Named Color Variables
-// --------------------------------------------------
-// Named colors makes it easy to reuse colors on various components.
-// It's highly recommended to change the default colors
-// to match your app's branding. Ionic uses a Sass map of
-// colors so you can add, rename and remove colors as needed.
-// The "primary" color is the only required color in the map.
-
 $colors: (
-  primary:    #488aff,
-  secondary:  #32db64,
-  danger:     #f53d3d,
-  light:      #f4f4f4,
-  dark:       #222
+  primary:    														#fd5c63,
+  secondary:  														#00a0dc,
+  danger:     														#f53d3d,
+  light:      														#f3f3f3,
+  dark:       														#666666,
+  gray:																		#cccccc,
+  dark-gray:															#708090
 );
 
+// LAYOUT
+$tiny-space:                              4px;
+$small-space:                             8px;
+$medium-space:                            16px;
+$large-space:                             24px;
+$xlarge-space:                            32px;
+$xxlarge-space:                           40px;
+$border-color:                            #dddddd;
 
-// App iOS Variables
-// --------------------------------------------------
-// iOS only Sass variables can go here
+// TEXT
+$font-family-base:                        "apercu", sans-serif;
+$font-size-base:                          1.5rem;
+$h1-font-size:                            2.6rem;
+$h2-font-size:                            2.4rem;
+$h3-font-size:                            2.2rem;
+$h4-font-size:                            2.0rem;
+$h5-font-size:                            1.8rem;
+$h6-font-size:                            1.6rem;
+$letter-spacing-base:                     normal;
+$line-height-base:                        1.3;
+$text-color:                              color($colors, dark);
+$word-spacing-base:                       0.1rem;
 
+// TOOLBAR
+$toolbar-background:											white;
+$toolbar-ios-border-color:								white;
+$toolbar-ios-button-font-size:						1.8rem;
+$toolbar-ios-height:											50px;
+$toolbar-ios-padding:                     0 $medium-space;
+$toolbar-ios-title-text-color:						color($colors, dark);
 
+// LIST
+$list-border-color:												$border-color;
+$list-ios-header-letter-spacing:					$letter-spacing-base;
 
+// ITEM
+$item-ios-avatar-size:                    36px;
+$item-ios-body-text-font-size:            $font-size-base;
+$item-ios-padding-top:                    $medium-space;
+$item-ios-padding-bottom:                 $medium-space;
+$item-ios-padding-left:                   0;
+$item-ios-padding-right:                  $tiny-space + 4;
+$item-ios-paragraph-font-size:            $font-size-base;
+$item-ios-paragraph-text-color:           $text-color;
+$item-ios-padding-media-top:							$medium-space;
+$item-ios-padding-media-bottom:						$medium-space;
 
-// App Material Design Variables
-// --------------------------------------------------
-// Material Design only Sass variables can go here
-
-
-
-
-// App Windows Variables
-// --------------------------------------------------
-// Windows only Sass variables can go here
-
-
-
-
-// App Theme
-// --------------------------------------------------
-// Ionic apps can have different themes applied, which can
-// then be future customized. This import comes last
-// so that the above variables are used and Ionic's
-// default are overridden.
+// GRID
+$grid-padding-width:                      0;
 
 @import "ionic.theme.default";
-
-
-// Ionicons
-// --------------------------------------------------
-// The premium icon font for Ionic. For more info, please see:
-// http://ionicframework.com/docs/ionicons/
-
 @import "ionic.ionicons";
-
-
-// Fonts
-// --------------------------------------------------
-
 @import "roboto";
 @import "noto-sans";
+
+@import "./components/avatar";
+@import "./components/chat";
+@import "./components/form";
+@import "./components/footer";
+@import "./components/header";
+@import "./components/item";
+@import "./components/layout";
+@import "./components/note";
+@import "./components/section";
+@import "./components/tag";
+@import "./components/text";

@@ -5,13 +5,19 @@ import { IonicApp, IonicErrorHandler, IonicModule } from "ionic-angular";
 import { SplashScreen } from "@ionic-native/splash-screen";
 import { StatusBar } from "@ionic-native/status-bar";
 
-import { MyApp } from "./app.component";
+import { AccountProvider } from "./providers/account.provider";
+import { InboxProvider } from "./providers/inbox.provider";
 
-import { HomePage } from "../pages/home/home.page";
+import { MyApp } from "./app.component";
+import { MessageFormPage } from "../pages/message-form/message-form.page";
+import { MessageInboxPage } from "../pages/message-inbox/message-inbox.page";
+import { MessageThreadPage } from "../pages/message-thread/message-thread.page";
 
 let components: Array<any> = [
   MyApp,
-  HomePage
+  MessageFormPage,
+  MessageInboxPage,
+  MessageThreadPage
 ]
 
 let directives: Array<any> = [
@@ -23,6 +29,8 @@ let pipes: Array<any> = [
 ]
 
 let providers: Array<any> = [
+  AccountProvider,
+  InboxProvider,
   StatusBar,
   SplashScreen,
   { provide: ErrorHandler, useClass: IonicErrorHandler }

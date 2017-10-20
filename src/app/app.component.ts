@@ -3,7 +3,7 @@ import { Nav, Platform } from "ionic-angular";
 import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
 
-import { HomePage } from "../pages/home/home.page";
+import { MessageInboxPage } from "../pages/message-inbox/message-inbox.page";
 
 @Component({
   templateUrl: "app.html"
@@ -20,7 +20,7 @@ export class MyApp {
       statusBar.overlaysWebView(false);
       splashScreen.hide();
       
-      this.nav.setRoot(HomePage);
+      this.nav.setRoot(MessageInboxPage);
     });
   }
   

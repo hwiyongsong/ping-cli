@@ -1,5 +1,11 @@
 import { Component } from "@angular/core";
-import { NavController, NavParams } from "ionic-angular";
+import { NavController } from "ionic-angular";
+
+import { InboxProvider } from "../../app/providers/inbox.provider";
+
+import { MessageThreadPage } from "../message-thread/message-thread.page";
+
+import { Thread } from "../../app/domains/thread";
 
 @Component({
   selector: "message-inbox-page",
@@ -7,11 +13,14 @@ import { NavController, NavParams } from "ionic-angular";
 })
 export class MessageInboxPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private navController: NavController, 
+              public inboxProvider: InboxProvider) {
   }
 
-  ionViewDidLoad() {
-    console.log("ionViewDidLoad MessageInboxPage");
+  onViewThread(thread: Thread) {
+    this.navController.push(MessageThreadPage, {
+      "thread": thread
+    }); 
   }
 
 }
