@@ -41,8 +41,8 @@ export class AccountProvider {
                                                 "Imagination is more important than knowledge.",
                                                 "https://pbs.twimg.com/profile_images/879355674957926400/VSGZHGib.jpg");
     
-    let albertLiao = this.createMockAccount("urn:member:albert-liao",
-                                            "Albert",
+    let albertLiao = this.createMockAccount("urn:member:robert-liao",
+                                            "Robert",
                                             "Liao",
                                             "Building the best teams to build the best self-driving vehicles",
                                             "https://media.licdn.com/mpr/mpr/shrinknp_100_100/AAEAAQAAAAAAAA3kAAAAJGRlZmQxMzhkLWFlNjQtNDBiYy05ZjE2LTg0ODQ0NjVmMzUzOA.jpg");

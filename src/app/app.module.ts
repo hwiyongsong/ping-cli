@@ -9,19 +9,29 @@ import { AccountProvider } from "./providers/account.provider";
 import { InboxProvider } from "./providers/inbox.provider";
 
 import { MyApp } from "./app.component";
+import { AccountProfilePage } from "../pages/account-profile/account-profile.page";
 import { MessageFormPage } from "../pages/message-form/message-form.page";
 import { MessageInboxPage } from "../pages/message-inbox/message-inbox.page";
 import { MessageThreadPage } from "../pages/message-thread/message-thread.page";
 
+import { AutoFocusDirective } from "./directives/autofocus.directive";
+import { ElasticHeaderDirective } from "./directives/elastic-header.directive";
+import { KeyboardAttachDirective } from "./directives/keyboard-attach.directive";
+import { TextareaAutosizeDirective } from "./directives/textarea-autosize.directive";
+
 let components: Array<any> = [
   MyApp,
+  AccountProfilePage,
   MessageFormPage,
   MessageInboxPage,
   MessageThreadPage
 ]
 
 let directives: Array<any> = [
-
+  AutoFocusDirective,
+  ElasticHeaderDirective,
+  KeyboardAttachDirective,
+  TextareaAutosizeDirective
 ]
 
 let pipes: Array<any> = [

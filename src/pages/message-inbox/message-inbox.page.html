@@ -19,12 +19,12 @@
 			<h5>Inbox</h5>
 			<ion-badge item-end>{{inboxProvider.getPendingSize()}}</ion-badge>
 		</ion-list-header>
-	  <ion-item (click)="onViewThread(thread)" *ngFor="let thread of inboxProvider.getPendingThreads(); let i = index">
-	    <ion-avatar item-start>
+	  <ion-item *ngFor="let thread of inboxProvider.getPendingThreads(); let i = index">
+	    <ion-avatar item-start (click)="onViewSender(thread.from)">
 	      <img src="{{thread.from.profileImage.url}}">
 	    </ion-avatar>
-	    <h6>{{thread.from.firstName}} {{thread.from.lastName}}</h6>
-	    <p class="caption">{{thread.subject}}</p>
+	    <h6 (click)="onViewThread(thread)">{{thread.from.firstName}} {{thread.from.lastName}}</h6>
+	    <p class="caption" (click)="onViewThread(thread)">{{thread.subject}}</p>	    
 	    <ion-note item-end item-top>
 	    	<p tiny-bottom-margin class="meta">{{thread.createdAt}}</p>
 	    	<p class="lead">{{thread.bounty}}</p>

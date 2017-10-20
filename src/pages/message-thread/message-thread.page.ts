@@ -1,8 +1,11 @@
 import { Component } from "@angular/core";
-import { NavParams } from "ionic-angular";
+import { NavController, NavParams } from "ionic-angular";
 
 import { AccountProvider } from "../../app/providers/account.provider";
 
+import { AccountProfilePage } from "../account-profile/account-profile.page";
+
+import { Account } from "../../app/domains/account";
 import { Message } from "../../app/domains/message";
 import { Thread } from "../../app/domains/thread";
 
@@ -18,8 +21,15 @@ export class MessageThreadPage {
   public reply: string;
   
   constructor(params: NavParams,
+              private navController: NavController,
               public accountProvider: AccountProvider) {
     this.thread = params.get("thread");
+  }
+  
+  onViewSender() {
+    this.navController.push(AccountProfilePage, {
+      "account": this.thread.from
+    }); 
   }
   
   onReply() {

@@ -1,6 +1,11 @@
 <ion-header>
   <ion-navbar>
     <ion-title>{{thread.from.getFullName()}}</ion-title>
+    <ion-buttons end>
+    	<button ion-button color="gray" (click)="onViewSender()">
+        <ion-icon name="md-open"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 

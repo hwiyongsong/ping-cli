@@ -3,8 +3,10 @@ import { NavController } from "ionic-angular";
 
 import { InboxProvider } from "../../app/providers/inbox.provider";
 
+import { AccountProfilePage } from "../account-profile/account-profile.page";
 import { MessageThreadPage } from "../message-thread/message-thread.page";
 
+import { Account } from "../../app/domains/account";
 import { Thread } from "../../app/domains/thread";
 
 @Component({
@@ -15,6 +17,12 @@ export class MessageInboxPage {
 
   constructor(private navController: NavController, 
               public inboxProvider: InboxProvider) {
+  }
+  
+  onViewSender(account: Account) {
+    this.navController.push(AccountProfilePage, {
+      "account": account
+    }); 
   }
 
   onViewThread(thread: Thread) {
