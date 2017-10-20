@@ -1,5 +1,6 @@
 import { Component, ViewChild } from "@angular/core";
 import { Nav, Platform } from "ionic-angular";
+import { Keyboard } from "@ionic-native/keyboard";
 import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
 
@@ -13,9 +14,12 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   constructor(platform: Platform, 
-              statusBar: StatusBar, 
-              splashScreen: SplashScreen) {
+              keyboard: Keyboard,
+              splashScreen: SplashScreen,
+              statusBar: StatusBar) {
     platform.ready().then(() => {
+      keyboard.disableScroll(true);
+      
       statusBar.styleDefault();
       statusBar.overlaysWebView(false);
       splashScreen.hide();

@@ -2,6 +2,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { CUSTOM_ELEMENTS_SCHEMA, ErrorHandler, NgModule } from "@angular/core";
 import { HttpModule } from "@angular/http";
 import { IonicApp, IonicErrorHandler, IonicModule } from "ionic-angular";
+import { Keyboard } from "@ionic-native/keyboard";
 import { SplashScreen } from "@ionic-native/splash-screen";
 import { StatusBar } from "@ionic-native/status-bar";
 
@@ -41,6 +42,7 @@ let pipes: Array<any> = [
 let providers: Array<any> = [
   AccountProvider,
   InboxProvider,
+  Keyboard,
   StatusBar,
   SplashScreen,
   { provide: ErrorHandler, useClass: IonicErrorHandler }

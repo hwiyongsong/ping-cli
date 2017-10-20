@@ -10,7 +10,7 @@
 </ion-header>
 
 
-<ion-content>
+<ion-content #content>
   <ion-section class="thread-section">
   	<ion-section-header text-center>
   		<p tiny-bottom-margin class="lead">{{thread.subject}}</p>
@@ -32,9 +32,9 @@
   </ion-section>
 </ion-content>
 
-<ion-footer padding>
+<ion-footer padding [keyboard-attach]="content">
 	<div flex>
-	  <ion-textarea autosize autofocus [(ngModel)]="reply" placeholder="Write a message"></ion-textarea>
+	  <ion-textarea autosize [(ngModel)]="reply" placeholder="Write a message"></ion-textarea>
     <button ion-button auto-height clear (click)="onReply()">Reply</button>	
 	</div>
 </ion-footer>

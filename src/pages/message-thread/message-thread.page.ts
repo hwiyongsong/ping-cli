@@ -5,7 +5,6 @@ import { AccountProvider } from "../../app/providers/account.provider";
 
 import { AccountProfilePage } from "../account-profile/account-profile.page";
 
-import { Account } from "../../app/domains/account";
 import { Message } from "../../app/domains/message";
 import { Thread } from "../../app/domains/thread";
 
