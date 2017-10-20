@@ -1,3 +1,7 @@
-message-detail-page {
-
+message-thread-page {
+	.thread-subject {
+		ion-badge {
+			padding: 6px 8px;
+		}
+	}
 }

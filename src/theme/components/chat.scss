@@ -1,9 +1,10 @@
 $chat-bubble-background-left: color($colors, secondary);
-$chat-bubble-background-right: yellow;
+$chat-bubble-background-right: color($colors, light);
 
 .chat-thread {
 	.chat-message {
 		position: relative;
+		margin-bottom: $medium-space;
 		font-size: 1.6rem;
 		
 		ion-avatar {
@@ -14,10 +15,12 @@ $chat-bubble-background-right: yellow;
 		.chat-bubble {
 			padding: 0 $medium-space;
 			border-radius: $tiny-space;
+			word-wrap: break-word;
+    	white-space: pre-line;
 		}
 		
 		.message-meta {
-			margin-top: $medium-space;
+			margin-top: $tiny-space;
 			font-size: 1.3rem;
 			font-weight: 300;
 		}
@@ -32,8 +35,6 @@ $chat-bubble-background-right: yellow;
 			background: $chat-bubble-background-left;
 			color: white;
 			margin-left: 40px;
-			word-wrap: break-word;
-    	white-space: pre-line;
 		
 			&:after {
 				content: '';
@@ -60,21 +61,21 @@ $chat-bubble-background-right: yellow;
 
 		.chat-bubble {
 			background: $chat-bubble-background-right;
-			
+			margin-right: 40px;
 		
 			&:after {
 				content: '';
 				position: absolute;
-				right: 0;
-				top: 50%;
+				right: 40px;
+				top: 0;
 				width: 0;
 				height: 0;
-				border: 20px solid transparent;
-				border-left-color: #00aabb;
+				border: 12px solid transparent;
+				border-left-color: $chat-bubble-background-right;
 				border-right: 0;
 				border-top: 0;
-				margin-top: -10px;
-				margin-right: -20px;
+				margin-top: 0;
+				margin-right: -6px;
 			}
 		}
 	}

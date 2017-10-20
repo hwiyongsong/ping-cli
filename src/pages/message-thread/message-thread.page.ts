@@ -18,14 +18,12 @@ export class MessageThreadPage {
   public reply: string;
   
   constructor(params: NavParams,
-              private accountProvider: AccountProvider) {
+              public accountProvider: AccountProvider) {
     this.thread = params.get("thread");
   }
   
   onReply() {
     if (this.reply) {
-      console.log("** Replying to thread[" + this.thread.urn + "]: " + this.reply);
-      
       let message = new Message();
       message.urn = "urn:message:" + StringUtils.generateUUID();
       message.from = this.accountProvider.currentAccount;
@@ -33,7 +31,12 @@ export class MessageThreadPage {
       message.createdAt = "A moment ago";
       
       this.thread.add(message);
+      this.clearReply();
     }
+  }
+
+  private clearReply() {
+    this.reply = "";
   }
 
 }
