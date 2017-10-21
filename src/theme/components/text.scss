@@ -10,7 +10,6 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 !important;
   line-height: $line-height-base !important;
   font-weight: 700 !important;
-  color: $text-color;
   
   sup {
   	display: block;
@@ -39,7 +38,7 @@ h1 {
 	font-size: $h1-font-size !important;
 	
 	sub, sup {
-		font-size: 70%;
+		font-size: 65%;
 	}
 }
 
@@ -71,7 +70,8 @@ h5 {
 	font-size: $h5-font-size !important;
 	
 	sub, sup {
-    font-size: 85%;
+    font-size: 80%;
+    font-weight: 300;
   }
 }
 
@@ -88,7 +88,7 @@ h6 {
 p {
 	width: 100%;
   margin: 0;
-  font-weight: 400;
+  font-weight: 300;
   font-size: $font-size-base;
   
   [color="primary"] {
@@ -104,11 +104,11 @@ p {
   }
   
   &[small] {
-  	font-size: 90% !important;
+  	font-size: 85% !important;
   }
   
   &[large] {
-  	font-size: 110% !important;
+  	font-size: 115% !important;
   }
   
   ion-icon {
@@ -154,7 +154,7 @@ small {
 
 .meta {
 	font-weight: 300 !important;
-  font-size: 1.2rem !important;
+  font-size: 1.3rem !important;
   color: color($colors, dark-gray) !important;
 }
 

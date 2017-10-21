@@ -19,7 +19,7 @@ export class MessageInboxPage {
               public inboxProvider: InboxProvider) {
   }
   
-  onViewSender(account: Account) {
+  onViewAccountProfile(account: Account) {
     this.navController.push(AccountProfilePage, {
       "account": account
     }); 

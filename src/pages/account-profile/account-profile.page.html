@@ -1,9 +1,96 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>{{account.getFullName()}}</ion-title>
-  </ion-navbar>
+<ion-header class="elastic">
+  <ion-navbar></ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content elastic-header>
+	<figure aspect-4-3 class="cover-image">
+    <img [src]="account.profileImage.url" *ngIf="account.profileImage"/>
+  </figure>
+  
+  <ion-section class="summary">
+  	<ion-section-header>
+  		<ion-row bottom-margin text-center>
+  			<ion-col>
+  				<h5 ion-text color="secondary"><div>{{account.rating.score}} <ion-icon name="star"></ion-icon></div><sub>{{account.rating.count}} Ratings</sub></h5>
+  			</ion-col>
+  			<ion-col>
+  				<h5 ion-text color="dark-gray">386<sub>Connections</sub></h5>
+  			</ion-col>
+  			<ion-col>
+  				<h5 ion-text color="dark-gray">511<sub>Followers</sub></h5>
+  			</ion-col>
+  		</ion-row>
+  		
+  		<hr/>
 
+  		<h1 flex>{{account.getFullName()}} <ion-badge small-left-margin>2nd</ion-badge></h1>  		
+  		<h4>{{account.title}}</h4>
+  		
+  		<ion-buttons top-margin>
+  			<button ion-button outline color="secondary">Connect</button>
+  			<button ion-button small-left-margin outline color="secondary">&nbsp; Follow &nbsp;</button>
+  		</ion-buttons>
+  		
+  		<p top-margin bottom-padding class="lead">{{account.description}}</p>
+  		<hr/>
+  	</ion-section-header>
+  </ion-section>
+
+  <ion-section class="experiences">
+  	<ion-section-content>
+	  	<h4>Experience</h4>
+  		<ion-list>
+  			<ion-item>
+  				<ion-thumbnail item-start>
+  					<img src="https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAYRAAAAJDVlMzBlYjNiLTAxN2QtNGQxZC1iZTAzLTlmNWQ1OTE4OGY4ZA.png"/>
+  				</ion-thumbnail>
+  				<h6>Technical Recruiter</h6>
+  				<p>Facebook</p>
+  				<p class="meta">Sep 2016 - Present • 1 yr 2 mos</p>
+  			</ion-item>
+  			<ion-item>
+  				<ion-thumbnail item-start>
+  					<img src="https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAqwAAAAJDAzZGFhNTg1LWU3ZmYtNGFlZS05YWI1LWQ2MmMyZTIxOTliNw.png"/>
+  				</ion-thumbnail>
+  				<h6>Talent Coordinator</h6>
+  				<p>Uber</p>
+  				<p class="meta">Sep 2014 - Aug 2016 • 1 yr 11 mos</p>
+  			</ion-item>
+  		</ion-list>
+  	</ion-section-content>
+  </ion-section>
+
+  <ion-section class="education">
+  	<ion-section-content>
+  		<h4>Education</h4>
+  		<ion-list>
+  			<ion-item>
+  				<ion-thumbnail item-start>
+  					<img src="https://media.licdn.com/mpr/mpr/shrinknp_100_100/AAEAAQAAAAAAAAe_AAAAJDcwYjc5OTVlLThiYjAtNDI4MS04NzQxLWI4MDA4ZjUxOWViOQ.png"/>
+  				</ion-thumbnail>
+  				<h5>University of Michigan</h5>
+  				<p>Bachelor of Science in Mathematics</p>
+  				<p class="meta">Sep 2010 - Aug 2014</p>
+  			</ion-item>
+  		</ion-list>
+  	</ion-section-content>
+  </ion-section>
+
+  <ion-section class="interests">
+  	<ion-section-content>
+  		<h4 small-bottom-margin>Interests</h4>
+  		<ion-thumbnail>
+  			<img src="https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAALTAAAAJGY1NGY1N2ZhLTNmZmUtNGRmZi1iMDgxLTJjZjdkNjNkYmZlOQ.png"/>
+  		</ion-thumbnail>
+  		<ion-thumbnail>
+  			<img src="https://media.licdn.com/mpr/mpr/shrink_100_100/p/8/000/1ee/3ce/12d3b23.png"/>
+  		</ion-thumbnail>
+  		<ion-thumbnail>
+  			<img src="http://files.coinmarketcap.com.s3-website-us-east-1.amazonaws.com/static/img/coins/200x200/ethereum.png"/>
+  		</ion-thumbnail>
+  		<ion-thumbnail>
+  			<img src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAA15AAAAJDdjZWZmNjUyLTY2MTktNDcxNS1hY2Y1LTQ4NjNhMWY0YTQ3NQ.png"/>
+  		</ion-thumbnail>
+  	</ion-section-content>
+  </ion-section>
 </ion-content>

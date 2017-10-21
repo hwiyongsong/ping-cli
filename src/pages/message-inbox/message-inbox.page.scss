@@ -1,3 +1,8 @@
-page-message-inbox {
-
+message-inbox-page {
+	ion-list.inbox {
+		.message-subject {
+			text-overflow: clip;
+			white-space: normal;
+		}
+	}
 }

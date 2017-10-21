@@ -34,12 +34,12 @@ $chat-bubble-background-right: color($colors, light);
 		.chat-bubble {
 			background: $chat-bubble-background-left;
 			color: white;
-			margin-left: 40px;
+			margin-left: 55px;
 		
 			&:after {
 				content: '';
 				position: absolute;
-				left: 40px;
+				left: 55px;
 				top: 0;
 				width: 0;
 				height: 0;
@@ -61,12 +61,12 @@ $chat-bubble-background-right: color($colors, light);
 
 		.chat-bubble {
 			background: $chat-bubble-background-right;
-			margin-right: 40px;
+			margin-right: 55px;
 		
 			&:after {
 				content: '';
 				position: absolute;
-				right: 40px;
+				right: 55px;
 				top: 0;
 				width: 0;
 				height: 0;

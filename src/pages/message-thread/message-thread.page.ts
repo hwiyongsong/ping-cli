@@ -1,10 +1,11 @@
-import { Component } from "@angular/core";
-import { NavController, NavParams } from "ionic-angular";
+import { Component, ViewChild } from "@angular/core";
+import { Content, NavController, NavParams } from "ionic-angular";
 
 import { AccountProvider } from "../../app/providers/account.provider";
 
 import { AccountProfilePage } from "../account-profile/account-profile.page";
 
+import { Account } from "../../app/domains/account";
 import { Message } from "../../app/domains/message";
 import { Thread } from "../../app/domains/thread";
 
@@ -19,15 +20,17 @@ export class MessageThreadPage {
   public thread: Thread;
   public reply: string;
   
+  @ViewChild(Content) content: Content;
+  
   constructor(params: NavParams,
               private navController: NavController,
               public accountProvider: AccountProvider) {
     this.thread = params.get("thread");
   }
   
-  onViewSender() {
+  onViewAccountProfile(account: Account) {
     this.navController.push(AccountProfilePage, {
-      "account": this.thread.from
+      "account": account
     }); 
   }
   
@@ -41,6 +44,10 @@ export class MessageThreadPage {
       
       this.thread.add(message);
       this.clearReply();
+      
+      setTimeout(() => {
+        this.content.scrollToBottom();        
+      }, 400);
     }
   }
 

@@ -1,3 +1,9 @@
 [item-top] {
 	align-self: flex-start;
 }
+
+ion-item.item-ios {
+	p {
+		margin: 0;
+	}
+}

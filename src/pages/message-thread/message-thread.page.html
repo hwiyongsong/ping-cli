@@ -2,7 +2,7 @@
   <ion-navbar>
     <ion-title>{{thread.from.getFullName()}}</ion-title>
     <ion-buttons end>
-    	<button ion-button color="gray" (click)="onViewSender()">
+    	<button ion-button color="gray" (click)="onViewAccountProfile(thread.from)">
         <ion-icon name="md-open"></ion-icon>
       </button>
     </ion-buttons>
@@ -19,7 +19,7 @@
   	<ion-section-content>
   		<div class="chat-thread">
   			<div class="chat-message" [class.left]="message.from.urn != accountProvider.currentAccount.urn" [class.right]="message.from.urn == accountProvider.currentAccount.urn" *ngFor="let message of thread.messages">
-  				<ion-avatar>
+  				<ion-avatar (click)="onViewAccountProfile(message.from)">
 			      <img [src]="message.from.profileImage.url">
 			    </ion-avatar>
   				<div class="chat-bubble">

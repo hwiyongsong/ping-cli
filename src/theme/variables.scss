@@ -5,7 +5,7 @@ $app-direction: ltr;
 
 $colors: (
   primary:    														#fd5c63,
-  secondary:  														#00a0dc,
+  secondary:  														#21bf8c,
   danger:     														#f53d3d,
   light:      														#f3f3f3,
   dark:       														#555555,
@@ -21,20 +21,21 @@ $large-space:                             24px;
 $xlarge-space:                            32px;
 $xxlarge-space:                           40px;
 $border-color:                            #dddddd;
+$border-radius:														4px;
 
 // TEXT
 $font-family-base:                        "apercu", sans-serif;
-$font-size-base:                          1.5rem;
-$h1-font-size:                            2.6rem;
-$h2-font-size:                            2.4rem;
-$h3-font-size:                            2.2rem;
-$h4-font-size:                            2.0rem;
-$h5-font-size:                            1.8rem;
-$h6-font-size:                            1.6rem;
+$font-size-base:                          1.6rem;
+$h1-font-size:                            3.4rem;
+$h2-font-size:                            3.0rem;
+$h3-font-size:                            2.6rem;
+$h4-font-size:                            2.2rem;
+$h5-font-size:                            1.9rem;
+$h6-font-size:                            1.7rem;
 $letter-spacing-base:                     normal;
 $line-height-base:                        1.3;
 $text-color:                              color($colors, dark);
-$word-spacing-base:                       0.1rem;
+$word-spacing-base:                       0;
 
 // TOOLBAR
 $toolbar-background:											white;
@@ -49,7 +50,7 @@ $list-border-color:												$border-color;
 $list-ios-header-letter-spacing:					$letter-spacing-base;
 
 // ITEM
-$item-ios-avatar-size:                    36px;
+$item-ios-avatar-size:                    50px;
 $item-ios-body-text-font-size:            $font-size-base;
 $item-ios-padding-top:                    $medium-space;
 $item-ios-padding-bottom:                 $medium-space;
@@ -69,13 +70,18 @@ $grid-padding-width:                      0;
 @import "noto-sans";
 
 @import "./components/avatar";
+@import "./components/badge";
+@import "./components/button";
 @import "./components/chat";
 @import "./components/form";
 @import "./components/footer";
 @import "./components/header";
 @import "./components/item";
+@import "./components/list";
 @import "./components/layout";
+@import "./components/media";
 @import "./components/note";
 @import "./components/section";
 @import "./components/tag";
 @import "./components/text";
+@import "./components/thumbnail";
