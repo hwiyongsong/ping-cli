@@ -1,0 +1,20 @@
+.ping-brand {
+	ion-icon.logo {	
+		font-size: 3.0rem !important;
+		color: color($colors, dark);
+	}
+	
+	span.text {
+		margin-left: $tiny-space;
+		letter-spacing: -0.025em;
+		color: color($colors, dark);
+		text-transform: uppercase;
+		
+		sub {
+			bottom: 0;
+			font-size: 1.0em;
+			color: color($colors, primary);
+			text-transform: lowercase;		
+		}
+	}
+}
