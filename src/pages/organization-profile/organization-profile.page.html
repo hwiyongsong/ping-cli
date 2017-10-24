@@ -1,0 +1,33 @@
+<ion-header class="elastic">
+  <ion-navbar></ion-navbar>
+</ion-header>
+
+<ion-content elastic-header>
+	<figure aspect-4-3 class="cover-image">
+    <img [src]="account.profileImage.url" *ngIf="account.profileImage"/>
+  </figure>
+  
+  <ion-section class="summary">
+  	<ion-section-header>
+  		<ion-row bottom-margin text-center>
+  			<ion-col>
+  				<h5 ion-text color="secondary"><div>{{account.rating.score}} <ion-icon name="star"></ion-icon></div><sub>{{account.rating.count}} Ratings</sub></h5>
+  			</ion-col>
+  			<ion-col>
+  				<h5 ion-text color="dark-gray">958<sub>Followers</sub></h5>
+  			</ion-col>
+  		</ion-row>
+  		
+  		<hr/>
+
+  		<h1 flex>{{account.getFullName()}}</h1>  		
+  		<h4>{{account.title}}</h4>
+  		
+  		<ion-buttons top-margin>
+  			<button ion-button small-left-margin outline color="secondary">&nbsp; Follow &nbsp;</button>
+  		</ion-buttons>
+  		
+  		<p top-margin class="lead">{{account.description}}</p>
+  	</ion-section-header>
+  </ion-section>
+</ion-content>

@@ -3,9 +3,10 @@ import { NavController } from "ionic-angular";
 
 import { InboxProvider } from "../../app/providers/inbox.provider";
 
-import { AccountProfilePage } from "../account-profile/account-profile.page";
+import { MemberProfilePage } from "../member-profile/member-profile.page";
 import { MessageAdVideoPage } from "../message-ad-video/message-ad-video.page";
 import { MessageThreadPage } from "../message-thread/message-thread.page";
+import { OrganizationProfilePage } from "../organization-profile/organization-profile.page";
 
 import { Account } from "../../app/domains/account";
 import { Thread } from "../../app/domains/thread";
@@ -21,9 +22,17 @@ export class MessageInboxPage {
   }
   
   onViewAccountProfile(account: Account) {
-    this.navController.push(AccountProfilePage, {
-      "account": account
-    }); 
+    if (account.urn.startsWith("urn:member:")) {
+      this.navController.push(MemberProfilePage, {
+        "account": account
+      });       
+    }
+    
+    if (account.urn.startsWith("urn:organization:")) {
+      this.navController.push(OrganizationProfilePage, {
+        "account": account
+      });  
+    }
   }
 
   onViewThread(thread: Thread) {

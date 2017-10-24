@@ -1,12 +1,20 @@
 message-thread-page {
-	ion-section.cover-message-section {
-		box-shadow: 0 0 4px color($colors, gray);;
-	} 
-	
-	.thread-subject {
-		ion-badge {
-			padding: 6px 8px;
+	ion-section.video-section {
+		position: relative;
+		padding-bottom: 56.25%;
+		height: 0;
+		
+		iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
 		}
+	}
+	
+	ion-section.messages {	
+		box-shadow: 0 0 4px color($colors, gray);;
 	}
 	
 	ion-footer {

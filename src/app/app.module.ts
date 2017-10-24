@@ -10,11 +10,12 @@ import { AccountProvider } from "./providers/account.provider";
 import { InboxProvider } from "./providers/inbox.provider";
 
 import { MyApp } from "./app.component";
-import { AccountProfilePage } from "../pages/account-profile/account-profile.page";
+import { MemberProfilePage } from "../pages/member-profile/member-profile.page";
 import { MessageAdVideoPage } from "../pages/message-ad-video/message-ad-video.page";
 import { MessageFormPage } from "../pages/message-form/message-form.page";
 import { MessageInboxPage } from "../pages/message-inbox/message-inbox.page";
 import { MessageThreadPage } from "../pages/message-thread/message-thread.page";
+import { OrganizationProfilePage } from "../pages/organization-profile/organization-profile.page";
 
 import { AutoFocusDirective } from "./directives/autofocus.directive";
 import { ElasticHeaderDirective } from "./directives/elastic-header.directive";
@@ -25,11 +26,12 @@ import { SafeUrlPipe } from "./pipes/safeurl.pipe";
 
 let components: Array<any> = [
   MyApp,
-  AccountProfilePage,
+  MemberProfilePage,
   MessageAdVideoPage,
   MessageFormPage,
   MessageInboxPage,
-  MessageThreadPage
+  MessageThreadPage,
+  OrganizationProfilePage
 ]
 
 let directives: Array<any> = [

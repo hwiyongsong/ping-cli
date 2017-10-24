@@ -3,7 +3,8 @@ import { Content, NavController, NavParams } from "ionic-angular";
 
 import { AccountProvider } from "../../app/providers/account.provider";
 
-import { AccountProfilePage } from "../account-profile/account-profile.page";
+import { MemberProfilePage } from "../member-profile/member-profile.page";
+import { OrganizationProfilePage } from "../organization-profile/organization-profile.page";
 
 import { Account } from "../../app/domains/account";
 import { Message } from "../../app/domains/message";
@@ -29,9 +30,17 @@ export class MessageThreadPage {
   }
   
   onViewAccountProfile(account: Account) {
-    this.navController.push(AccountProfilePage, {
-      "account": account
-    }); 
+    if (account.urn.startsWith("urn:member:")) {
+      this.navController.push(MemberProfilePage, {
+        "account": account
+      });       
+    }
+    
+    if (account.urn.startsWith("urn:organization:")) {
+      this.navController.push(OrganizationProfilePage, {
+        "account": account
+      });  
+    }
   }
   
   onReply() {

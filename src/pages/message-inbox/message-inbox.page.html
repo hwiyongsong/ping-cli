@@ -7,6 +7,9 @@
       </button>
     </ion-buttons>
     <ion-buttons end>
+    	<button ion-button no-padding>
+    		<span class="tag">$185</span>
+    	</button>
     	<button ion-button (click)="onViewAdVideo()">
         <ion-icon name="md-contact" color="gray"></ion-icon>
       </button>
@@ -15,17 +18,26 @@
 </ion-header>
 
 <ion-content>
-	<ion-list class="inbox" padding>
-		<ion-list-header>
-			<h3 flex>Messages <ion-badge small-left-margin>{{inboxProvider.currentInbox.conversations.length}}</ion-badge></h3>
-		</ion-list-header>
-	  <ion-item class="conversation thread" *ngFor="let thread of inboxProvider.currentInbox.conversations">
-	    <ion-avatar item-start (click)="onViewAccountProfile(thread.from)">
-	      <img src="{{thread.from.profileImage.url}}">
-	    </ion-avatar>
-	    <p class="meta">{{thread.createdAt}} • {{thread.category}} • <span color="primary">{{thread.bounty}}</span> • <span color="secondary" *ngIf="thread.from.rating">{{thread.from.rating.score}} <ion-icon name="star"></ion-icon></span></p>   
-    	<h6 flex class="message-from" (click)="onViewThread(thread)">{{thread.from.firstName}} {{thread.from.lastName}}</h6>
-	    <p skinny class="message-subject" (click)="onViewThread(thread)">{{thread.subject}}</p>
-	  </ion-item>
-	</ion-list>
+	<ion-section small-top-margin class="threads-section">
+		<ion-section-header>
+			<h2 flex uppercase>Inbox <ion-badge small-left-margin>{{inboxProvider.currentInbox.threads.length}}</ion-badge></h2>		
+		</ion-section-header>
+		<ion-section-content>
+			<ion-list>
+			  <ion-item class="thread" *ngFor="let thread of inboxProvider.currentInbox.threads">
+			    <ion-avatar item-start (click)="onViewAccountProfile(thread.from)">
+			      <img src="{{thread.from.profileImage.url}}">
+			    </ion-avatar>
+			    <p class="meta">{{thread.createdAt}} • {{thread.category}} • <span color="secondary">{{thread.bounty}}</span></p>   
+		    	<h6 flex class="message-from" (click)="onViewThread(thread)">{{thread.from.firstName}} {{thread.from.lastName}}</h6>
+			    <p skinny class="message-subject" (click)="onViewThread(thread)">{{thread.subject}}</p>
+			  	<ion-note item-end *ngIf="thread.coverMessage.video">
+			  		<ion-thumbnail>
+			  			<img [src]="thread.coverMessage.video.thumbnailUrl"/>
+			  		</ion-thumbnail>
+			  	</ion-note>
+			  </ion-item>
+			</ion-list>		
+		</ion-section-content>
+	</ion-section>
 </ion-content>

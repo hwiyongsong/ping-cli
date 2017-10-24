@@ -4,10 +4,10 @@ import { NavParams } from "ionic-angular";
 import { Account } from "../../app/domains/account";
 
 @Component({
-  selector: "account-profile-page",
-  templateUrl: "account-profile.page.html",
+  selector: "organization-profile-page",
+  templateUrl: "organization-profile.page.html",
 })
-export class AccountProfilePage {
+export class OrganizationProfilePage {
     
   public account: Account;
 

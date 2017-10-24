@@ -9,16 +9,27 @@
 				<ion-avatar item-start>
 			  	<img [src]="thread.coverMessage.from.profileImage.url">
 			  </ion-avatar>
-			  <h6 flex>{{thread.coverMessage.from.getFullName()}}<ion-badge tiny-left-margin>2nd</ion-badge></h6>
-		  	<p class="meta">{{thread.coverMessage.from.title}} • <span color="secondary" *ngIf="thread.from.rating">{{thread.from.rating.score}} <ion-icon name="star"></ion-icon></span></p>
+			  <h5 flex>{{thread.coverMessage.from.getFullName()}}<ion-badge tiny-left-margin *ngIf="thread.from.urn.startsWith('urn:member:')">2nd</ion-badge></h5>
+		  	<p class="caption">{{thread.coverMessage.from.title}} • <span color="secondary" *ngIf="thread.from.rating">{{thread.from.rating.score}} <ion-icon name="star"></ion-icon></span></p>
 			</ion-item> 
 		</ion-section-header>
 		<ion-section-content>
 			<p tiny-bottom-margin class="meta">{{thread.createdAt}} • {{thread.category}}</p>
-			<h4 large-bottom-margin>{{thread.subject}}
-				<sub>Respond to {{thread.from.firstName}} to earn <strong ion-text color="primary">{{thread.bounty}}</strong>.</sub>
+			<h4>{{thread.subject}}
+				<sub *ngIf="thread.category != 'Video'">Respond to {{thread.from.firstName}} to earn <strong ion-text color="secondary">{{thread.bounty}}</strong>.</sub>
+				<sub *ngIf="thread.category == 'Video'">View entire video to earn <strong ion-text color="secondary">{{thread.bounty}}</strong>.</sub>
 			</h4>
-			<p class="message-body">{{thread.coverMessage.body}}</p>
+			<p large-top-margin class="message-body" *ngIf="thread.coverMessage.body">{{thread.coverMessage.body}}</p>
+		</ion-section-content>
+	</ion-section>
+	
+	<ion-section class="video-section" *ngIf="thread.coverMessage.video">
+		<figure aspect-16-9>		
+			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREgl3ITNktGVgUZH7lUIdHB0eNAzSw7l8-lxmC181VW4cpmwm0RA"/>
+			<iframe allowfullscreen [src]="thread.coverMessage.video.url | safeurl" frameborder="0" class="video-embed"></iframe>		
+		</figure>
+		<ion-section-content>
+			<p class="caption" *ngIf="thread.coverMessage.video.caption">{{thread.coverMessage.video.caption}}</p>		
 		</ion-section-content>
 	</ion-section>
 

@@ -1,8 +1,16 @@
 message-inbox-page {
-	ion-list.inbox {
-		.message-subject {
-			text-overflow: clip;
-			white-space: normal;
+	ion-section.threads-section {
+		ion-section-header ion-badge {
+			font-size: 1.6rem;
 		}
+	}
+	
+	ion-item.thread {
+		padding: $tiny-space 0;
+	}
+	
+	.message-subject {
+		text-overflow: clip;
+		white-space: normal;
 	}
 }
