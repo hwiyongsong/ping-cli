@@ -75,6 +75,11 @@ $chat-bubble-background-right: color($colors, light);
 	}
 }
 
+.message-subject {
+	text-overflow: clip;
+	white-space: normal;
+}
+
 .message-body {
 	word-wrap: break-word;
   white-space: pre-line;

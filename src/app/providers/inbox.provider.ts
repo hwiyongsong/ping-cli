@@ -37,7 +37,7 @@ export class InboxProvider {
     let createdAt = "Yesterday";
 
     let thread = this.createThread(account,
-                                   "Senior role at Uber self-driving project",
+                                   "Senior Role at Uber Self-Driving Project",
                                    "Job Opportunity",
                                    "$10",
                                    createdAt);
@@ -76,7 +76,7 @@ export class InboxProvider {
     let createdAt = "Sep 19";
     
     let thread = this.createThread(account,
-                                   "Sr Software Engineer at Facebook",
+                                   "Senior Engineer Position at Facebook",
                                    "Job Opportunity",
                                    "$10",
                                    createdAt);
@@ -97,7 +97,7 @@ export class InboxProvider {
     let thread = this.createThread(account,
                                    "Learn about Uber Elevate",
                                    "Video",
-                                   "$2",
+                                   "$5",
                                    createdAt);
 
     let video = this.createVideo("https://www.youtube.com/embed/nuFSh7N0Nhw",
@@ -123,7 +123,7 @@ export class InboxProvider {
     let thread = this.createThread(account,
                                    "Local Discovery Team at Facebook",
                                    "Video",
-                                   "$2",
+                                   "$5",
                                    createdAt);
 
     let video = this.createVideo("https://www.youtube.com/embed/gnzqOphpOgE",

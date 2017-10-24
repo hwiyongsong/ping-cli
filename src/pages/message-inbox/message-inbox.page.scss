@@ -8,9 +8,4 @@ message-inbox-page {
 	ion-item.thread {
 		padding: $tiny-space 0;
 	}
-	
-	.message-subject {
-		text-overflow: clip;
-		white-space: normal;
-	}
 }

@@ -28,9 +28,9 @@
 			    <ion-avatar item-start (click)="onViewAccountProfile(thread.from)">
 			      <img src="{{thread.from.profileImage.url}}">
 			    </ion-avatar>
-			    <p class="meta">{{thread.createdAt}} • {{thread.category}} • <span color="secondary">{{thread.bounty}}</span></p>   
 		    	<h6 flex class="message-from" (click)="onViewThread(thread)">{{thread.from.firstName}} {{thread.from.lastName}}</h6>
 			    <p skinny class="message-subject" (click)="onViewThread(thread)">{{thread.subject}}</p>
+			    <p class="meta">{{thread.createdAt}} • {{thread.category}} • <span ion-text color="primary">{{thread.bounty}}</span></p>   
 			  	<ion-note item-end *ngIf="thread.coverMessage.video">
 			  		<ion-thumbnail>
 			  			<img [src]="thread.coverMessage.video.thumbnailUrl"/>

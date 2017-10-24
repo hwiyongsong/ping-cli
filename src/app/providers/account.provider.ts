@@ -57,7 +57,7 @@ export class AccountProvider {
     let lilyLapcokova = this.createMockAccount("urn:member:lily-lapcokova",
                                                "Lily",
                                                "Lapcokova",
-                                               "Senior Event Coordinator at Facebook",
+                                               "Event Coordinator at Facebook",
                                                "My passion lies in finding exceptional talent, building candidate and client relationships and thinking outside the box to solve challenges.",
                                                "https://media.licdn.com/media/AAEAAQAAAAAAAAboAAAAJGEwMTFhYWU2LTRmODgtNDFlYi1iOGM0LTJhYjRjZjE3YjdlMQ.jpg",
                                                4.9,

@@ -8,7 +8,7 @@ h1, h2, h3, h4, h5, h6 {
 	display: block;
   width: 100%;
   margin: 0 !important;
-  line-height: $line-height-base !important;
+  line-height: $line-height-base - 0.1 !important;
   font-weight: 700 !important;
   
   sup {
@@ -16,7 +16,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
   	top: 0;
   	font-weight: 500;
-    line-height: 1.3;
+    line-height: $line-height-base;
     color: color($colors, dark-gray);
   }
 
@@ -25,12 +25,12 @@ h1, h2, h3, h4, h5, h6 {
     bottom: 0;
     width: 100%;
     font-weight: 500;
-    line-height: 1.3;
+    line-height: $line-height-base;
     color: color($colors, dark-gray);
   }
   
   ion-icon {
-  	font-size: 1.0em;
+  	font-size: 1.0em; 
   }
 }
 
@@ -154,8 +154,8 @@ small {
 
 .meta {
 	font-weight: 300 !important;
-  font-size: 1.3rem !important;
-  color: color($colors, dark-gray) !important;
+  font-size: 1.4rem !important;
+  color: color($colors, dark-gray) !important; 
 }
 
 .lead {
@@ -167,6 +167,8 @@ small {
 .caption {
 	font-weight: 300 !important; 
 	color: color($colors, dark-gray) !important;
+	text-overflow: clip;
+	white-space: normal;
 }
 
 .truncate {

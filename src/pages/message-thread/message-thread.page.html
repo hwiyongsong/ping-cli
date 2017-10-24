@@ -8,18 +8,19 @@
 			<ion-item (click)="onViewAccountProfile(thread.coverMessage.from)">
 				<ion-avatar item-start>
 			  	<img [src]="thread.coverMessage.from.profileImage.url">
-			  </ion-avatar>
-			  <h5 flex>{{thread.coverMessage.from.getFullName()}}<ion-badge tiny-left-margin *ngIf="thread.from.urn.startsWith('urn:member:')">2nd</ion-badge></h5>
-		  	<p class="caption">{{thread.coverMessage.from.title}} • <span color="secondary" *ngIf="thread.from.rating">{{thread.from.rating.score}} <ion-icon name="star"></ion-icon></span></p>
+			  </ion-avatar> 
+			  <h5 flex>{{thread.coverMessage.from.getFullName()}}<ion-badge tiny-left-margin color="secondary" *ngIf="thread.from.urn.startsWith('urn:member:')">2nd</ion-badge></h5>
+		  	<p class="caption">{{thread.coverMessage.from.title}} • <span color="primary" *ngIf="thread.from.rating">{{thread.from.rating.score}} <ion-icon name="star"></ion-icon></span></p>
 			</ion-item> 
-		</ion-section-header>
+		</ion-section-header> 
 		<ion-section-content>
+			<h6 ion-text bottom-margin color="primary">
+				<div *ngIf="thread.category != 'Video'">Respond to {{thread.from.firstName}} to earn {{thread.bounty}}.</div>
+				<div *ngIf="thread.category == 'Video'">View entire video to earn {{thread.bounty}}.</div>
+			</h6>
 			<p tiny-bottom-margin class="meta">{{thread.createdAt}} • {{thread.category}}</p>
-			<h4>{{thread.subject}}
-				<sub *ngIf="thread.category != 'Video'">Respond to {{thread.from.firstName}} to earn <strong ion-text color="secondary">{{thread.bounty}}</strong>.</sub>
-				<sub *ngIf="thread.category == 'Video'">View entire video to earn <strong ion-text color="secondary">{{thread.bounty}}</strong>.</sub>
-			</h4>
-			<p large-top-margin class="message-body" *ngIf="thread.coverMessage.body">{{thread.coverMessage.body}}</p>
+			<h4>{{thread.subject}}</h4>
+			<p top-margin class="message-body" *ngIf="thread.coverMessage.body">{{thread.coverMessage.body}}</p>
 		</ion-section-content>
 	</ion-section>
 	
@@ -52,7 +53,7 @@
 
 <ion-footer padding [keyboard-attach]="content">
 	<div flex>
-	  <ion-textarea autosize [(ngModel)]="reply" placeholder="Write a message"></ion-textarea>
+	  <ion-textarea autosize [(ngModel)]="reply" placeholder="Write a message..."></ion-textarea>
     <button ion-button auto-height color="secondary" (click)="onReply()">Reply</button>	
 	</div>
 </ion-footer>
