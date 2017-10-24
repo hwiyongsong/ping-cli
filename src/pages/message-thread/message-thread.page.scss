@@ -1,7 +1,15 @@
 message-thread-page {
+	ion-section.cover-message-section {
+		box-shadow: 0 0 4px color($colors, gray);;
+	} 
+	
 	.thread-subject {
 		ion-badge {
 			padding: 6px 8px;
 		}
+	}
+	
+	ion-footer {
+		background: color($colors, light);
 	}
 }

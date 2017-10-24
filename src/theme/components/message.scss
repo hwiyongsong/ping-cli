@@ -18,12 +18,6 @@ $chat-bubble-background-right: color($colors, light);
 			word-wrap: break-word;
     	white-space: pre-line;
 		}
-		
-		.message-meta {
-			margin-top: $tiny-space;
-			font-size: 1.3rem;
-			font-weight: 300;
-		}
 	}
 	
 	.chat-message.left {
@@ -79,4 +73,16 @@ $chat-bubble-background-right: color($colors, light);
 			}
 		}
 	}
+}
+
+.message-body {
+	word-wrap: break-word;
+  white-space: pre-line;
+}
+
+.message-meta { 
+	margin-top: $tiny-space; 
+	font-size: 1.3rem;
+	font-weight: 300;
+	color: color($colors, dark-gray) !important;
 }

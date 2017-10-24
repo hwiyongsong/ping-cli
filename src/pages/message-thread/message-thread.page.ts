@@ -42,7 +42,7 @@ export class MessageThreadPage {
       message.body = this.reply;
       message.createdAt = "A moment ago";
       
-      this.thread.add(message);
+      this.thread.addMessage(message);
       this.clearReply();
       
       setTimeout(() => {

@@ -1,4 +1,16 @@
 account-profile-page {
+	ion-section.summary {
+		ul.relationship {
+			padding-left: 24px;
+			font-weight: 300;
+			font-size: 1.4rem;
+			
+			li {
+				padding: 2px 0;
+			}
+		}
+	}
+	
 	ion-section.interests {
 		ion-thumbnail {
 			display: inline-block;

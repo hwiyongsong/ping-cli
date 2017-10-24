@@ -11,6 +11,7 @@ import { InboxProvider } from "./providers/inbox.provider";
 
 import { MyApp } from "./app.component";
 import { AccountProfilePage } from "../pages/account-profile/account-profile.page";
+import { MessageAdVideoPage } from "../pages/message-ad-video/message-ad-video.page";
 import { MessageFormPage } from "../pages/message-form/message-form.page";
 import { MessageInboxPage } from "../pages/message-inbox/message-inbox.page";
 import { MessageThreadPage } from "../pages/message-thread/message-thread.page";
@@ -20,9 +21,12 @@ import { ElasticHeaderDirective } from "./directives/elastic-header.directive";
 import { KeyboardAttachDirective } from "./directives/keyboard-attach.directive";
 import { TextareaAutosizeDirective } from "./directives/textarea-autosize.directive";
 
+import { SafeUrlPipe } from "./pipes/safeurl.pipe";
+
 let components: Array<any> = [
   MyApp,
   AccountProfilePage,
+  MessageAdVideoPage,
   MessageFormPage,
   MessageInboxPage,
   MessageThreadPage
@@ -36,7 +40,7 @@ let directives: Array<any> = [
 ]
 
 let pipes: Array<any> = [
-
+  SafeUrlPipe
 ]
 
 let providers: Array<any> = [

@@ -7,7 +7,7 @@
       </button>
     </ion-buttons>
     <ion-buttons end>
-    	<button ion-button>
+    	<button ion-button (click)="onViewAdVideo()">
         <ion-icon name="md-contact" color="gray"></ion-icon>
       </button>
     </ion-buttons>
@@ -17,13 +17,13 @@
 <ion-content>
 	<ion-list class="inbox" padding>
 		<ion-list-header>
-			<h1 flex>Inbox <ion-badge small-left-margin>{{inboxProvider.getPendingSize()}}</ion-badge></h1>
+			<h3 flex>Messages <ion-badge small-left-margin>{{inboxProvider.currentInbox.conversations.length}}</ion-badge></h3>
 		</ion-list-header>
-	  <ion-item class="thread" *ngFor="let thread of inboxProvider.getPendingThreads(); let i = index">
+	  <ion-item class="conversation thread" *ngFor="let thread of inboxProvider.currentInbox.conversations">
 	    <ion-avatar item-start (click)="onViewAccountProfile(thread.from)">
 	      <img src="{{thread.from.profileImage.url}}">
 	    </ion-avatar>
-	    <p class="meta">{{thread.createdAt}} • <span color="primary">{{thread.bounty}}</span> • <span color="secondary" *ngIf="thread.from.rating">{{thread.from.rating.score}} <ion-icon name="star"></ion-icon></span></p>   
+	    <p class="meta">{{thread.createdAt}} • {{thread.category}} • <span color="primary">{{thread.bounty}}</span> • <span color="secondary" *ngIf="thread.from.rating">{{thread.from.rating.score}} <ion-icon name="star"></ion-icon></span></p>   
     	<h6 flex class="message-from" (click)="onViewThread(thread)">{{thread.from.firstName}} {{thread.from.lastName}}</h6>
 	    <p skinny class="message-subject" (click)="onViewThread(thread)">{{thread.subject}}</p>
 	  </ion-item>

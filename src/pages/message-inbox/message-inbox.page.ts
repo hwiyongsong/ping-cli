@@ -4,6 +4,7 @@ import { NavController } from "ionic-angular";
 import { InboxProvider } from "../../app/providers/inbox.provider";
 
 import { AccountProfilePage } from "../account-profile/account-profile.page";
+import { MessageAdVideoPage } from "../message-ad-video/message-ad-video.page";
 import { MessageThreadPage } from "../message-thread/message-thread.page";
 
 import { Account } from "../../app/domains/account";
@@ -28,6 +29,12 @@ export class MessageInboxPage {
   onViewThread(thread: Thread) {
     this.navController.push(MessageThreadPage, {
       "thread": thread
+    }); 
+  }
+  
+  onViewAdVideo() {
+    this.navController.push(MessageAdVideoPage, {
+      "url": "https://www.youtube.com/embed/Cp10_PygJ4o"
     }); 
   }
 
