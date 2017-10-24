@@ -11,7 +11,6 @@ import { InboxProvider } from "./providers/inbox.provider";
 
 import { MyApp } from "./app.component";
 import { MemberProfilePage } from "../pages/member-profile/member-profile.page";
-import { MessageAdVideoPage } from "../pages/message-ad-video/message-ad-video.page";
 import { MessageFormPage } from "../pages/message-form/message-form.page";
 import { MessageInboxPage } from "../pages/message-inbox/message-inbox.page";
 import { MessageThreadPage } from "../pages/message-thread/message-thread.page";
@@ -27,7 +26,6 @@ import { SafeUrlPipe } from "./pipes/safeurl.pipe";
 let components: Array<any> = [
   MyApp,
   MemberProfilePage,
-  MessageAdVideoPage,
   MessageFormPage,
   MessageInboxPage,
   MessageThreadPage,

@@ -3,7 +3,6 @@ import { Injectable } from "@angular/core";
 import { AccountProvider } from "./account.provider";
 
 import { Account } from "../domains/account";
-import { Image } from "../domains/image";
 import { Inbox } from "../domains/inbox";
 import { Message } from "../domains/message";
 import { Thread } from "../domains/thread";
