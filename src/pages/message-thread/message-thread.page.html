@@ -9,7 +9,7 @@
 				<ion-avatar item-start>
 			  	<img [src]="thread.coverMessage.from.profileImage.url">
 			  </ion-avatar> 
-			  <h5 flex>{{thread.coverMessage.from.getFullName()}}<ion-badge tiny-left-margin color="secondary" *ngIf="thread.from.urn.startsWith('urn:member:')">2nd</ion-badge></h5>
+			  <h5 flex>{{thread.coverMessage.from.getFullName()}}<ion-badge tiny-left-margin color="dark-gray" *ngIf="thread.from.urn.startsWith('urn:member:')">2nd</ion-badge></h5>
 		  	<p class="caption">{{thread.coverMessage.from.title}} • <span color="primary" *ngIf="thread.from.rating">{{thread.from.rating.score}} <ion-icon name="star"></ion-icon></span></p>
 			</ion-item> 
 		</ion-section-header> 

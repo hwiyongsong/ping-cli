@@ -14,6 +14,7 @@ import { MemberProfilePage } from "../pages/member-profile/member-profile.page";
 import { MessageFormPage } from "../pages/message-form/message-form.page";
 import { MessageInboxPage } from "../pages/message-inbox/message-inbox.page";
 import { MessageThreadPage } from "../pages/message-thread/message-thread.page";
+import { MyAccountPage } from "../pages/my-account/my-account.page";
 import { OrganizationProfilePage } from "../pages/organization-profile/organization-profile.page";
 
 import { AutoFocusDirective } from "./directives/autofocus.directive";
@@ -29,6 +30,7 @@ let components: Array<any> = [
   MessageFormPage,
   MessageInboxPage,
   MessageThreadPage,
+  MyAccountPage,
   OrganizationProfilePage
 ]
 

@@ -20,9 +20,9 @@ export class MyApp {
     platform.ready().then(() => {
       keyboard.disableScroll(true);
       
+      splashScreen.hide();
       statusBar.styleDefault();
       statusBar.overlaysWebView(false);
-      splashScreen.hide();
       
       this.nav.setRoot(MessageInboxPage);
     });
