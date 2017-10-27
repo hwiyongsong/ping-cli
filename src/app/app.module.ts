@@ -10,6 +10,7 @@ import { AccountProvider } from "./providers/account.provider";
 import { InboxProvider } from "./providers/inbox.provider";
 
 import { MyApp } from "./app.component";
+import { MainPage } from "../pages/main.page";
 import { MemberProfilePage } from "../pages/member-profile/member-profile.page";
 import { MessageFormPage } from "../pages/message-form/message-form.page";
 import { MessageInboxPage } from "../pages/message-inbox/message-inbox.page";
@@ -26,6 +27,7 @@ import { SafeUrlPipe } from "./pipes/safeurl.pipe";
 
 let components: Array<any> = [
   MyApp,
+  MainPage,
   MemberProfilePage,
   MessageFormPage,
   MessageInboxPage,
