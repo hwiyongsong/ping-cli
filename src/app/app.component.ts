@@ -4,14 +4,14 @@ import { Keyboard } from "@ionic-native/keyboard";
 import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
 
-import { MessageInboxPage } from "../pages/message-inbox/message-inbox.page";
+import { MainPage } from "../pages/main.page";
 
 @Component({
   templateUrl: "app.html"
 })
 export class MyApp {
     
-  @ViewChild(Nav) nav: Nav;
+  public rootPage: any;
 
   constructor(platform: Platform, 
               keyboard: Keyboard,
@@ -21,10 +21,11 @@ export class MyApp {
       keyboard.disableScroll(true);
       
       splashScreen.hide();
+      
       statusBar.styleDefault();
       statusBar.overlaysWebView(false);
       
-      this.nav.setRoot(MessageInboxPage);
+      this.rootPage = MainPage;
     });
   }
   

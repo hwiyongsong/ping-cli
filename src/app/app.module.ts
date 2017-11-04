@@ -7,16 +7,20 @@ import { SplashScreen } from "@ionic-native/splash-screen";
 import { StatusBar } from "@ionic-native/status-bar";
 
 import { AccountProvider } from "./providers/account.provider";
+import { ExperimentProvider } from "./providers/experiment.provider";
 import { InboxProvider } from "./providers/inbox.provider";
 
 import { MyApp } from "./app.component";
 import { MainPage } from "../pages/main.page";
+import { HomePage } from "../pages/home/home.page";
 import { MemberProfilePage } from "../pages/member-profile/member-profile.page";
 import { MessageFormPage } from "../pages/message-form/message-form.page";
 import { MessageInboxPage } from "../pages/message-inbox/message-inbox.page";
 import { MessageThreadPage } from "../pages/message-thread/message-thread.page";
 import { MyAccountPage } from "../pages/my-account/my-account.page";
 import { OrganizationProfilePage } from "../pages/organization-profile/organization-profile.page";
+
+import { ChromeBlock } from "../blocks/chrome/chrome.block";
 
 import { AutoFocusDirective } from "./directives/autofocus.directive";
 import { ElasticHeaderDirective } from "./directives/elastic-header.directive";
@@ -27,13 +31,17 @@ import { SafeUrlPipe } from "./pipes/safeurl.pipe";
 
 let components: Array<any> = [
   MyApp,
+  
   MainPage,
+  HomePage,
   MemberProfilePage,
   MessageFormPage,
   MessageInboxPage,
   MessageThreadPage,
   MyAccountPage,
-  OrganizationProfilePage
+  OrganizationProfilePage,
+  
+  ChromeBlock
 ]
 
 let directives: Array<any> = [
@@ -49,6 +57,7 @@ let pipes: Array<any> = [
 
 let providers: Array<any> = [
   AccountProvider,
+  ExperimentProvider,
   InboxProvider,
   Keyboard,
   StatusBar,

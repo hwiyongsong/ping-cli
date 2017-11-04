@@ -4,11 +4,11 @@ $app-direction: ltr;
 @import "ionic.globals";
 
 $colors: (
-  primary:  														  #1da1f2,
-  secondary:    												  #fd5c63,
+  primary:    												    #6058bc,
+  secondary:  														salmon,
   danger:     														#f53d3d,
   light:      														#f3f3f3,
-  dark:       														#555555,
+  dark:       														#444444,
   gray:																		#cccccc,
   dark-gray:															#708090
 );
@@ -80,6 +80,7 @@ $grid-padding-width:                      0;
 @import "./components/list";
 @import "./components/layout";
 @import "./components/media";
+@import "./components/menu";
 @import "./components/message";
 @import "./components/note";
 @import "./components/section";

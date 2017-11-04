@@ -1,25 +1,11 @@
 <ion-header>
-  <ion-navbar>
-    <ion-buttons start>
-      <button ion-button class="ping-brand">
-        <span class="text">Ping<sub>.me</sub></span>
-      </button>
-    </ion-buttons>
-    <ion-buttons end>
-    	<button ion-button no-padding>
-    		<span class="tag">$185</span> 
-    	</button>
-    	<button ion-button (click)="onViewMyAccount()">
-        <ion-icon name="md-contact" color="gray"></ion-icon>
-      </button>
-    </ion-buttons>
-  </ion-navbar>
+	<chrome-block></chrome-block>
 </ion-header>
 
 <ion-content>
 	<ion-section small-top-margin class="threads-section">
 		<ion-section-header>
-			<h2 flex uppercase>Inbox <ion-badge small-left-margin>{{inboxProvider.currentInbox.threads.length}}</ion-badge></h2>		
+			<h2 flex uppercase>Inbox</h2>		
 		</ion-section-header>
 		<ion-section-content>
 			<ion-list>
@@ -29,11 +15,9 @@
 			    </ion-avatar>
 		    	<h6 flex class="message-from" (click)="onViewThread(thread)">{{thread.from.firstName}} {{thread.from.lastName}}</h6>
 			    <p skinny class="message-subject" (click)="onViewThread(thread)">{{thread.subject}}</p>
-			    <p class="meta">{{thread.createdAt}} • {{thread.category}} • <span ion-text color="primary">{{thread.bounty}}</span></p>   
-			  	<ion-note item-end *ngIf="thread.coverMessage.video">
-			  		<ion-thumbnail>
-			  			<img [src]="thread.coverMessage.video.thumbnailUrl"/>
-			  		</ion-thumbnail>
+			    <p class="meta">{{thread.category}} • {{thread.createdAt}}</p>   
+			  	<ion-note item-end item-top>
+			  		<p ion-text color="primary">{{thread.bounty}}</p>
 			  	</ion-note>
 			  </ion-item>
 			</ion-list>		

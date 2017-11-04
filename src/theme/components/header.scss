@@ -45,6 +45,11 @@ ion-header.header-ios {
 	ion-icon {
     font-size: 3.4rem;
   }
+  
+  .bar-button-menutoggle-ios ion-icon {
+  	margin-left: -2px;
+  	padding: 0;
+  }
 }
 
 ion-content {	

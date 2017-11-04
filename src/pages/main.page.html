@@ -1,0 +1,20 @@
+<ion-menu [content]="mainContent">
+  <ion-content padding>
+    <ion-list>
+      <button ion-item (click)="openHome()">
+        Home
+      </button>
+      <button ion-item (click)="openInbox()">
+        Inbox
+      </button>
+      <button ion-item (click)="openInbox()">
+        Payments
+      </button>
+      <button ion-item (click)="openMyAccount()">
+        My Account
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav #mainContent [root]="rootPage" swipeBackEnabled="false"></ion-nav>

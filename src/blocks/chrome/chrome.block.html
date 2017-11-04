@@ -1,0 +1,13 @@
+<ion-navbar>
+ 	<ion-buttons start>
+    <button ion-button icon-start menuToggle color="dark" class="ping-brand">
+    	<ion-icon name="md-menu" class="menu"></ion-icon>
+      <span class="text">Ping<sub>me</sub></span>
+    </button>
+ 	</ion-buttons>
+ 	<ion-buttons end>
+ 		<button ion-button class="inbox-button" (tap)="openInbox()">
+ 			<ion-badge>{{inboxProvider.currentInbox.threads.length}}</ion-badge>
+ 		</button>
+ 	</ion-buttons>
+</ion-navbar>
