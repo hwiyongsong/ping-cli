@@ -3,6 +3,7 @@ import { NavController } from "ionic-angular";
 
 import { InboxProvider } from "../../app/providers/inbox.provider";
 
+import { MainPage } from "../../pages/main.page";
 import { MessageInboxPage } from "../../pages/message-inbox/message-inbox.page";
 
 @Component({
@@ -16,7 +17,9 @@ export class ChromeBlock {
   }
   
   openInbox() {
-    this.navController.push(MessageInboxPage);
+    this.navController.setRoot(MainPage, {
+      "page": MessageInboxPage
+    });
   }
   
 }

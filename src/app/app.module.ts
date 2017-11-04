@@ -19,6 +19,7 @@ import { MessageInboxPage } from "../pages/message-inbox/message-inbox.page";
 import { MessageThreadPage } from "../pages/message-thread/message-thread.page";
 import { MyAccountPage } from "../pages/my-account/my-account.page";
 import { OrganizationProfilePage } from "../pages/organization-profile/organization-profile.page";
+import { PaymentHistoryPage } from "../pages/payment-history/payment-history.page";
 
 import { ChromeBlock } from "../blocks/chrome/chrome.block";
 
@@ -40,6 +41,7 @@ let components: Array<any> = [
   MessageThreadPage,
   MyAccountPage,
   OrganizationProfilePage,
+  PaymentHistoryPage,
   
   ChromeBlock
 ]
