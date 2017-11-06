@@ -61,7 +61,7 @@ export class InterestProvider {
   private createApple(): Interest {
     return this.createMockInterest("urn:interest:apple",
                                    "Apple",
-                                   "https://media.licdn.com/mpr/mpr/shrink_200_200/AAIA_wDGAAAAAQAAAAAAAA2MAAAAJDEyYzgyM2Y1LTQ4ZDctNDhiNy04MzZiLWNkY2I3YzJiOGIwZQ.png");
+                                   "https://image.freepik.com/free-icon/apple-logo_318-40184.jpg");
   }
 
   private createAndroid(): Interest {

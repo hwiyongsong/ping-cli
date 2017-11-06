@@ -13,10 +13,10 @@ import { StringUtils } from "../utils/string-utils";
 @Injectable()
 export class InboxProvider {
   
-  public currentInbox: Inbox;
+  public currentInbox: Inbox = new Inbox();
   
   constructor(private accountProvider: AccountProvider) { 
-    this.currentInbox = this.createMockInbox();
+    this.currentInbox = this.createMockInbox();      
   }
    
   private createMockInbox(): Inbox {
@@ -90,7 +90,7 @@ export class InboxProvider {
   }
   
   private createMockVideo01() {
-    let account = this.accountProvider.getAccountByAccountUrn("urn:organization:uber");
+    let account = this.accountProvider.getAccountByAccountUrn("urn:member:frank-clemmens");
     let createdAt = "Oct 13";
 
     let thread = this.createThread(account,
@@ -116,7 +116,7 @@ export class InboxProvider {
   }
   
   private createMockVideo02() {
-    let account = this.accountProvider.getAccountByAccountUrn("urn:organization:facebook");
+    let account = this.accountProvider.getAccountByAccountUrn("urn:member:kim-kamitani");
     let createdAt = "Sep 5";
 
     let thread = this.createThread(account,

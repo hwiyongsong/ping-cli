@@ -1,5 +1,9 @@
 [item-top] {
 	align-self: flex-start;
+	
+	&[item-start] {
+		margin-top: 20px !important;
+	}
 }
 
 ion-item.item-ios {

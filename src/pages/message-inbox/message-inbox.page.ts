@@ -22,17 +22,9 @@ export class MessageInboxPage {
   }
   
   onViewAccountProfile(account: Account) {
-    if (account.urn.startsWith("urn:member:")) {
-      this.navController.push(MemberProfilePage, {
-        "account": account
-      });       
-    }
-    
-    if (account.urn.startsWith("urn:organization:")) {
-      this.navController.push(OrganizationProfilePage, {
-        "account": account
-      });  
-    }
+    this.navController.push(MemberProfilePage, {
+      "account": account
+    });
   }
   
   onViewMyAccount() {

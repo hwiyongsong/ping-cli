@@ -1,4 +1,5 @@
 ion-avatar {
+	position: relative;
   width: $item-ios-avatar-size;
   height: $item-ios-avatar-size;
   
@@ -9,5 +10,17 @@ ion-avatar {
     margin: 0 !important;
     border-radius: 50% !important;
     object-fit: fill !important;
+  }
+  
+  ion-badge {
+  	position: absolute;
+  	bottom: 0;
+  	right: 0;
+  	padding: $tiny-space !important;
+  }
+  
+  &[large] {
+  	width: $item-ios-avatar-size + 36;
+  	height: $item-ios-avatar-size + 36;
   }
 }

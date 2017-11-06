@@ -46,7 +46,7 @@ h2 {
 	font-size: $h2-font-size !important;
 	
 	sub, sup {
-		font-size: 70%;
+		font-size: 65%;
 	}
 }
 
@@ -54,7 +54,7 @@ h3 {
 	font-size: $h3-font-size !important;
 	
 	sub, sup {
-		font-size: 75%;
+		font-size: 70%;
 	}
 }
 
@@ -152,16 +152,20 @@ small {
   text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
 }
 
+.lead {
+	font-weight: 300 !important;
+	font-size: 1.8rem !important;
+}
+
+.description {
+	font-weight: 300 !important;
+  font-size: 1.5rem !important;
+}
+
 .meta {
 	font-weight: 300 !important;
   font-size: 1.4rem !important;
   color: color($colors, dark-gray) !important; 
-}
-
-.lead {
-	font-weight: 300 !important;
-	font-size: 1.8rem !important;
-	color: color($colors, dark-gray) !important;
 }
 
 .caption {
@@ -177,8 +181,8 @@ small {
   text-overflow: ellipsis;
 }
 
-.no-wrap {
-	white-space: nowrap;
+.no-wrap, [no-wrap] {
+	white-space: normal;
 }
 
 @mixin light-text {

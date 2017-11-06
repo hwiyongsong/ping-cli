@@ -1,8 +1,14 @@
 import { Injectable } from "@angular/core";
 
+import { InterestProvider } from "./interest.provider";
+import { OrganizationProvider } from "./organization.provider";
+
 import { Account } from "../domains/account";
+import { Education } from "../domains/education";
+import { Experience } from "../domains/experience";
 import { Image } from "../domains/image";
-import { Rating } from "../domains/rating";
+import { Interest } from "../domains/interest";
+import { Relationship } from "../domains/relationship";
 
 import { StringUtils } from "../utils/string-utils";
 
@@ -12,7 +18,8 @@ export class AccountProvider {
   public currentAccount: Account;
   private mockAccounts: Array<Account> = [];
   
-  constructor() { 
+  constructor(private interestProvider: InterestProvider,
+              private organizationProvider: OrganizationProvider) { 
     this.initMockAccounts();
     this.initCurrentAccount();
   }
@@ -32,95 +39,354 @@ export class AccountProvider {
   }
   
   private initCurrentAccount() {
-    this.currentAccount = this.getAccountByAccountUrn("urn:member:albert-einstein");
+    this.currentAccount = this.getAccountByAccountUrn("urn:member:scott-hartman");
   }
   
   private initMockAccounts() {
-    let albertEinstein = this.createMockAccount("urn:member:albert-einstein",
-                                                "Albert",
-                                                "Einstein",
-                                                "Principal engineer and theorist at Einsten Labs",
-                                                "Imagination is more important than knowledge.",
-                                                "https://pbs.twimg.com/profile_images/879355674957926400/VSGZHGib.jpg",
-                                                4.4,
-                                                64);
+    this.mockAccounts.push(this.createScottPredmore());
+    this.mockAccounts.push(this.createRobertConner());
+    this.mockAccounts.push(this.createLilyLapcokova());
+    this.mockAccounts.push(this.createKimKamitani());
+    this.mockAccounts.push(this.createAkashGupta());
+    this.mockAccounts.push(this.createFrankClemmens());
+  }
+  
+  private createScottPredmore(): Account {
+    let account = this.createMockAccount("urn:member:scott-hartman",
+                                         "Scott",
+                                         "Hartman",
+                                         "Staff Software Engineer at Linkedin",
+                                         "Passionate about promoting an open and decentralized economy in the modern era.",
+                                         "https://media.licdn.com/media/AAEAAQAAAAAAAAqtAAAAJDM4MTg0MmQwLTQ4ZTktNDQxZC1hNGI5LWIxOGVmODNiYzEzNw.jpg");
     
-    let albertLiao = this.createMockAccount("urn:member:robert-conner",
-                                            "Robert",
-                                            "Conner",
-                                            "HR Manager at Uber",
-                                            "Building the best teams to build the ultimate self-driving vehicles. Also crazy about robotics and ping pong.",
-                                            "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAMVAAAAJDhhNDJlOGY1LTg4NmQtNGFmOC1hMGI2LTRjY2ViMjNhNDZmNQ.jpg",
-                                            4.7,
-                                            83);
-
-    let lilyLapcokova = this.createMockAccount("urn:member:lily-lapcokova",
-                                               "Lily",
-                                               "Lapcokova",
-                                               "Event Coordinator at Facebook",
-                                               "My passion lies in finding exceptional talent, building candidate and client relationships and thinking outside the box to solve challenges.",
-                                               "https://media.licdn.com/media/AAEAAQAAAAAAAAboAAAAJGEwMTFhYWU2LTRmODgtNDFlYi1iOGM0LTJhYjRjZjE3YjdlMQ.jpg",
-                                               4.9,
-                                               98);
-
-    let kimKamitani = this.createMockAccount("urn:member:kim-kamitani",
-                                             "Kim",
-                                             "Kamitani",
-                                             "Talent Recruiter at Facebook",
-                                             "A fun loving talent builder and food warrior in the Silicon Valley.",
-                                             "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/5/000/1c6/2ca/0ed27c5.jpg",
-                                             4.5,
-                                             155);
+    account.experiences.push(this.createMockExperience("urn:company:linkedin",
+                                                       "Staff Software Engineer",
+                                                       "Technical lead on the Search and Indexing team, designing and developing infrastructure to scale search and social graph on LinkedIn. Also a leading member of LinkedIn Architecture Council.",
+                                                       "Aug 2012",
+                                                       "Present"));
     
-    let uber = this.createMockAccount("urn:organization:uber",
-                                       "Uber",
-                                       "",
-                                       "Get there.",
-                                       "We believe that by solving some of the biggest problems of our time, we can create a future where there is limitless freedom of movement for people and things all across the world. Just talk to our people \u2014 and feel their passion, optimism and curiosity for building solutions every single day on behalf of drivers, riders, couriers, eaters and employees.\r\n\r\nWhile the tough problems we face everyday can be incredibly difficult to figure out, we believe those same problems enable us to personally grow the most. So we welcome people from all backgrounds who have the passion to change the world and also want to help create a supportive and collaborative environment. So that ultimately, we can learn together, solve together, build together, and move the world forward together.",
-                                       "https://media.licdn.com/mpr/mpr/shrink_400_400/AAEAAQAAAAAAAAqwAAAAJDAzZGFhNTg1LWU3ZmYtNGFlZS05YWI1LWQ2MmMyZTIxOTliNw.png",
-                                       4.4,
-                                       765);
+    account.experiences.push(this.createMockExperience("urn:company:microsoft",
+                                                       "Senior Software Engineer",
+                                                       "Worked on some top-secret stuff I can't talk about here.",
+                                                       "Jun 2008",
+                                                       "Aug 2012"));
     
-    let facebook = this.createMockAccount("urn:organization:facebook",
-                                       "Facebook",
-                                       "",
-                                       "Be Connected. Be Discovered.",
-                                       "Founded in 2004, Facebook\u2019s mission is to give people the power to build community and bring the world closer together. People use Facebook to stay connected with friends and family, to discover what\u2019s going on in the world, and to share and express what matters to them.\r\n\r\nFacebook is defined by our unique culture \u2013 one that rewards impact. We encourage people to be bold and solve the problems they care most about. We work in small teams and move fast to develop new products, constantly iterating. The phrase \u201Cthis journey is 1% finished,\u201D reminds us that we\u2019ve only begun to fulfill our mission to bring the world closer together. \r\n\r\nFor a full listings of our jobs, visit www.facebook.com/careers\r\n\r\n*Thank you for visiting our page. We welcome conversation and reserve the right to remove any comments that constitute harassment, hate speech, abuse, libel, or spam.",
-                                       "https://media.licdn.com/mpr/mpr/shrink_400_400/AAEAAQAAAAAAAAYRAAAAJDVlMzBlYjNiLTAxN2QtNGQxZC1iZTAzLTlmNWQ1OTE4OGY4ZA.png",
-                                       4.7,
-                                       943); 
+    account.experiences.push(this.createMockExperience("urn:company:microsoft",
+                                                       "Software Engineer",
+                                                       "Doing things and solving interesting problems for Bing Search.",
+                                                       "Jun 2005",
+                                                       "Aug 2008"));
     
-    this.mockAccounts.push(albertEinstein);
-    this.mockAccounts.push(albertLiao);
-    this.mockAccounts.push(lilyLapcokova);
-    this.mockAccounts.push(kimKamitani);
-    this.mockAccounts.push(uber);
-    this.mockAccounts.push(facebook);
+    account.educations.push(this.createMockEducation("urn:school:stanford",
+                                                     "Bachelor of Science, Computer Science",
+                                                     null,
+                                                     "2001",
+                                                     "2005"));
+    
+    account.interests.push(this.createMockInterest("urn:interest:ethereum"));
+    account.interests.push(this.createMockInterest("urn:interest:bitcoin"));
+    account.interests.push(this.createMockInterest("urn:interest:ted-talk"));
+    
+    return account;
+  }
+  
+  private createRobertConner(): Account {
+    let account = this.createMockAccount("urn:member:robert-conner",
+                                         "Robert",
+                                         "Conner",
+                                         "HR Manager at Uber",
+                                         "Building the best teams to build the ultimate self-driving vehicles. Also crazy about robotics and ping pong.",
+                                         "https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAMVAAAAJDhhNDJlOGY1LTg4NmQtNGFmOC1hMGI2LTRjY2ViMjNhNDZmNQ.jpg");
+    
+    account.relationship = this.createMockRelationship("2nd",
+                                                       24,
+                                                       "Linkedin",
+                                                       "University of California, Berkeley");
+    
+    account.experiences.push(this.createMockExperience("urn:company:uber",
+                                                       "Senior Technical Recruiter",
+                                                       "Uber ATG is re-imagining the possibilities of transportation, starting with self driving cars + trucks. <br/><br/>We\'re looking for engineers who have proven experience shipping world changing products in backend infrastructure and applied Machine Learning. <br/><br/>Know someone who\'d be a fit? Shoot me a message.",
+                                                       "Aug 2016",
+                                                       "Present"));
+  
+    account.experiences.push(this.createMockExperience("urn:company:facebook",
+                                                       "Technical Recruiter",
+                                                       "Built teams for iOS and Android development at Facebook.",
+                                                       "Apr 2014",
+                                                       "Aug 2016"));
+    
+    account.experiences.push(this.createMockExperience("urn:company:linkedin",
+                                                       "Recruiting Coordinator",
+                                                       "Recruiting coordinator for the Engineering recruiting teams. Striving to create the best candidate experience in the world through masterful scheduling, attention to detail, and a splash of silliness and humor. My goal is to positively transform each candidate's prior perspectives and ideologies about Linkedin and securing a firm and room-echoing high five after!",
+                                                       "2014",
+                                                       "2014"));
+    
+    account.educations.push(this.createMockEducation("urn:school:berkeley",
+                                                     "BA, Business Economic",
+                                                     "Activities and Societies: Campus Tour Guide, Social Sciences Representative - Legislative Council, Activities Leader for UCI Extension program, Student Parent Orientation Staff Leader, Sigma Phi Epsilon (1 year)",
+                                                     "2011",
+                                                     "2014"));
+    
+    account.interests.push(this.createMockInterest("urn:interest:ethereum"));
+    account.interests.push(this.createMockInterest("urn:interest:apple"));
+    account.interests.push(this.createMockInterest("urn:interest:ted-talk"));
+    
+    return account;
+  }
+  
+  private createLilyLapcokova(): Account {
+    let account = this.createMockAccount("urn:member:lily-lapcokova",
+                                         "Lily",
+                                         "Lapcokova",
+                                         "Technical Recruiting Lead at Facebook",
+                                         "My passion lies in finding exceptional talent, building candidate and client relationships and thinking outside the box to solve challenges.",
+                                         "https://media.licdn.com/media/AAEAAQAAAAAAAAboAAAAJGEwMTFhYWU2LTRmODgtNDFlYi1iOGM0LTJhYjRjZjE3YjdlMQ.jpg");
+    
+    account.relationship = this.createMockRelationship("3rd",
+                                                       11,
+                                                       null,
+                                                       "University of California, Berkeley");
+    
+    account.experiences.push(this.createMockExperience("urn:company:facebook",
+                                                       "Technical Recruiting Lead",
+                                                       "Recruiting Product and Systems Engineers who want to join us on our mission to give people the power to share and make the world more open and connected!<br/><br/>At Facebook, you have the opportunity to own products like Ads, Education, Messenger, Newsfeed, Search, Videos from end-to-end and constantly grow. You can build large distributed components that run Facebook, Your journey is never finished, and neither is the exciting work we do everyday.",
+                                                       "Feb 2016",
+                                                       "Present"));
+    
+    account.experiences.push(this.createMockExperience("urn:company:facebook",
+                                                       "Technical Recruiter",
+                                                       "Recruiting Product and Systems Engineers for the world's biggest social network.",
+                                                       "Jan 2014",
+                                                       "Feb 2016"));
+    
+    account.experiences.push(this.createMockExperience("urn:company:amazon",
+                                                       "Technical Sourcing Recruiter",
+                                                       "- Sourced the best and brightest Software Engineers, Software Managers, Technical Program Managers, Web Developers and Quality Assurance Engineers for Amazon Prime Hiring Events and Onsite Interviews.<br/><br/>- Partnered with hiring teams to build effective sourcing, assessment and closing strategies.<br/><br/>- Invented and simplified event recruiting while engaging strong analytical thinking to impact results.<br/><br/>- Maintained exceptional interview to offer ratio.<br/><br/>- Filled 30+ positions which accounted for approximately 25% of Amazon Prime new hires in 2013.",
+                                                       "Jan 2013",
+                                                       "Jan 2014"));
+    account.experiences.push(this.createMockExperience("urn:company:microsoft",
+                                                       "College Recruiter / Talent Sourcer (Volt)",
+                                                       "- Conducted initial interviews of the very best computer science and engineering college students from the world\u2019s top universities.<br/><br/>- Provided a pool of candidates to hiring groups while employing strategic recommendations and expertise.<br/><br/>- Worked closely with school recruiters and managers to ensure proper routing of candidates and deliver best results.<br/><br/>- Maintained optimal interview to fly-back and interview to offer ratios.",
+                                                       "Aug 2012",
+                                                       "Jan 2013"));
+    
+    account.educations.push(this.createMockEducation("urn:school:stanford",
+                                                     "Master of Business Administration (MBA), Marketing",
+                                                     null,
+                                                     "2011",
+                                                     "2012"));
+    
+    account.educations.push(this.createMockEducation("urn:school:berkeley",
+                                                     "Bachelor of Science, Business Administration",
+                                                     null,
+                                                     "2008",
+                                                     "2011"));
+    
+    account.interests.push(this.createMockInterest("urn:interest:bitcoin"));
+    account.interests.push(this.createMockInterest("urn:interest:ethereum"));
+    account.interests.push(this.createMockInterest("urn:interest:game-of-thrones"));
+    
+    return account;
+  }
+  
+  private createKimKamitani(): Account {
+    let account = this.createMockAccount("urn:member:kim-kamitani",
+                                         "Kim",
+                                         "Kamitani",
+                                         "Talent Recruiter at Airbnb",
+                                         "A fun loving talent builder and food warrior in the Silicon Valley.",
+                                         "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/5/000/1c6/2ca/0ed27c5.jpg");
+    
+    account.relationship = this.createMockRelationship("2nd",
+                                                       29,
+                                                       null,
+                                                       "University of California, Berkeley");
+    
+    account.experiences.push(this.createMockExperience("urn:company:airbnb",
+                                                       "Technical Recruiter",
+                                                       "We are growing our engineering team!",
+                                                       "May 2015",
+                                                       "Present"));
+    
+    account.experiences.push(this.createMockExperience("urn:company:facebook",
+                                                       "Technical Sourcer- Product Engineering",
+                                                       "Sourcing in support of product engineering pipelines.<br/><br/>Finding highly qualified, passive and active candidates using creative search techniques.<br/><br/>Partnering with recruiting team and hiring managers to achieve hiring goals.",
+                                                       "May 2012",
+                                                       "May 2015"));
+    
+    account.experiences.push(this.createMockExperience("urn:company:google",
+                                                       "Engineering Recruiting",
+                                                       "Coordinated all aspects of the interview process for software engineer candidates at Google, specializing in User Experience, Youtube, and Research Scientists<br/><br/>Participated in process related projects for recruiting coordinator team<br/><br/>Helped create and develop charity event called Compassion Thru Fashion, collecting donated clothes from Eng-Staffing team and donating to women\'s and men\'s shelters, also coordinated a department-wide sale at Google.",
+                                                       "Nov 2009",
+                                                       "May 2012"));
+    
+    account.educations.push(this.createMockEducation("urn:school:berkeley",
+                                                     "Bachelor of Arts, Graphic Design",
+                                                     null,
+                                                     "2006",
+                                                     "2009"));
+    
+    account.interests.push(this.createMockInterest("urn:interest:bitcoin"));
+    account.interests.push(this.createMockInterest("urn:interest:ethereum"));
+    account.interests.push(this.createMockInterest("urn:interest:apple"));
+    account.interests.push(this.createMockInterest("urn:interest:game-of-thrones"));
+    
+    return account;
+  }
+  
+  private createAkashGupta(): Account {
+    let account = this.createMockAccount("urn:member:akash-gupta",
+                                         "Akash",
+                                         "Gupta",
+                                         "Head of Global Vehicle Solutions Engineering at Uber",
+                                         "I enjoy building awesome software and teams to build new products and technology that will make our lives easier and allow us to accomplish more than what we\'re able to do today. <br/><br/>I\'m excited about building highly scalable back-end systems that serve millions of users each day. Just the same, I\'m also excited about building mobile apps and front-end products that delight us each day.",
+                                         "https://media.licdn.com/media/p/6/005/06c/1ee/39b4187.jpg");
+    
+    account.relationship = this.createMockRelationship("1st",
+                                                       49,
+                                                       "Linkedin",
+                                                       null);
+    
+    account.experiences.push(this.createMockExperience("urn:company:uber",
+                                                       "Senior Engineering Manager",
+                                                       "Leading Global Vehicle Solutions engineering organization whose mission is to provide the simplest way to get a vehicle for anyone who wants to make money around the world. We\'re solving problems like realtime tracking and managements of thousands of cars around the globe, to building seamless product experiences for people to get a car and for owners to manage their cars. <br/><br/>We\'re a collection of 8 teams, across SF, Seattle and Bangalore and we\'re definitely hiring :)! <br/><br/>Prior roles at Uber include: <br/><br/>* Engineering Lead for Driver Growth (May 2015 - Dec 2016): Lead a team of 100+ engineers to build features and infrastructure that help bring more people to Uber\'s platform to engagement and social features that create a better experience for our partners.<br/><br/>* Engineering Lead for Mobile Growth (Sept 2014 - May 2015): Grew the team from 3 to 40+ engineers focusing on growing Uber\'s core business, engagement and international expansion (India\/China) efforts.",
+                                                       "Sep 2014",
+                                                       "Present"));
+    
+    account.experiences.push(this.createMockExperience("urn:company:linkedin",
+                                                       "Engineering Manager",
+                                                       "Leading the teams in charge of building and scaling the various products under the Relationship and Network umbrella: <br/><br/>\u2022 Everything under Connections tab (desktop\/mobile-web)<br/><br/>\u2022 LinkedIn Connected iOS App <br/><br/>\u2022 Network updates<br/><br/>\u2022 Next generation infrastructure for anticipatory computing <br/><br/>\u2022 Third party Contacts\/Calendar\/Email sync infrastructure ",
+                                                       "Dec 2011",
+                                                       "Sep 2014"));
+    
+    account.educations.push(this.createMockEducation("urn:school:carnegie-mellon",
+                                                     "Master of Science of Computer Science: Software Engineering",
+                                                     "Graduated with honors.",
+                                                     "2008",
+                                                     "2011"));
+    
+    account.interests.push(this.createMockInterest("urn:interest:bitcoin"));
+    account.interests.push(this.createMockInterest("urn:interest:ethereum"));
+    account.interests.push(this.createMockInterest("urn:interest:apple"));
+    
+    return account;
+  }
+  
+  private createFrankClemmens(): Account {
+    let account = this.createMockAccount("urn:member:frank-clemmens",
+                                         "Frank",
+                                         "Clemmens",
+                                         "Engineering and Product at Uber",
+                                         "Currently leading UberEATS Eater engineering. Responsible for product and software engineering strategy across multiple teams, developing high performing leaders, and most importantly building a diverse and inclusive work culture.",
+                                         "https://media.licdn.com/media/AAEAAQAAAAAAAAsAAAAAJGFiOGM5NjZiLWI5NTktNDk1Mi1hNzI3LWYzMjA1MjQzMzZiZA.jpg");
+    
+    account.relationship = this.createMockRelationship("2nd",
+                                                       33,
+                                                       "Linkedin",
+                                                       null);
+    
+    account.experiences.push(this.createMockExperience("urn:company:uber",
+                                                       "Senior Engineering Manager",
+                                                       "Currently leading UberEATS Eater engineering. This is our consumer experience group including the UberEATS app, ubereats.com, search and discovery, restaurant recommendations, ordering experience, delivery, customer service integration, consumer growth, and mobile infrastructure.<br/><br/>Before that, led Driver Acquisition engineering. We added flexible earning opportunities for millions of drivers across the globe through referrals, organic search optimization, web landing page optimization, marketing partnerships, and creative rider-facing products like Driver Profiles.<br/><br/>My teams prioritize great work culture, diversity and inclusion, putting employees first, and having fun.",
+                                                       "Dec 2015",
+                                                       "Present"));
+    
+    account.experiences.push(this.createMockExperience("urn:company:linkedin",
+                                                       "Senior Engineering Manager",
+                                                       "Leading the teams in charge of building and scaling the various products under the Relationship and Network umbrella: <br/><br/>\u2022 Everything under Connections tab (desktop\/mobile-web)<br/><br/>\u2022 LinkedIn Connected iOS App <br/><br/>\u2022 Network updates<br/><br/>\u2022 Next generation infrastructure for anticipatory computing <br/><br/>\u2022 Third party Contacts\/Calendar\/Email sync infrastructure ",
+                                                       "Feb 2011",
+                                                       "Dec 2015"));
+    
+    account.experiences.push(this.createMockExperience("urn:company:lockheed-martin",
+                                                       "Senior Software Engineer",
+                                                       "Led the 5-person engineering team in charge of the Distributed Fusion Manager (DFM) within Lockheed\'s Level 1 tracking and data fusion product.",
+                                                       "Feb 2005",
+                                                       "Dec 2011"));
+    
+    account.educations.push(this.createMockEducation("urn:school:carnegie-mellon",
+                                                     "Master of Science of Computer Science: Software Engineering",
+                                                     null,
+                                                     "2001",
+                                                     "2005"));
+    
+    account.interests.push(this.createMockInterest("urn:interest:android"));
+    account.interests.push(this.createMockInterest("urn:interest:ethereum"));
+    account.interests.push(this.createMockInterest("urn:interest:game-of-thrones"));
+    account.interests.push(this.createMockInterest("urn:interest:blizzard"));
+    
+    return account;
   }
   
   private createMockAccount(accountUrn: string,
                             firstName: string, 
                             lastName: string,
-                            title: string,
+                            headline: string,
                             description: string,
-                            profileImageUrl: string,
-                            ratingScore: number,
-                            ratingCount: number): Account {
+                            profileImageUrl: string): Account {
     let account = new Account();
     
     account.urn = accountUrn;
     account.firstName = firstName;
     account.lastName = lastName;
-    account.title = title;
+    account.headline = headline;
     account.description = description;
     account.profileImage = new Image();
     account.profileImage.urn = "urn:image:" + StringUtils.generateUUID();
     account.profileImage.url = profileImageUrl;
-    account.rating = new Rating();
-    account.rating.score = ratingScore;
-    account.rating.count = ratingCount;
     
     return account;
+  }
+  
+  private createMockRelationship(graphDistance: string,
+                                 sharedConnectionSize: number,
+                                 sharedCompany: string,
+                                 sharedSchool: string): Relationship {
+    let relationship = new Relationship();
+    
+    relationship.graphDistance = graphDistance;
+    relationship.sharedConnectionSize = sharedConnectionSize;
+    relationship.sharedCompany = sharedCompany;
+    relationship.sharedSchool = sharedSchool;
+    
+    return relationship;
+  }
+  
+  private createMockExperience(companyUrn: string,
+                               title: string,
+                               description: string,
+                               startDate: string,
+                               endDate: string): Experience {
+    let experience = new Experience();
+
+    experience.urn = "urn:experience:" + StringUtils.generateUUID();
+    experience.company = this.organizationProvider.getOrganizationByOrganizationUrn(companyUrn);
+    experience.title = title;
+    experience.description = description;
+    experience.startDate = startDate;
+    experience.endDate = endDate;
+    
+    return experience;
+  }
+  
+  private createMockEducation(schoolUrn: string,
+                              degree: string,
+                              description: string,
+                              startDate: string,
+                              endDate: string): Education {
+    let education = new Education();
+    
+    education.urn = "urn:education:" + StringUtils.generateUUID();
+    education.school = this.organizationProvider.getOrganizationByOrganizationUrn(schoolUrn);
+    education.degree = degree;
+    education.description = description;
+    education.startDate = startDate;
+    education.endDate = endDate;
+    
+    return education;
+  }
+  
+  private createMockInterest(interestUrn: string): Interest {
+    return this.interestProvider.getInterestByInterestUrn(interestUrn);
   }
     
 }
