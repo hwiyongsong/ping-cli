@@ -10,5 +10,6 @@ export class Message {
   public image: Image;
   public video: Video;
   public createdAt: string;
+  public replies: Array<Message> = [];
   
 }

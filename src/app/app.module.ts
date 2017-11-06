@@ -9,6 +9,8 @@ import { StatusBar } from "@ionic-native/status-bar";
 import { AccountProvider } from "./providers/account.provider";
 import { ExperimentProvider } from "./providers/experiment.provider";
 import { InboxProvider } from "./providers/inbox.provider";
+import { InterestProvider } from "./providers/interest.provider";
+import { OrganizationProvider } from "./providers/organization.provider";
 
 import { MyApp } from "./app.component";
 import { MainPage } from "../pages/main.page";
@@ -61,6 +63,8 @@ let providers: Array<any> = [
   AccountProvider,
   ExperimentProvider,
   InboxProvider,
+  InterestProvider,
+  OrganizationProvider,
   Keyboard,
   StatusBar,
   SplashScreen,
