@@ -4,7 +4,6 @@ import { Content, NavController, NavParams } from "ionic-angular";
 import { AccountProvider } from "../../app/providers/account.provider";
 
 import { MemberProfilePage } from "../member-profile/member-profile.page";
-import { OrganizationProfilePage } from "../organization-profile/organization-profile.page";
 
 import { Account } from "../../app/domains/account";
 import { Message } from "../../app/domains/message";

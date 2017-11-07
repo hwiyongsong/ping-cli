@@ -6,7 +6,6 @@ import { InboxProvider } from "../../app/providers/inbox.provider";
 import { MemberProfilePage } from "../member-profile/member-profile.page";
 import { MessageThreadPage } from "../message-thread/message-thread.page";
 import { MyAccountPage } from "../my-account/my-account.page";
-import { OrganizationProfilePage } from "../organization-profile/organization-profile.page";
 
 import { Account } from "../../app/domains/account";
 import { Thread } from "../../app/domains/thread";

@@ -3,7 +3,7 @@ import { MenuController, NavParams } from "ionic-angular";
 
 import { PageProvider } from "../app/providers/page.provider";
 
-import { HomePage } from "./home/home.page";
+import { ExplorePage } from "./explore/explore.page";
 import { MessageBoxPage } from "./message-box/message-box.page";
 import { MyAccountPage } from "./my-account/my-account.page";
 import { PaymentHistoryPage } from "./payment-history/payment-history.page";
@@ -18,13 +18,13 @@ export class MainPage {
   constructor(params: NavParams,
               private menuController: MenuController,
               pageProvider: PageProvider) {
-    this.rootPage = params.get("page") || HomePage;
+    this.rootPage = params.get("page") || ExplorePage;
     
     pageProvider.mainPage = this;
   }
   
-  openHome() {
-    this.open(HomePage);
+  openExplore() {
+    this.open(ExplorePage);
   }
   
   openMessages() {

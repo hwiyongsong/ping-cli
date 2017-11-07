@@ -7,15 +7,17 @@ import { SplashScreen } from "@ionic-native/splash-screen";
 import { StatusBar } from "@ionic-native/status-bar";
 
 import { AccountProvider } from "./providers/account.provider";
+import { CommunityProvider } from "./providers/community.provider";
 import { ExperimentProvider } from "./providers/experiment.provider";
 import { InboxProvider } from "./providers/inbox.provider";
 import { InterestProvider } from "./providers/interest.provider";
 import { PageProvider } from "./providers/page.provider";
 import { OrganizationProvider } from "./providers/organization.provider";
+import { PostProvider } from "./providers/post.provider";
 
 import { MyApp } from "./app.component";
 import { MainPage } from "../pages/main.page";
-import { HomePage } from "../pages/home/home.page";
+import { ExplorePage } from "../pages/explore/explore.page";
 import { MemberProfilePage } from "../pages/member-profile/member-profile.page";
 import { MessageFormPage } from "../pages/message-form/message-form.page";
 import { MessageBoxPage } from "../pages/message-box/message-box.page";
@@ -37,7 +39,7 @@ let components: Array<any> = [
   MyApp,
   
   MainPage,
-  HomePage,
+  ExplorePage,
   MemberProfilePage,
   MessageFormPage,
   MessageBoxPage,
@@ -62,11 +64,13 @@ let pipes: Array<any> = [
 
 let providers: Array<any> = [
   AccountProvider,
+  CommunityProvider,
   ExperimentProvider,
   InboxProvider,
   InterestProvider,
   OrganizationProvider,
   PageProvider,
+  PostProvider,
   Keyboard,
   StatusBar,
   SplashScreen,
