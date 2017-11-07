@@ -31,6 +31,7 @@ export class AccountProvider {
       }
     }
     
+    console.log("** Unable to find: " + accountUrn);
     return null;
   }
   

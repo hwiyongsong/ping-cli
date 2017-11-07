@@ -21,6 +21,7 @@ export class InterestProvider {
       }
     }
     
+    console.log("** Unable to find: " + interestUrn);
     return null;
   }
   

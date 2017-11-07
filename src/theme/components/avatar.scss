@@ -12,15 +12,21 @@ ion-avatar {
     object-fit: fill !important;
   }
   
-  ion-badge {
+  ion-badge.badge-ios {
   	position: absolute;
   	bottom: 0;
   	right: 0;
-  	padding: $tiny-space !important;
+  	padding: $tiny-space;
+  	font-weight: 500;
+  	font-size: 1.1rem;
   }
-  
-  &[large] {
-  	width: $item-ios-avatar-size + 36;
-  	height: $item-ios-avatar-size + 36;
-  }
+}
+
+ion-avatar[large] {
+ 	width: $item-ios-avatar-size + 30;
+ 	height: $item-ios-avatar-size + 30;
+ 	
+ 	ion-badge {
+ 		font-size: 1.4rem;
+ 	}	
 }

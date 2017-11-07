@@ -21,6 +21,7 @@ export class OrganizationProvider {
       }
     }
     
+    console.log("** Unable to find: " + organizationUrn);
     return null;
   }
   

@@ -5,7 +5,7 @@ $app-direction: ltr;
 
 $colors: (
   primary:    												    #6058bc,
-  secondary:  														salmon,
+  secondary:  														#fd5c63,
   danger:     														#f53d3d,
   light:      														#f3f3f3,
   dark:       														#444444,
@@ -50,7 +50,7 @@ $list-border-color:												$border-color;
 $list-ios-header-letter-spacing:					$letter-spacing-base;
 
 // ITEM
-$item-ios-avatar-size:                    50px;
+$item-ios-avatar-size:                    60px;
 $item-ios-body-text-font-size:            $font-size-base;
 $item-ios-padding-top:                    $medium-space;
 $item-ios-padding-bottom:                 $medium-space;
@@ -73,6 +73,7 @@ $grid-padding-width:                      0;
 @import "./components/badge";
 @import "./components/brand";
 @import "./components/button";
+@import "./components/fab";
 @import "./components/form";
 @import "./components/footer";
 @import "./components/header";

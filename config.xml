@@ -3,7 +3,7 @@
     <name>Ping</name>
     <description>Decentralizing your personal attention.</description>
     <author email="eng@piicked.com" href="http://www.piicked.com/">Piicked Team</author>
-    <content original-src="index.html" src="http://172.29.2.216:8101" />
+    <content original-src="index.html" src="http://192.168.1.168:8101" />
     <access origin="*" />
     <allow-navigation href="*" />
     <allow-navigation href="http://localhost:8080/*" />

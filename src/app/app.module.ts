@@ -10,6 +10,7 @@ import { AccountProvider } from "./providers/account.provider";
 import { ExperimentProvider } from "./providers/experiment.provider";
 import { InboxProvider } from "./providers/inbox.provider";
 import { InterestProvider } from "./providers/interest.provider";
+import { PageProvider } from "./providers/page.provider";
 import { OrganizationProvider } from "./providers/organization.provider";
 
 import { MyApp } from "./app.component";
@@ -17,7 +18,7 @@ import { MainPage } from "../pages/main.page";
 import { HomePage } from "../pages/home/home.page";
 import { MemberProfilePage } from "../pages/member-profile/member-profile.page";
 import { MessageFormPage } from "../pages/message-form/message-form.page";
-import { MessageInboxPage } from "../pages/message-inbox/message-inbox.page";
+import { MessageBoxPage } from "../pages/message-box/message-box.page";
 import { MessageThreadPage } from "../pages/message-thread/message-thread.page";
 import { MyAccountPage } from "../pages/my-account/my-account.page";
 import { OrganizationProfilePage } from "../pages/organization-profile/organization-profile.page";
@@ -39,7 +40,7 @@ let components: Array<any> = [
   HomePage,
   MemberProfilePage,
   MessageFormPage,
-  MessageInboxPage,
+  MessageBoxPage,
   MessageThreadPage,
   MyAccountPage,
   OrganizationProfilePage,
@@ -65,6 +66,7 @@ let providers: Array<any> = [
   InboxProvider,
   InterestProvider,
   OrganizationProvider,
+  PageProvider,
   Keyboard,
   StatusBar,
   SplashScreen,

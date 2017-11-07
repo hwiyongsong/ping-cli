@@ -12,10 +12,10 @@ import { Account } from "../../app/domains/account";
 import { Thread } from "../../app/domains/thread";
 
 @Component({
-  selector: "message-inbox-page",
-  templateUrl: "message-inbox.page.html",
+  selector: "message-box-page",
+  templateUrl: "message-box.page.html",
 })
-export class MessageInboxPage {
+export class MessageBoxPage {
 
   constructor(private navController: NavController, 
               public inboxProvider: InboxProvider) {

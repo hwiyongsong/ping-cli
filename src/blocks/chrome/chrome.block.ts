@@ -1,10 +1,7 @@
 import { Component } from "@angular/core";
-import { NavController } from "ionic-angular";
 
 import { InboxProvider } from "../../app/providers/inbox.provider";
-
-import { MainPage } from "../../pages/main.page";
-import { MessageInboxPage } from "../../pages/message-inbox/message-inbox.page";
+import { PageProvider } from "../../app/providers/page.provider";
 
 @Component({
   selector: "chrome-block",
@@ -12,14 +9,12 @@ import { MessageInboxPage } from "../../pages/message-inbox/message-inbox.page";
 })
 export class ChromeBlock {
 
-  constructor(private navController: NavController, 
-              public inboxProvider: InboxProvider) {
+  constructor(public inboxProvider: InboxProvider,
+              private pageProvider: PageProvider) {
   }
   
-  openInbox() {
-    this.navController.setRoot(MainPage, {
-      "page": MessageInboxPage
-    });
+  openMessages() {
+    this.pageProvider.mainPage.openMessages();
   }
   
 }
