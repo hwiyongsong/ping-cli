@@ -5,7 +5,7 @@
 <ion-content>
 	<ion-section>
 		<ion-section-header>
-			<h4>Community Posts</h4>
+			<h4>Trending Posts</h4>
 		</ion-section-header>
 		<ion-section-content no-padding>
 			<post-block [post]="post" layout="FEED" *ngFor="let post of postProvider.mockPosts"></post-block>
@@ -21,14 +21,5 @@
 		    <list-block [list]="list" layout="COMPACT"></list-block>	
 		  </ion-slide>
 		</ion-slides>
-	</ion-section>
-	
-	<ion-section>
-		<ion-section-header>
-			<h4>Trending Influencers</h4>
-		</ion-section-header>
-		<ion-section-content>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-		</ion-section-content>
 	</ion-section>
 </ion-content>
