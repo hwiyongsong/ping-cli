@@ -5,7 +5,7 @@ $app-direction: ltr;
 
 $colors: (
   primary:    												    #6058bc,
-  secondary:  														#fd5c63,
+  secondary:  														#009688,
   danger:     														#f53d3d,
   light:      														#f3f3f3,
   dark:       														#444444,
@@ -60,6 +60,7 @@ $item-ios-paragraph-font-size:            $font-size-base;
 $item-ios-paragraph-text-color:           $text-color;
 $item-ios-padding-media-top:							$medium-space;
 $item-ios-padding-media-bottom:						$medium-space;
+$item-ios-thumbnail-size:									60px;
 
 // GRID
 $grid-padding-width:                      0;
@@ -73,6 +74,7 @@ $grid-padding-width:                      0;
 @import "./components/badge";
 @import "./components/brand";
 @import "./components/button";
+@import "./components/card";
 @import "./components/fab";
 @import "./components/form";
 @import "./components/footer";
@@ -88,3 +90,4 @@ $grid-padding-width:                      0;
 @import "./components/tag";
 @import "./components/text";
 @import "./components/thumbnail";
+@import "./components/video";

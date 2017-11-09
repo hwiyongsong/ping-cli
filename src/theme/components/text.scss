@@ -181,6 +181,17 @@ small {
   text-overflow: ellipsis;
 }
 
+p.bounty {
+	font-weight: 300 !important;
+	color: color($colors, primary) !important;
+}
+
+.excerpt, .excerpt * {
+	font-weight: 300 !important;
+	font-size: 1.4rem !important;
+	color: color($colors, dark-gray) !important; 
+}
+
 .no-wrap, [no-wrap] {
 	white-space: normal;
 }

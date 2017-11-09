@@ -5,7 +5,7 @@ import { Interest } from "./interest";
 import { Rating } from "./rating";
 import { Relationship } from "./relationship";
 
-export class Account {
+export class Member {
   
   public urn: string;
   public firstName: string;
@@ -21,14 +21,6 @@ export class Account {
   
   getFullName() {
     return this.firstName + " " + this.lastName; 
-  }
-  
-  getCurrentCompany() {
-    if (this.experiences.length > 0) {
-      return this.experiences[0].company;
-    }
-    
-    return null;
   }
   
 }

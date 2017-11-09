@@ -4,6 +4,10 @@ figure {
   margin: 0 !important;
   overflow: hidden;
   line-height: 0;
+  
+  span {
+  	line-height: 1;
+  }
 
   &[radius] {
     border-radius: $tiny-space;

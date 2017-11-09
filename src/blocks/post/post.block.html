@@ -1,0 +1,37 @@
+<ion-card class="feed">
+	<ion-card-header>
+		<ion-item (click)="onViewMemberProfile()" *ngIf="!post.organizational">
+	  	<ion-avatar small item-start>
+			  <img [src]="post.createdBy.profileImage.url">
+			</ion-avatar>  	
+	    <h6 flex-center class="created-by" (click)="onViewMemberProfile()">{{post.createdBy.getFullName()}}</h6>
+	    <p class="meta">{{post.createdBy.headline}}</p>
+			<p class="meta">{{post.createdAt}}</p>  	
+			<ion-note item-end item-top>
+	  		<p ion-text class="bounty" [innerHTML]="bountyProvider.formatBounty(post.bounty)"></p>
+	  	</ion-note>
+  	</ion-item>
+  	<ion-item (click)="onViewOrganizationProfile()" *ngIf="post.organizational">
+	  	<ion-thumbnail small item-start>
+			  <img [src]="post.createdBy.getCurrentCompany().profileImage.url">
+			</ion-thumbnail>  	
+	    <h6 flex-center class="created-by" (click)="onViewMemberProfile()">{{post.createdBy.getCurrentCompany().name}}</h6>
+			<p class="meta">{{post.createdAt}}</p> 
+			<ion-note item-end item-top>
+	  		<p ion-text class="bounty" [innerHTML]="bountyProvider.formatBounty(post.bounty)"></p>
+	  	</ion-note> 	
+  	</ion-item>
+	</ion-card-header>
+	<ion-card-content>
+		<ion-item>
+			<h6 small-bottom-margin no-wrap>{{post.title}}</h6>
+			<p no-wrap class="excerpt" [innerHTML]="post.getExcerpt()"></p>		
+			<ion-note item-end item-top *ngIf="post.video">
+				<figure radius class="video-thumbnail">
+					<img [src]="post.video.thumbnailUrl"/>
+					<span class="duration">{{post.video.duration}}</span>				
+				</figure>
+			</ion-note>
+		</ion-item>
+	</ion-card-content>
+</ion-card>

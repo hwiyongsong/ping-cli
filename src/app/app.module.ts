@@ -7,10 +7,12 @@ import { SplashScreen } from "@ionic-native/splash-screen";
 import { StatusBar } from "@ionic-native/status-bar";
 
 import { AccountProvider } from "./providers/account.provider";
+import { BountyProvider } from "./providers/bounty.provider";
 import { CommunityProvider } from "./providers/community.provider";
 import { ExperimentProvider } from "./providers/experiment.provider";
 import { InboxProvider } from "./providers/inbox.provider";
 import { InterestProvider } from "./providers/interest.provider";
+import { ListProvider } from "./providers/list.provider";
 import { PageProvider } from "./providers/page.provider";
 import { OrganizationProvider } from "./providers/organization.provider";
 import { PostProvider } from "./providers/post.provider";
@@ -27,6 +29,8 @@ import { OrganizationProfilePage } from "../pages/organization-profile/organizat
 import { PaymentHistoryPage } from "../pages/payment-history/payment-history.page";
 
 import { ChromeBlock } from "../blocks/chrome/chrome.block";
+import { ListBlock } from "../blocks/list/list.block";
+import { PostBlock } from "../blocks/post/post.block";
 
 import { AutoFocusDirective } from "./directives/autofocus.directive";
 import { ElasticHeaderDirective } from "./directives/elastic-header.directive";
@@ -48,7 +52,9 @@ let components: Array<any> = [
   OrganizationProfilePage,
   PaymentHistoryPage,
   
-  ChromeBlock
+  ChromeBlock,
+  ListBlock,
+  PostBlock
 ]
 
 let directives: Array<any> = [
@@ -64,10 +70,12 @@ let pipes: Array<any> = [
 
 let providers: Array<any> = [
   AccountProvider,
+  BountyProvider,
   CommunityProvider,
   ExperimentProvider,
   InboxProvider,
   InterestProvider,
+  ListProvider,
   OrganizationProvider,
   PageProvider,
   PostProvider,

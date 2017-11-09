@@ -50,6 +50,8 @@ export class AccountProvider {
     this.mockAccounts.push(this.createKimKamitani());
     this.mockAccounts.push(this.createAkashGupta());
     this.mockAccounts.push(this.createFrankClemmens());
+    this.mockAccounts.push(this.createRitaUrbach());
+    this.mockAccounts.push(this.createMichaelSena());
   }
   
   private createScottPredmore(): Account {
@@ -314,6 +316,81 @@ export class AccountProvider {
     account.interests.push(this.createMockInterest("urn:interest:ethereum"));
     account.interests.push(this.createMockInterest("urn:interest:game-of-thrones"));
     account.interests.push(this.createMockInterest("urn:interest:blizzard"));
+    
+    return account;
+  }
+  
+  private createMichaelSena(): Account {
+    let account = this.createMockAccount("urn:member:michael-sena",
+                                         "Michael",
+                                         "Sena",
+                                         "Product Lead at uPort",
+                                         "Michael Sena manages product spokes and enterprise partnerships at Consensys. Michael brings a diverse background in product management, technology consulting, capital markets, and political economics to the blockchain. In previous roles, he designed and deployed consumer and enterprise technologies for some of the largest organizations in the world, managed a portfolio of international financial securities, and launched a startup. At Consensys, Michael is using these foundational experiences to unlock value on a global scale by building applications for the emerging blockchain economy. He believes that exponential blockchain adoption is only a beautiful Dapp away and is passionate about getting these products into the hands of people.<br/><br/>For business opportunities, please email michael.sena@consensys.net",
+                                         "https://media.licdn.com/media/AAEAAQAAAAAAAAh6AAAAJDhjNWIxNzhjLWU2NTgtNGIwNy1hNTExLWFiZWU1YWNlMDA5OA.jpg");
+  
+    account.experiences.push(this.createMockExperience("urn:company:uport",
+                                                       "Product Lead",
+                                                       "I wear many hats as a senior member of the uPort team. We're hiring! (Message me for details)",
+                                                       "Jul 2016",
+                                                       "Present"));
+    
+    account.experiences.push(this.createMockExperience("urn:company:consensys",
+                                                       "Product Manager",
+                                                       "Product manager for uPort, a self-sovereign digital identity platform built on Ethereum.",
+                                                       "Jul 2016",
+                                                       "Present"));
+    
+    account.experiences.push(this.createMockExperience("urn:company:airbnb",
+                                                       "Product Manager",
+                                                       null,
+                                                       "Jul 2011",
+                                                       "Jul 2016"));
+    
+    account.educations.push(this.createMockEducation("urn:school:princeton",
+                                                     "B.A.: Political Economics",
+                                                     "Studied how political game theory is shaped by popular mass media",
+                                                     "2007",
+                                                     "2011"));
+    
+    account.interests.push(this.createMockInterest("urn:interest:ethereum"));
+    account.interests.push(this.createMockInterest("urn:interest:game-of-thrones"));
+    
+    return account;
+  }
+  
+  private createRitaUrbach(): Account {
+    let account = this.createMockAccount("urn:member:rita-urbach",
+                                         "Rita",
+                                         "Urbach",
+                                         "Marketing Manager at Bancor",
+                                         "I am a results driven - business oriented professional who is a fast learner and adopter of new technologies. I am motivated by strategic planning, creative execution and data-driven decisions.",
+                                         "https://media.licdn.com/media/p/3/005/04b/1af/2b7fe97.jpg");
+    
+    account.relationship = this.createMockRelationship("2nd",
+                                                       119,
+                                                       null,
+                                                       null);
+    
+    account.experiences.push(this.createMockExperience("urn:company:bancor",
+                                                       "Marketing Manager",
+                                                       null,
+                                                       "Sep 2017",
+                                                       "Present"));
+    
+    account.experiences.push(this.createMockExperience("urn:company:facebook",
+                                                       "Product Marketing",
+                                                       "Produce marketing materials such as presentations, websites, landing pages, blog posts, product descriptions, video tutorials, training sessions, emails, ads & online campaigns.<br/><br/>Engage regularly and present to directors, teams, partners and customers.<br/><br/>Translate technical features into benefits that customers understand.<br/><br/>Managing the user funnel from user acquisition to retention, using marketing automation. <br/><br/>Manage outsourced service providers for development, design and SEO. <br/><br/>Coordinate and train resellers and affiliate partners. <br/><br/>Work closely with customers to refine positioning and messaging, and ensure they are used effectively.",
+                                                       "Aug 2014",
+                                                       "Sep 2017"));
+    
+    account.educations.push(this.createMockEducation("urn:school:carnegie-mellon",
+                                                     "Bachelor of Arts: Business Management",
+                                                     null,
+                                                     "2011",
+                                                     "2014"));
+
+    account.interests.push(this.createMockInterest("urn:interest:ethereum"));
+    account.interests.push(this.createMockInterest("urn:interest:bitcoin"));
     
     return account;
   }

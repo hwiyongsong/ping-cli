@@ -35,9 +35,13 @@ export class OrganizationProvider {
     this.mockOrganizations.push(this.createAirbnb());
     this.mockOrganizations.push(this.createNetflix());
     this.mockOrganizations.push(this.createLockheedMartin());
+    this.mockOrganizations.push(this.createConsensys());
+    this.mockOrganizations.push(this.createUPort());
+    this.mockOrganizations.push(this.createBancor());
     this.mockOrganizations.push(this.createBerkeley());
     this.mockOrganizations.push(this.createStanford());
     this.mockOrganizations.push(this.createCarnegieMellon());
+    this.mockOrganizations.push(this.createPrinceton());
   }
   
   private createGoogle(): Organization {
@@ -121,6 +125,33 @@ export class OrganizationProvider {
                                        "https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAA1vAAAAJGFkN2FhN2ZiLWQzNDEtNGEyMi1hMjQ2LTM1NzA3NTUxZmU0Zg.png");
   }
 
+  private createConsensys(): Organization {
+    return this.createMockOrganization("urn:company:consensys",
+                                       "Consensys",
+                                       "ConsenSys is a blockchain venture production studio. Our global team is building an ecosystem of consumer-centric products and enterprise solutions using blockchain technologies, primarily Ethereum.",
+                                       "Brooklyn, NY",
+                                       "http://consensys.net",
+                                       "https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAWsAAAAJDlmOTBlYWJlLTAzMjctNGQ3OC1iZTViLTUzYTg4ZDAzMjA0NQ.png");
+  }
+  
+  private createUPort(): Organization {
+    return this.createMockOrganization("urn:company:uport",
+                                       "uPort",
+                                       "uPort is the leading blockchain identity platform. We are building a self-sovereign identity platform that provides users with a central place to to establish a complete digital identity and authenticate themselves wherever uPort is accepted. We are built on the Ethereum blockchain and are currently being incubated at ConsenSys.",
+                                       "Brooklyn, New York",
+                                       "http://uport.me",
+                                       "https://pbs.twimg.com/profile_images/767715333377523712/10QF-QIE.jpg");
+  }
+  
+  private createBancor(): Organization {
+    return this.createMockOrganization("urn:company:bancor",
+                                       "Bancor",
+                                       "Bancor Protocol™ is a standard for the creation of Smart Tokens™, cryptocurrencies with built-in convertibility directly through their smart contracts. Bancor utilizes an innovative token “Connector” method to enable formulaic price calculation and continuous liquidity for all compliant tokens, without needing to match two parties in an exchange. Smart Tokens™ interconnect to form token liquidity networks, allowing user-generated cryptocurrencies to thrive. For more information, please visit the website and read the Bancor Protocol™ Whitepaper.",
+                                       "Zug, Switzerland",
+                                       "http://bancor.network",
+                                       "https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAu_AAAAJDIxM2RhYThmLTdiZjEtNGUwNC05ZjEyLTY5ZjU2MmJkNmFmMQ.png");
+  }
+
   private createBerkeley(): Organization {
     return this.createMockOrganization("urn:school:berkeley",
                                        "University of California, Berkeley",
@@ -146,6 +177,15 @@ export class OrganizationProvider {
                                        "Pittsburgh, PA",
                                        "cmu.edu",
                                        "https://media.licdn.com/mpr/mpr/shrink_200_200/p/6/000/2d0/039/2f00df5.png");
+  }
+  
+  private createPrinceton(): Organization {
+    return this.createMockOrganization("urn:school:princeton",
+                                       "Princeton Univeristy",
+                                       "A vibrant community of learning that endeavors to fulfill its informal motto, '​'​in the nation's service and the service of humanity.'​'​",
+                                       "Princeton, NJ",
+                                       "http://princeton.edu",
+                                       "https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAALWAAAAJGVlNmQ5M2RhLTA1MWItNDZjNy1iZDNlLWY4MTQyNjZlZGRjMw.png");
   }
   
   private createMockOrganization(organizationUrn: string,

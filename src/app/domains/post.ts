@@ -6,12 +6,21 @@ import { Video } from "./video";
 export class Post {
  
   public urn: string;
-  public from: Account;
   public title: string;
   public body: string;
+  public createdBy: Account;
   public createdAt: string;
   public bounty: Bounty;
   public image: Image;
   public video: Video;
+  public organizational: boolean = false;
+  
+  getExcerpt() {
+    if (this.body && this.body.length > 120) {
+      return this.body.substring(0, 120) + "...";
+    }
+    
+    return null;
+  }
   
 }

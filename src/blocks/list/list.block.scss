@@ -1,0 +1,18 @@
+list-block {
+	figure {
+		span.bounty {
+			position: absolute;
+			top: 0;
+			left: 0;
+			padding: $small-space ($small-space + 2);
+			background: color($colors, dark-gray);
+			font-weight: 700;
+			color: white;
+		}
+	}
+	
+	ion-card-content {
+		margin-top: -100px;
+		background: white;
+	}
+}
