@@ -9,10 +9,3 @@ ion-thumbnail {
 		height: 100% !important;
 	}
 }
-
-ion-thumbnail[small] {
-	width: $item-ios-thumbnail-size - 16 !important;
- 	height: $item-ios-thumbnail-size - 16 !important;
-	min-width: $item-ios-thumbnail-size - 16 !important;
-	min-height: $item-ios-thumbnail-size - 16 !important;
-}

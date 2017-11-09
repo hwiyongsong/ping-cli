@@ -1,0 +1,17 @@
+ion-toolbar.toolbar {
+ 	overflow: visible;
+ 	
+ 	
+ 	ion-searchbar.searchbar-md {
+  	padding: 0;
+  	border: $hairlines-width solid color($colors, gray);
+  	
+  	.searchbar-search-icon {
+  		top: 15px;
+  	}
+  	
+  	input.searchbar-input {
+  		padding: 9px 44px 10px 44px;
+  	}
+ 	}
+}

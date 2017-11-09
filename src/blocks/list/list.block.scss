@@ -2,17 +2,16 @@ list-block {
 	figure {
 		span.bounty {
 			position: absolute;
-			top: 0;
+			bottom: 100px;
 			left: 0;
-			padding: $small-space ($small-space + 2);
-			background: color($colors, dark-gray);
-			font-weight: 700;
+			padding: 10px;
+			background: black;
 			color: white;
 		}
 	}
 	
 	ion-card-content {
-		margin-top: -100px;
+		margin-top: -100px; 
 		background: white;
 	}
 }

@@ -15,9 +15,10 @@ h1, h2, h3, h4, h5, h6 {
   	display: block;
     width: 100%;
   	top: 0;
-  	font-weight: 500;
+  	font-weight: 300;
     line-height: $line-height-base;
     color: color($colors, dark-gray);
+    text-transform: uppercase;
   }
 
   sub {
@@ -70,8 +71,7 @@ h5 {
 	font-size: $h5-font-size !important;
 	
 	sub, sup {
-    font-size: 80%;
-    font-weight: 300;
+    font-size: 75%;
   }
 }
 
@@ -79,8 +79,6 @@ h6 {
 	font-size: $h6-font-size !important;
 	
 	sub, sup {
-		margin: 1px 0;
-		font-weight: 300;
     font-size: 80%;
   }
 }
@@ -182,8 +180,8 @@ small {
 }
 
 p.bounty {
-	font-weight: 300 !important;
-	color: color($colors, primary) !important;
+	font-size: 1.7rem !important;
+	color: color($colors, secondary) !important;
 }
 
 .excerpt, .excerpt * {

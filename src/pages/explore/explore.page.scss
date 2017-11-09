@@ -1,7 +1,15 @@
 explore-page {
+	ion-section {
+		margin-bottom: $large-space;
+		
+		ion-section-header {
+			padding-bottom: $tiny-space;
+		}
+	}
+	
 	ion-slides {
 		ion-slide {
-	    width: 60% !important;
+	    width: 80% !important; 
 		}
 	}
 }

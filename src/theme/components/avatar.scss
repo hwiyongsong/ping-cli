@@ -21,13 +21,6 @@ ion-avatar {
   }
 }
 
-ion-avatar[small] {
-	width: $item-ios-avatar-size - 16 !important;
- 	height: $item-ios-avatar-size - 16 !important;
-	min-width: $item-ios-avatar-size - 16 !important;
-	min-height: $item-ios-avatar-size - 16 !important;
-}
-
 ion-avatar[large] {
  	width: $item-ios-avatar-size + 32;
  	height: $item-ios-avatar-size + 32;
