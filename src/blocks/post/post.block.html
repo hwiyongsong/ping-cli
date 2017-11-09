@@ -1,4 +1,4 @@
-<ion-card class="feed">
+<ion-card class="feed" (tap)="viewPostDetail()">
 	<ion-card-header>
 		<ion-item *ngIf="!post.organizational">
 	  	<ion-avatar item-start>
@@ -6,7 +6,7 @@
 			</ion-avatar>  	
 	    <h6 flex-center class="created-by">{{post.createdBy.getFullName()}}</h6>
 	    <p class="meta">{{post.createdBy.headline}}</p>
-			<p class="meta">{{post.createdAt}}</p>  	
+			<p class="meta">{{post.createdAt}}</p>
 			<ion-note item-end item-top>
 	  		<p ion-text class="bounty" [innerHTML]="bountyProvider.formatBounty(post.bounty)"></p>
 	  	</ion-note>

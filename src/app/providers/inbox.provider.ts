@@ -3,6 +3,7 @@ import { Injectable } from "@angular/core";
 import { AccountProvider } from "./account.provider";
 
 import { Account } from "../domains/account";
+import { Bounty } from "../domains/bounty";
 import { Inbox } from "../domains/inbox";
 import { Message } from "../domains/message";
 import { Thread } from "../domains/thread";
@@ -38,14 +39,13 @@ export class InboxProvider {
     let thread = this.createThread(account,
                                    "Senior Role at Uber Self-Driving Project",
                                    "Job Opportunity",
-                                   "$10",
                                    createdAt);
 
-    let message = this.createMessage(account,
-                                     "Hi Albert,\r\n\r\nHow would you like to work on one of the newest teams working on self driving tech?\r\n\r\nSelf driving is the new technological frontier that is spreading like fire across all the biggest car manufacturers, venture capitalists and big tech companies. \r\n\r\nThe Teleassist team here at the Uber ATG is focused on solving a new problem in telepresence, support and remote operations and we could use a senior engineering leader to help build this product from ground 0. \r\n\r\nIf you're open to networking I'd love to share more. \r\n\r\nThanks!\r\nAlbert\r\n\r\n Robert Conner | Talent \r\nUber ATG | Self-Driving Cars + Trucks",
-                                     createdAt);
+    thread.coverMessage = this.createMessage(account,
+                                             "Hi Albert,\r\n\r\nHow would you like to work on one of the newest teams working on self driving tech?\r\n\r\nSelf driving is the new technological frontier that is spreading like fire across all the biggest car manufacturers, venture capitalists and big tech companies. \r\n\r\nThe Teleassist team here at the Uber ATG is focused on solving a new problem in telepresence, support and remote operations and we could use a senior engineering leader to help build this product from ground 0. \r\n\r\nIf you're open to networking I'd love to share more. \r\n\r\nThanks!\r\nAlbert\r\n\r\n Robert Conner | Talent \r\nUber ATG | Self-Driving Cars + Trucks",
+                                             createdAt);
     
-    thread.coverMessage = message;
+    thread.bounty = this.createBounty(10);
     
     return thread;
   }
@@ -57,15 +57,13 @@ export class InboxProvider {
     let thread = this.createThread(account,
                                    "A Look into Facebook Payments Team",
                                    "Event",
-                                   "$15",
                                    createdAt);
 
-    let message = this.createMessage(account,
-                                     "A Look Into Payments at Facebook - September 13 @ 6pm\r\n\r\nHi Albert, \r\n\r\nClear your calendar - You\'re invited to join us at Facebook HQ for a deep dive into the work of the Payments teams presented by Facebook Engineering. This talk will be followed by drinks, appetizers and great conversation with your engineering peers.\r\n\r\nWhen\/Where: Facebook HQ - September 13 @ 6pm (PST) @ 300 Constitution Drive, Menlo Park, CA (See Event Page for instructions)\r\n\r\nMore info: https:\/\/fbpaymentstechtalk.splashthat.com\r\n\r\nPlease RSVP now as space is limited.\r\n\r\nWe look forward to seeing you there!\r\n\r\nLilly Lapcakova\r\nTechnical Recruiting Lead at Facebook",
-                                     createdAt);
+    thread.coverMessage = this.createMessage(account,
+                                             "A Look Into Payments at Facebook - September 13 @ 6pm\r\n\r\nHi Albert, \r\n\r\nClear your calendar - You\'re invited to join us at Facebook HQ for a deep dive into the work of the Payments teams presented by Facebook Engineering. This talk will be followed by drinks, appetizers and great conversation with your engineering peers.\r\n\r\nWhen\/Where: Facebook HQ - September 13 @ 6pm (PST) @ 300 Constitution Drive, Menlo Park, CA (See Event Page for instructions)\r\n\r\nMore info: https:\/\/fbpaymentstechtalk.splashthat.com\r\n\r\nPlease RSVP now as space is limited.\r\n\r\nWe look forward to seeing you there!\r\n\r\nLilly Lapcakova\r\nTechnical Recruiting Lead at Facebook",
+                                             createdAt);
     
-    
-    thread.coverMessage = message;
+    thread.bounty = this.createBounty(15);
     
     return thread;
   }
@@ -77,14 +75,13 @@ export class InboxProvider {
     let thread = this.createThread(account,
                                    "Senior Engineer Position at Facebook",
                                    "Job Opportunity",
-                                   "$10",
                                    createdAt);
 
-    let message = this.createMessage(account,
-                                     "Kim from Facebook, Software Engineering\r\n\r\nHi Albert, \r\n\r\nI wanted to follow up on my last two messages and see if you had any interest in discussing opportunities with Facebook. \r\n\r\nI understand if timing might not be right, but either way, I\u2019d still like to connect so that we can keep in contact for the future. \r\n\r\nThank you in advance for your consideration,\r\nKim\r\n\r\nKim Kamitaki\r\nTechnical Recruiter at Facebook",
-                                     createdAt);
-
-    thread.coverMessage = message;
+    thread.coverMessage = this.createMessage(account,
+                                             "Kim from Facebook, Software Engineering\r\n\r\nHi Albert, \r\n\r\nI wanted to follow up on my last two messages and see if you had any interest in discussing opportunities with Facebook. \r\n\r\nI understand if timing might not be right, but either way, I\u2019d still like to connect so that we can keep in contact for the future. \r\n\r\nThank you in advance for your consideration,\r\nKim\r\n\r\nKim Kamitaki\r\nTechnical Recruiter at Facebook",
+                                             createdAt);
+    
+    thread.bounty = this.createBounty(10);
     
     return thread;
   }
@@ -96,21 +93,19 @@ export class InboxProvider {
     let thread = this.createThread(account,
                                    "Learn about Uber Elevate",
                                    "Video",
-                                   "$5",
                                    createdAt);
 
-    let video = this.createVideo("https://www.youtube.com/embed/nuFSh7N0Nhw",
-                                 "Uber Elevate",
-                                 "Taking commuting to the next level! Uber Elevate will use electric vertical takeoff and landing vehicles (evtols) to make our lives easier, our commutes shorter, and our cities cleaner. See how we're starting to get this idea off the ground, and join us in building the future!",
-                                 "https://img.youtube.com/vi/nuFSh7N0Nhw/0.jpg",
-                                 "4 min");
-
-    let message = this.createMessage(account,
-                                     null,
-                                     createdAt);
-
-    message.video = video;
-    thread.coverMessage = message;
+    thread.coverMessage = this.createMessage(account,
+                                             null,
+                                             createdAt);
+    
+    thread.coverMessage.video = this.createVideo("https://www.youtube.com/embed/nuFSh7N0Nhw",
+                                                 "Uber Elevate",
+                                                 "Taking commuting to the next level! Uber Elevate will use electric vertical takeoff and landing vehicles (evtols) to make our lives easier, our commutes shorter, and our cities cleaner. See how we're starting to get this idea off the ground, and join us in building the future!",
+                                                 "https://img.youtube.com/vi/nuFSh7N0Nhw/0.jpg",
+                                                 "4 min");
+    
+    thread.bounty = this.createBounty(5);
     
     return thread;
   }
@@ -122,21 +117,19 @@ export class InboxProvider {
     let thread = this.createThread(account,
                                    "Local Discovery Team at Facebook",
                                    "Video",
-                                   "$5",
                                    createdAt);
 
-    let video = this.createVideo("https://www.youtube.com/embed/gnzqOphpOgE",
-                                 "The Local Discovery Team at Facebook New York Engineering - Join Us",
-                                 "Founded in 2004, Facebook\u2019s mission is to give people the power to build community and bring the world closer together. People use Facebook to stay connected with friends and family, to discover what\u2019s going on in the world, and to share and express what matters to them.\r\n\r\nFacebook is defined by our unique culture \u2013 one that rewards impact. We encourage people to be bold and solve the problems they care most about. We work in small teams and move fast to develop new products, constantly iterating. The phrase \u201Cthis journey is 1% finished,\u201D reminds us that we\u2019ve only begun to fulfill our mission to bring the world closer together. ",
-                                 "https://img.youtube.com/vi/gnzqOphpOgE/0.jpg",
-                                 "4 min");
-
-    let message = this.createMessage(account,
-                                     null,
-                                     createdAt);
-
-    message.video = video;
-    thread.coverMessage = message;
+    thread.coverMessage = this.createMessage(account,
+                                             null,
+                                             createdAt);
+    
+    thread.coverMessage.video = this.createVideo("https://www.youtube.com/embed/gnzqOphpOgE",
+                                                 "The Local Discovery Team at Facebook New York Engineering - Join Us",
+                                                 "<p>Founded in 2004, Facebook\u2019s mission is to give people the power to build community and bring the world closer together.</p><p>People use Facebook to stay connected with friends and family, to discover what\u2019s going on in the world, and to share and express what matters to them.</p><p>Facebook is defined by our unique culture \u2013 one that rewards impact. We encourage people to be bold and solve the problems they care most about. We work in small teams and move fast to develop new products, constantly iterating.</p><p>The phrase \u201Cthis journey is 1% finished,\u201D reminds us that we\u2019ve only begun to fulfill our mission to bring the world closer together.</p>",
+                                                 "https://img.youtube.com/vi/gnzqOphpOgE/0.jpg",
+                                                 "4 min");
+    
+    thread.bounty = this.createBounty(5);
     
     return thread;
   }
@@ -144,7 +137,6 @@ export class InboxProvider {
   private createThread(account: Account,
                        subject: string, 
                        category: string,
-                       bounty: string,
                        createdAt: string): Thread {
     
     let thread = new Thread();
@@ -153,7 +145,6 @@ export class InboxProvider {
     thread.from = account;
     thread.subject = subject;
     thread.category = category;
-    thread.bounty = bounty;
     thread.createdAt = createdAt;
     
     return thread;
@@ -186,6 +177,15 @@ export class InboxProvider {
     video.duration = duration;
     
     return video;
+  }
+  
+  private createBounty(value: number): Bounty {
+    let bounty = new Bounty();
+    
+    bounty.value = value;
+    bounty.condition = "REPLY";
+    
+    return bounty;
   }
 
 }

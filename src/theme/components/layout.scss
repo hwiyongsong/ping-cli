@@ -179,6 +179,15 @@
   padding-right: $large-space !important;
 }
 
+[radius] {
+	overflow: hidden;
+	border-radius: $border-radius;
+}
+
+iframe {
+	width: 100%;
+}
+
 /* Allow touch events during loading. */
 .disable-scroll .ion-page {
   pointer-events: auto !important;

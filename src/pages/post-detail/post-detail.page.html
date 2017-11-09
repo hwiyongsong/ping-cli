@@ -1,0 +1,39 @@
+<ion-header clear>
+  <ion-navbar></ion-navbar>
+</ion-header>
+
+<ion-content>
+	<ion-section>
+		<ion-section-header no-top-padding>
+			<ion-item *ngIf="!post.organizational" (click)="onViewMemberProfile()">
+		    <h4 flex-center class="created-by">{{post.createdBy.getFullName()}}<sub>{{post.createdBy.headline}}</sub></h4>		
+		  	<ion-avatar item-end>
+				  <img [src]="post.createdBy.profileImage.url">
+				</ion-avatar>  	
+	  	</ion-item>
+	  	<ion-item *ngIf="post.organizational" (click)="onViewOrganizationProfile()">
+		    <h4 flex-center class="created-by">{{post.createdBy.getCurrentCompany().name}}<sub *ngIf="post.createdBy.getCurrentCompany().headline">{{post.createdBy.getCurrentCompany().headline}}</sub></h4>	
+		  	<ion-thumbnail item-end>
+				  <img [src]="post.createdBy.getCurrentCompany().profileImage.url">
+				</ion-thumbnail>
+	  	</ion-item>
+		</ion-section-header>
+		<ion-section-content>
+			<p tiny-bottom-margin class="meta">{{post.createdAt}} • {{post.category}}</p>
+			<h4>{{post.title}}</h4>
+			<div class="article">			
+				<figure large-top-margin *ngIf="post.image">
+					<img [src]="post.image.url"/>
+				</figure>
+				<figure large-top-margin *ngIf="post.video">
+					<iframe allowfullscreen [src]="post.video.url | safeurl" frameborder="0" class="video-embed"></iframe>		
+				</figure>
+				<p large-top-margin [innerHTML]="post.body" *ngIf="post.body"></p>
+			</div>
+		</ion-section-content>
+	</ion-section>
+</ion-content>
+
+<ion-footer padding>
+  <button ion-button block (click)="onAction()">{{post.actionText}} for {{bountyProvider.formatBounty(post.bounty)}}</button>	
+</ion-footer>

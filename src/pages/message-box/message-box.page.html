@@ -17,7 +17,7 @@
 			    <p skinny class="message-subject" (click)="onViewThread(thread)">{{thread.subject}}</p>
 			    <p class="meta">{{thread.category}} • {{thread.createdAt}}</p>   
 			  	<ion-note item-end item-top>
-			  		<p ion-text color="primary">{{thread.bounty}}</p>
+			  		<p class="bounty">{{bountyProvider.formatBounty(thread.bounty)}}</p>
 			  	</ion-note>
 			  </ion-item>
 			</ion-list>		

@@ -13,6 +13,7 @@ export class Post {
   public image: Image;
   public video: Video;
   public organizational: boolean = false;
+  public actionText: string;
   public createdBy: Account;
   public createdAt: string;
   

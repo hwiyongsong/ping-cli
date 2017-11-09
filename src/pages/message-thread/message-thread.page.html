@@ -14,23 +14,15 @@
 			</ion-item>
 		</ion-section-header>
 		<ion-section-content>
-			<h6 ion-text bottom-margin color="secondary">
-				<div *ngIf="thread.category != 'Video'">Respond to {{thread.from.firstName}} to earn {{thread.bounty}}.</div>
-				<div *ngIf="thread.category == 'Video'">View entire video to earn {{thread.bounty}}.</div>
-			</h6>
 			<p tiny-bottom-margin class="meta">{{thread.createdAt}} • {{thread.category}}</p>
-			<h4>{{thread.subject}}</h4>
-			<p top-margin class="message-body" *ngIf="thread.coverMessage.body">{{thread.coverMessage.body}}</p>
-		</ion-section-content>
-	</ion-section>
-	
-	<ion-section class="video-section" *ngIf="thread.coverMessage.video">
-		<figure aspect-16-9>		
-			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREgl3ITNktGVgUZH7lUIdHB0eNAzSw7l8-lxmC181VW4cpmwm0RA"/>
-			<iframe allowfullscreen [src]="thread.coverMessage.video.url | safeurl" frameborder="0" class="video-embed"></iframe>		
-		</figure>
-		<ion-section-content>
-			<p class="caption" *ngIf="thread.coverMessage.video.caption">{{thread.coverMessage.video.caption}}</p>		
+			<article>
+				<h4>{{thread.subject}}</h4>
+				<p top-margin class="message-body" [innerHTML]="thread.coverMessage.body" *ngIf="thread.coverMessage.body"></p>
+				<figure large-top-margin *ngIf="thread.coverMessage.video">
+					<iframe allowfullscreen [src]="thread.coverMessage.video.url | safeurl" frameborder="0" class="video-embed"></iframe>		
+				</figure>
+				<p large-top-margin [innerHTML]="thread.coverMessage.video.caption" *ngIf="thread.coverMessage.video && thread.coverMessage.video.caption"></p>					
+			</article>
 		</ion-section-content>
 	</ion-section>
 
@@ -52,7 +44,11 @@
 </ion-content>
 
 <ion-footer padding [keyboard-attach]="content">
-	<div flex>
+  <div *ngIf="!replyable">
+		<button ion-button block (click)="onReplyable()" *ngIf="thread.category != 'Video'">Reply for {{bountyProvider.formatBounty(thread.bounty)}}</button>
+		<button ion-button block (click)="onViewVideo()" *ngIf="thread.category == 'Video'">View Video for {{bountyProvider.formatBounty(thread.bounty)}}</button>  
+  </div>
+	<div flex *ngIf="replyable">
 	  <ion-textarea autosize [(ngModel)]="reply" placeholder="Write a message..."></ion-textarea>
     <button ion-button auto-height (click)="onReply()">Reply</button>	
 	</div>

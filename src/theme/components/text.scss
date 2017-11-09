@@ -18,7 +18,6 @@ h1, h2, h3, h4, h5, h6 {
   	font-weight: 300;
     line-height: $line-height-base;
     color: color($colors, dark-gray);
-    text-transform: uppercase;
   }
 
   sub {
@@ -55,7 +54,7 @@ h3 {
 	font-size: $h3-font-size !important;
 	
 	sub, sup {
-		font-size: 70%;
+		font-size: 65%;
 	}
 }
 
@@ -63,7 +62,7 @@ h4 {
 	font-size: $h4-font-size !important;
 	
 	sub, sup {
-		font-size: 75%;
+		font-size: 65%;
 	}
 }
 
@@ -120,6 +119,17 @@ span[ion-text] {
 
 strong, [strong] {
   font-weight: 700 !important;
+}
+
+article {
+	h1, h2, h3, h4, h5, h6 {
+		margin-bottom: $medium-space !important;
+	}
+	
+	p {
+		margin-bottom: $medium-space !important;
+		line-height: 1.4 !important;
+	} 
 }
 
 [skinny] {

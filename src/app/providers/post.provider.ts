@@ -3,8 +3,11 @@ import { Injectable } from "@angular/core";
 import { AccountProvider } from "./account.provider";
 
 import { Bounty } from "../domains/bounty";
+import { Image } from "../domains/image";
 import { Post } from "../domains/post";
 import { Video } from "../domains/video";
+
+import { StringUtils } from "../utils/string-utils";
 
 @Injectable()
 export class PostProvider {
@@ -35,10 +38,13 @@ export class PostProvider {
   private createUPortProject(): Post {
     let post = this.createPost("urn:post:uport-project",
                                "uPort is LIVE. Join our alpha.",
-                               "<p>uPort ID is your mobile identity for secure digital interactions. Download the app to register your self-sovereign identity, collect verifications, log in to applications, and digitally sign Ethereum transactions.</p><p>Our app is now live. Sign up to participate in our alpha test.</p><h4><a href='www.uport.me/signup'>Sign up for Alpha</a></h4>",
+                               "<p>Self-sovereign ID enables you to collect verifications, log-in without passwords, digitally sign transactions, and interact with Ethereum applications.</p><p>uPort ID is your mobile identity for secure digital interactions. Download the app to register your self-sovereign identity, collect verifications, log in to applications, and digitally sign Ethereum transactions.</p><p>Our app is now live. Sign up to participate in our alpha test.</p>",
+                               "Sign Up",
                                "Sign Up",
                                "urn:member:michael-sena",
                                "Nov 5, 2017");
+    
+    post.image = this.createImage("https://www.isport360.com/wp-content/uploads/2017/01/appstore-icon-mobile-retina.png");
     
     post.bounty = this.createBounty(10,
                                     275,
@@ -53,12 +59,13 @@ export class PostProvider {
   private createBitAboutBancor(): Post {
     let post = this.createPost("urn:post:bit-about-bancor",
                                "Introducing Bancor Protocol",
-                               "<p>Introducing the Bancor Protocol. Bancor introduces a revolutionary new mechanism to issue tokens, in which one currency can hold one or more other currencies in its reserve. The implications are profound. Much like the Dollar was backed by Gold, new digital currencies can now be backed by Ether, Bitcoin, or any other currency, meaning intrinsically tradable tokens. The White Paper and the Smart Contract are accessible at www.bancor.network.</p>",
-                               "Video",
+                               "<p>Bancor introduces a revolutionary new mechanism to issue tokens, in which one currency can hold one or more other currencies in its reserve.</p></p>The implications are profound. Much like the Dollar was backed by Gold, new digital currencies can now be backed by Ether, Bitcoin, or any other currency, meaning intrinsically tradable tokens.</p></p>The White Paper and the Smart Contract are accessible at <a href='www.bancor.network'>www.bancor.network</a>.</p>",
+                               "Video", 
+                               "View Video",
                                "urn:member:rita-urbach",
                                "Nov 4, 2017");
-    
-    post.video = this.createVideo("https://www.youtube.com/watch?v=P8EoAvWfFnY",
+     
+    post.video = this.createVideo("https://www.youtube.com/embed/P8EoAvWfFnY",
                                   "A Bit About Bancor",
                                   "The Bancor team shares the vision behind Bancor and a bit about how Smart Tokens work and what they mean for the future of communities.",
                                   "https://img.youtube.com/vi/P8EoAvWfFnY/0.jpg",
@@ -75,12 +82,15 @@ export class PostProvider {
   private createAirbnbSurvey(): Post {
     let post = this.createPost("urn:post:airbnb-survey",
                                "Give feedback on our new Airbnb homepage experience",
-                               "<h5>Airbnb’s Newly Refreshed and Minimalistic Look</h5> <p>In preparation for the Airbnb Open and the launch of City Hosts, Airbnb is gradually rolling out a new homepage design, with a simpler design and a strong focus on experiences as a key message.</p> <p>As for most of the changes rolled out by Airbnb, the new homepage has been released as an A/B tests and thus is not yet live for 100% of the traffic.</p> <p>To ensure you can view the new version, visit www.airbnb.com in incognito mode or clean your cookies until when you see it.</p> <p>Compared to the old version, the new homepage has a more condensed look, fewer sections and a clearer focus on the “live an experience” message that the company has been pushing more and more as the center of its brand identity.</p> <p>Try out the new homepage, and give us your feedback.</p> <h4><a href='#'>Give Feedback</a></h4>",
+                               "<p>In preparation for the Airbnb Open and the launch of City Hosts, Airbnb is gradually rolling out a new homepage design, with a simpler design and a strong focus on experiences as a key message.</p> <p>As for most of the changes rolled out by Airbnb, the new homepage has been released as an A/B tests and thus is not yet live for 100% of the traffic.</p> <p>To ensure you can view the new version, visit www.airbnb.com in incognito mode or clean your cookies until when you see it.</p> <p>Compared to the old version, the new homepage has a more condensed look, fewer sections and a clearer focus on the “live an experience” message that the company has been pushing more and more as the center of its brand identity.</p> <p>Try out the new homepage, and give us your feedback.</p>",
                                "Survey",
+                               "Take Survey",
                                "urn:member:kim-kamitani",
                                "Nov 2, 2017");
+    
+    post.image = this.createImage("https://tctechcrunch2011.files.wordpress.com/2014/07/symbol.jpg?w=655&zoom=2");
 
-     post.bounty = this.createBounty(25,
+    post.bounty = this.createBounty(25,
                                     72,
                                     100,
                                     "SURVEY");
@@ -94,6 +104,7 @@ export class PostProvider {
                      title: string,
                      body: string,
                      category: string,
+                     actionText: string,
                      createdBy: string,
                      createdAt: string) {
     let post = new Post();
@@ -102,6 +113,7 @@ export class PostProvider {
     post.title = title;
     post.body = body;
     post.category = category;
+    post.actionText = actionText;
     post.createdBy = this.accountProvider.getAccountByAccountUrn(createdBy);;
     post.createdAt = createdAt;
     
@@ -112,7 +124,7 @@ export class PostProvider {
                       title: string, 
                       caption: string,
                       thumbnailUrl: string,
-                      duration: string) {
+                      duration: string): Video {
     let video = new Video();
     
     video.url = url;
@@ -124,10 +136,19 @@ export class PostProvider {
     return video;
   }
   
+  private createImage(url: string): Image {
+    let image = new Image();
+    
+    image.urn = "urn:image:" + StringUtils.generateUUID();
+    image.url = url;
+    
+    return image;
+  }
+  
   private createBounty(value: number, 
                        viewCount: number,
                        viewLimit: number,
-                       condition: string) {
+                       condition: string): Bounty {
     let bounty = new Bounty();
     
     bounty.value = value;

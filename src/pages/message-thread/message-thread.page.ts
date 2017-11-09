@@ -2,6 +2,7 @@ import { Component, ViewChild } from "@angular/core";
 import { Content, NavController, NavParams } from "ionic-angular";
 
 import { AccountProvider } from "../../app/providers/account.provider";
+import { BountyProvider } from "../../app/providers/bounty.provider";
 
 import { MemberProfilePage } from "../member-profile/member-profile.page";
 
@@ -19,13 +20,16 @@ export class MessageThreadPage {
 
   public thread: Thread;
   public reply: string;
+  public replyable: boolean = false;
   
   @ViewChild(Content) content: Content;
   
   constructor(params: NavParams,
               private navController: NavController,
-              public accountProvider: AccountProvider) {
+              public accountProvider: AccountProvider,
+              public bountyProvider: BountyProvider) {
     this.thread = params.get("thread");
+    this.replyable = this.thread.messages.length > 0;
   }
   
   onViewAccountProfile(account: Account) {
@@ -49,6 +53,14 @@ export class MessageThreadPage {
         this.content.scrollToBottom();        
       }, 400);
     }
+  }
+  
+  onReplyable() {
+    this.replyable = true; 
+  }
+  
+  onViewVideo() {
+    alert("Looks like that's a mock..."); 
   }
 
   private clearReply() {
