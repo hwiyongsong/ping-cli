@@ -1,0 +1,12 @@
+main-page {
+	ion-content.main-menu {
+		ion-list.actions {
+			margin-top: $medium-space;
+			
+			button {
+				font-weight: 300;
+				font-size: 1.7rem;
+			}
+		}
+	}
+}

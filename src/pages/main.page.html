@@ -1,20 +1,36 @@
 <ion-menu [content]="mainContent">
-  <ion-content padding>
-    <ion-list>
-      <button ion-item (click)="openExplore()">
+  <ion-content padding class="main-menu">
+  	<ion-item no-lines>  	
+ 			<ion-avatar item-start large>
+ 				<img [src]="accountProvider.currentAccount.profileImage.url"/>
+ 			</ion-avatar>
+ 			<h4>{{accountProvider.currentAccount.getFullName()}}</h4>
+ 			<p class="meta"><span ion-text color="secondary">{{accountProvider.currentAccount.formatBalance()}}</span> • {{accountProvider.currentAccount.formatKarmaSize()}} karma</p>
+  	</ion-item>
+    <ion-list class="actions">
+      <button ion-item (click)="onViewExplore()">
         Explore
       </button>
-      <button ion-item (click)="openMessages()">
-        Messages
+      <button ion-item (click)="onViewMyNetwork()">
+        My Network
       </button>
-      <button ion-item (click)="openPaymentHistory()">
-        Payments
+      <button ion-item (click)="onViewMessages()">
+        Messages <ion-badge>{{inboxProvider.currentInbox.threads.length}}</ion-badge>
       </button>
-      <button ion-item (click)="openMyAccount()">
-        My Account
+      <button ion-item (click)="onViewPaymentsReceived()">
+        Payments Received
+      </button>
+      <button ion-item (click)="onViewSettings()">
+        Settings
       </button>
     </ion-list>
   </ion-content>
+  <ion-footer>
+  	<ion-buttons>
+	    <button ion-button small skinny clear>Configurations</button>
+	    <button ion-button small skinny clear>Help</button>  	
+  	</ion-buttons>
+  </ion-footer>
 </ion-menu>
 
 <ion-nav #mainContent [root]="rootPage" swipeBackEnabled="false"></ion-nav>

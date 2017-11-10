@@ -60,6 +60,8 @@ export class AccountProvider {
                                          "Hartman",
                                          "Staff Software Engineer at Linkedin",
                                          "Passionate about promoting an open and decentralized economy in the modern era.",
+                                         115,
+                                         5250,
                                          "https://media.licdn.com/media/AAEAAQAAAAAAAAqtAAAAJDM4MTg0MmQwLTQ4ZTktNDQxZC1hNGI5LWIxOGVmODNiYzEzNw.jpg");
     
     account.experiences.push(this.createMockExperience("urn:company:linkedin",
@@ -99,6 +101,8 @@ export class AccountProvider {
                                          "Conner",
                                          "HR Manager at Uber",
                                          "Building the best teams to build the ultimate self-driving vehicles. Also crazy about robotics and ping pong.",
+                                         232,
+                                         8923,
                                          "https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAMVAAAAJDhhNDJlOGY1LTg4NmQtNGFmOC1hMGI2LTRjY2ViMjNhNDZmNQ.jpg");
     
     account.relationship = this.createMockRelationship("2nd",
@@ -143,6 +147,8 @@ export class AccountProvider {
                                          "Lapcokova",
                                          "Technical Recruiting Lead at Facebook",
                                          "My passion lies in finding exceptional talent, building candidate and client relationships and thinking outside the box to solve challenges.",
+                                         392,
+                                         9820,
                                          "https://media.licdn.com/media/AAEAAQAAAAAAAAboAAAAJGEwMTFhYWU2LTRmODgtNDFlYi1iOGM0LTJhYjRjZjE3YjdlMQ.jpg");
     
     account.relationship = this.createMockRelationship("3rd",
@@ -198,6 +204,8 @@ export class AccountProvider {
                                          "Kamitani",
                                          "Talent Recruiter at Airbnb",
                                          "A fun loving talent builder and food warrior in the Silicon Valley.",
+                                         168,
+                                         8122,
                                          "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/5/000/1c6/2ca/0ed27c5.jpg");
     
     account.relationship = this.createMockRelationship("2nd",
@@ -243,6 +251,8 @@ export class AccountProvider {
                                          "Gupta",
                                          "Head of Global Vehicle Solutions Engineering at Uber",
                                          "I enjoy building awesome software and teams to build new products and technology that will make our lives easier and allow us to accomplish more than what we\'re able to do today. <br/><br/>I\'m excited about building highly scalable back-end systems that serve millions of users each day. Just the same, I\'m also excited about building mobile apps and front-end products that delight us each day.",
+                                         295,
+                                         4504,
                                          "https://media.licdn.com/media/p/6/005/06c/1ee/39b4187.jpg");
     
     account.relationship = this.createMockRelationship("1st",
@@ -281,6 +291,8 @@ export class AccountProvider {
                                          "Clemmens",
                                          "Engineering and Product at Uber",
                                          "Currently leading UberEATS Eater engineering. Responsible for product and software engineering strategy across multiple teams, developing high performing leaders, and most importantly building a diverse and inclusive work culture.",
+                                         128,
+                                         4594,
                                          "https://media.licdn.com/media/AAEAAQAAAAAAAAsAAAAAJGFiOGM5NjZiLWI5NTktNDk1Mi1hNzI3LWYzMjA1MjQzMzZiZA.jpg");
     
     account.relationship = this.createMockRelationship("2nd",
@@ -326,6 +338,8 @@ export class AccountProvider {
                                          "Sena",
                                          "Product Lead at uPort",
                                          "Michael Sena manages product spokes and enterprise partnerships at Consensys. Michael brings a diverse background in product management, technology consulting, capital markets, and political economics to the blockchain. In previous roles, he designed and deployed consumer and enterprise technologies for some of the largest organizations in the world, managed a portfolio of international financial securities, and launched a startup. At Consensys, Michael is using these foundational experiences to unlock value on a global scale by building applications for the emerging blockchain economy. He believes that exponential blockchain adoption is only a beautiful Dapp away and is passionate about getting these products into the hands of people.<br/><br/>For business opportunities, please email michael.sena@consensys.net",
+                                         187,
+                                         4671,
                                          "https://media.licdn.com/media/AAEAAQAAAAAAAAh6AAAAJDhjNWIxNzhjLWU2NTgtNGIwNy1hNTExLWFiZWU1YWNlMDA5OA.jpg");
   
     account.experiences.push(this.createMockExperience("urn:company:uport",
@@ -364,6 +378,8 @@ export class AccountProvider {
                                          "Urbach",
                                          "Marketing Manager at Bancor",
                                          "I am a results driven - business oriented professional who is a fast learner and adopter of new technologies. I am motivated by strategic planning, creative execution and data-driven decisions.",
+                                         316,
+                                         8936,
                                          "https://media.licdn.com/media/p/3/005/04b/1af/2b7fe97.jpg");
     
     account.relationship = this.createMockRelationship("2nd",
@@ -400,6 +416,8 @@ export class AccountProvider {
                             lastName: string,
                             headline: string,
                             description: string,
+                            connectionSize: number,
+                            karmaSize: number,
                             profileImageUrl: string): Account {
     let account = new Account();
     
@@ -408,6 +426,8 @@ export class AccountProvider {
     account.lastName = lastName;
     account.headline = headline;
     account.description = description;
+    account.connectionSize = connectionSize;
+    account.karmaSize = karmaSize;
     account.profileImage = new Image();
     account.profileImage.urn = "urn:image:" + StringUtils.generateUUID();
     account.profileImage.url = profileImageUrl;

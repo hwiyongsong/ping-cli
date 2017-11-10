@@ -14,7 +14,7 @@ export class ChromeBlock {
   }
   
   openMessages() {
-    this.pageProvider.mainPage.openMessages();
+    this.pageProvider.mainPage.onViewMessages();
   }
   
 }

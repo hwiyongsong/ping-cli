@@ -5,6 +5,8 @@ import { Interest } from "./interest";
 import { Rating } from "./rating";
 import { Relationship } from "./relationship";
 
+import { NumberUtils } from "../utils/number-utils";
+
 export class Account {
   
   public urn: string;
@@ -14,6 +16,9 @@ export class Account {
   public description: string;
   public profileImage: Image;
   public rating: Rating;
+  public connectionSize: number;
+  public karmaSize: number;
+  public balance: number = 315;
   public relationship: Relationship;
   public experiences: Array<Experience> = [];
   public educations: Array<Education> = [];
@@ -29,6 +34,14 @@ export class Account {
     }
     
     return null;
+  }
+  
+  formatKarmaSize() {
+    return NumberUtils.format(this.karmaSize); 
+  }
+  
+  formatBalance() {
+    return "$" + NumberUtils.format(this.balance); 
   }
   
 }
