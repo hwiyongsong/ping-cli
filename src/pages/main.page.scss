@@ -1,5 +1,9 @@
 main-page {
 	ion-content.main-menu {
+		.currency {
+			font-size: 1.7rem;
+		}
+		
 		ion-list.actions {
 			margin-top: $medium-space;
 			

@@ -35,5 +35,5 @@
 </ion-content>
 
 <ion-footer padding>
-  <button ion-button block (click)="onAction()">{{post.actionText}} for {{bountyProvider.formatBounty(post.bounty)}}</button>	
+  <button ion-button block (click)="onAction()" class="currency" [innerHTML]="currencyProvider.format(post.bounty.value, post.actionText + ' for ')"></button>	
 </ion-footer>

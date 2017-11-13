@@ -29,6 +29,23 @@ export class PostProvider {
     return null;
   }
   
+  getPostsForCommunity(communityUrn: string): Post[] {
+    if (communityUrn == "urn:community:blockchain") {
+      return [
+        this.getPostByPostUrn("urn:post:uport-project"),
+        this.getPostByPostUrn("urn:post:bit-about-bancor")
+      ];
+    }
+    
+    if (communityUrn == "urn:community:ui") {
+      return [
+        this.getPostByPostUrn("urn:post:airbnb-survey")
+      ];
+    }
+    
+    return [];
+  }
+  
   private initMockPosts() {
     this.mockPosts.push(this.createUPortProject());
     this.mockPosts.push(this.createBitAboutBancor());

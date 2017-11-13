@@ -2,13 +2,13 @@ import { Component } from "@angular/core";
 import { MenuController, NavParams } from "ionic-angular";
 
 import { AccountProvider } from "../app/providers/account.provider";
+import { CurrencyProvider } from "../app/providers/currency.provider";
 import { InboxProvider } from "../app/providers/inbox.provider";
 import { PageProvider } from "../app/providers/page.provider";
 
+import { ConfigurationPage } from "./configuration/configuration.page";
 import { ExplorePage } from "./explore/explore.page";
 import { MessageBoxPage } from "./message-box/message-box.page";
-import { MyAccountPage } from "./my-account/my-account.page";
-import { PaymentHistoryPage } from "./payment-history/payment-history.page";
 
 @Component({
   selector: "main-page",
@@ -21,6 +21,7 @@ export class MainPage {
   constructor(params: NavParams,
               private menuController: MenuController,
               public accountProvider: AccountProvider,
+              public currencyProvider: CurrencyProvider,
               public inboxProvider: InboxProvider,
               pageProvider: PageProvider) {
     this.rootPage = params.get("page") || ExplorePage;
@@ -46,6 +47,10 @@ export class MainPage {
 
   onViewSettings() {
     alert("Looks like that's a mock...");
+  }
+  
+  onViewConfiguration() {
+    this.open(ConfigurationPage);
   }
   
   private open(page: any) {

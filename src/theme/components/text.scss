@@ -15,7 +15,7 @@ h1, h2, h3, h4, h5, h6 {
   	display: block;
     width: 100%;
   	top: 0;
-  	font-weight: 300;
+  	font-weight: 500;
     line-height: $line-height-base;
     color: color($colors, dark-gray);
   }
@@ -87,6 +87,7 @@ p {
   margin: 0;
   font-weight: 300;
   font-size: $font-size-base;
+  line-height: $line-height-base;
   
   [color="primary"] {
   	color: color($colors, primary);
@@ -100,14 +101,6 @@ p {
     margin-top: -0.2em !important;
   }
   
-  &[small] {
-  	font-size: 85% !important;
-  }
-  
-  &[large] {
-  	font-size: 115% !important;
-  }
-  
   ion-icon {
   	font-size: 1.0em;
   }
@@ -119,6 +112,10 @@ span[ion-text] {
 
 strong, [strong] {
   font-weight: 700 !important;
+}
+
+small {
+	font-size: 80% !important;
 }
 
 article {
@@ -149,11 +146,7 @@ article {
 }
 
 b {
-  font-weight: 600 !important;
-}
-
-small {
-  font-size: 85% !important;
+  font-weight: 700 !important;
 }
 
 [text-shadow] {
@@ -191,7 +184,7 @@ small {
 
 p.bounty {
 	font-size: 1.7rem !important;
-	color: color($colors, secondary) !important;
+	color: color($colors, primary) !important;
 }
 
 .excerpt, .excerpt * {

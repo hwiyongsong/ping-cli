@@ -1,6 +1,6 @@
 import { Component, Input } from "@angular/core";
 
-import { BountyProvider } from "../../app/providers/bounty.provider";
+import { CurrencyProvider } from "../../app/providers/currency.provider";
 
 import { List } from "../../app/domains/list";
 
@@ -16,7 +16,7 @@ export class ListBlock {
   @Input()
   public layout: string;
   
-  constructor(public bountyProvider: BountyProvider) {
+  constructor(public currencyProvider: CurrencyProvider) {
     // Do nothing.
   }
   

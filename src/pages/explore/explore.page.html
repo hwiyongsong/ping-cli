@@ -6,17 +6,25 @@
 </ion-header>
 
 <ion-content>
-	<ion-section top-margin>
+	<ion-section large-top-margin>
 		<ion-section-header>
-			<h3>Community Posts</h3>
+			<h4><sup>Since you're following</sup>Blockchain Community</h4>
 		</ion-section-header>
 		<ion-section-content no-padding>
-			<post-block [post]="post" layout="FEED" *ngFor="let post of postProvider.mockPosts"></post-block>
+			<post-block [post]="post" layout="FEED" *ngFor="let post of postProvider.getPostsForCommunity('urn:community:blockchain')"></post-block>
 		</ion-section-content>
 	</ion-section>
-	<ion-section>
+	<ion-section xlarge-top-margin>
 		<ion-section-header>
-			<h3>Reach Out</h3>
+			<h4><sup>Since you're following</sup>UI Design Community</h4>
+		</ion-section-header>
+		<ion-section-content no-padding>
+			<post-block [post]="post" layout="FEED" *ngFor="let post of postProvider.getPostsForCommunity('urn:community:ui')"></post-block>
+		</ion-section-content>
+	</ion-section>
+	<ion-section xlarge-top-margin>
+		<ion-section-header>
+			<h4><sup>Send a message</sup>Popular Lists</h4>
 		</ion-section-header>
 		<ion-slides slidesPerView="auto" spaceBetween="8">
 		  <ion-slide *ngFor="let list of listProvider.mockLists">

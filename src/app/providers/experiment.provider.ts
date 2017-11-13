@@ -3,14 +3,16 @@ import { Injectable } from "@angular/core";
 @Injectable()
 export class ExperimentProvider {
     
-  public currencyExperiment: string;
+  public tokenExperiment: string; // CAN BE 'UTILITY', 'LICENSE', or 'PERSONAL'.
+  public currencyExperiement: string; // CAN BE 'PNG', 'ETH', 'BTC', or 'DOLLAR'.
   
   constructor() { 
     this.initExperiments();
   }
   
   private initExperiments() {
-    this.currencyExperiment = "DOLLARS";
+    this.tokenExperiment = "UTILITY";
+    this.currencyExperiement = "PNG";
   }
   
 }

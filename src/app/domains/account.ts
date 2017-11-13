@@ -18,7 +18,7 @@ export class Account {
   public rating: Rating;
   public connectionSize: number;
   public karmaSize: number;
-  public balance: number = 315;
+  public balance: number = 325;
   public relationship: Relationship;
   public experiences: Array<Experience> = [];
   public educations: Array<Education> = [];

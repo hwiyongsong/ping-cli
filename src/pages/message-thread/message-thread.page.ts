@@ -2,7 +2,7 @@ import { Component, ViewChild } from "@angular/core";
 import { Content, NavController, NavParams } from "ionic-angular";
 
 import { AccountProvider } from "../../app/providers/account.provider";
-import { BountyProvider } from "../../app/providers/bounty.provider";
+import { CurrencyProvider } from "../../app/providers/currency.provider";
 
 import { MemberProfilePage } from "../member-profile/member-profile.page";
 
@@ -27,7 +27,7 @@ export class MessageThreadPage {
   constructor(params: NavParams,
               private navController: NavController,
               public accountProvider: AccountProvider,
-              public bountyProvider: BountyProvider) {
+              public currencyProvider: CurrencyProvider) {
     this.thread = params.get("thread");
     this.replyable = this.thread.messages.length > 0;
   }

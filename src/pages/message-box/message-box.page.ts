@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { NavController } from "ionic-angular";
 
-import { BountyProvider } from "../../app/providers/bounty.provider";
+import { CurrencyProvider } from "../../app/providers/currency.provider";
 import { InboxProvider } from "../../app/providers/inbox.provider";
 
 import { MemberProfilePage } from "../member-profile/member-profile.page";
@@ -18,7 +18,7 @@ import { Thread } from "../../app/domains/thread";
 export class MessageBoxPage {
 
   constructor(private navController: NavController, 
-              public bountyProvider: BountyProvider,
+              public currencyProvider: CurrencyProvider,
               public inboxProvider: InboxProvider) {
   }
   

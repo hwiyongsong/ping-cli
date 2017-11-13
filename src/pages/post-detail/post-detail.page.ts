@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { NavController, NavParams } from "ionic-angular";
 
-import { BountyProvider } from "../../app/providers/bounty.provider";
+import { CurrencyProvider } from "../../app/providers/currency.provider";
 
 import { Post } from "../../app/domains/post";
 
@@ -17,7 +17,7 @@ export class PostDetailPage {
   
   constructor(params: NavParams, 
               private navController: NavController,
-              public bountyProvider: BountyProvider) {
+              public currencyProvider: CurrencyProvider) {
     this.post = params.get("post");
   }
   

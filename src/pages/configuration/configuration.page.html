@@ -1,0 +1,32 @@
+<ion-header>
+	<chrome-block></chrome-block>
+</ion-header>
+
+<ion-content>
+	<ion-section>
+		<ion-section-header>
+			<h4>Experiments</h4>
+		</ion-section-header>
+		<ion-section-content>
+			<ion-list>
+				<ion-item>
+					<ion-label>Token Type</ion-label>
+					<ion-select [(ngModel)]="experimentProvider.tokenExperiment" mode="md">
+				    <ion-option value="UTILITY">Utility</ion-option>
+				    <ion-option value="LICENSE">License</ion-option>
+				    <ion-option value="PERSONAL">Personal</ion-option>
+				  </ion-select>
+				</ion-item>
+				<ion-item>
+					<ion-label>Currency</ion-label>
+					<ion-select [(ngModel)]="experimentProvider.currencyExperiement" mode="md">
+				    <ion-option value="PNG">PNG</ion-option>
+				    <ion-option value="ETH">ETH</ion-option>
+				    <ion-option value="BTC">BTC</ion-option>
+				    <ion-option value="DOLLAR">Dollar</ion-option>
+				  </ion-select>
+				</ion-item>
+			</ion-list>
+		</ion-section-content>
+	</ion-section>
+</ion-content>

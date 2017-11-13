@@ -45,8 +45,8 @@
 
 <ion-footer padding [keyboard-attach]="content">
   <div *ngIf="!replyable">
-		<button ion-button block (click)="onReplyable()" *ngIf="thread.category != 'Video'">Reply for {{bountyProvider.formatBounty(thread.bounty)}}</button>
-		<button ion-button block (click)="onViewVideo()" *ngIf="thread.category == 'Video'">View Video for {{bountyProvider.formatBounty(thread.bounty)}}</button>  
+		<button ion-button block class="currency" (click)="onReplyable()" [innerHTML]="currencyProvider.format(thread.bounty.value, 'Reply for ')" *ngIf="thread.category != 'Video'"></button>
+		<button ion-button block class="currency" (click)="onViewVideo()" [innerHTML]="currencyProvider.format(thread.bounty.value, 'View Video for ')" *ngIf="thread.category == 'Video'"></button>  
   </div>
 	<div flex *ngIf="replyable">
 	  <ion-textarea autosize [(ngModel)]="reply" placeholder="Write a message..."></ion-textarea>
