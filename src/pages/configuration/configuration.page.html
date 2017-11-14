@@ -14,13 +14,11 @@
 					<ion-select [(ngModel)]="experimentProvider.tokenExperiment" mode="md">
 				    <ion-option value="UTILITY">Utility</ion-option>
 				    <ion-option value="LICENSE">License</ion-option>
-				    <ion-option value="PERSONAL">Personal</ion-option>
 				  </ion-select>
 				</ion-item>
-				<ion-item>
+				<ion-item *ngIf="experimentProvider.tokenExperiment == 'LICENSE'">
 					<ion-label>Currency</ion-label>
 					<ion-select [(ngModel)]="experimentProvider.currencyExperiement" mode="md">
-				    <ion-option value="PNG">PNG</ion-option>
 				    <ion-option value="ETH">ETH</ion-option>
 				    <ion-option value="BTC">BTC</ion-option>
 				    <ion-option value="DOLLAR">Dollar</ion-option>
