@@ -1,7 +1,7 @@
 <ion-card class="compact">
 	<figure>
 		<img [src]="list.profileImage.url"/>
-		<span class="currency" [innerHTML]="currencyProvider.format(list.bounty.value, 'Pay ', ' per reply')"></span>
+		<span class="currency" [innerHTML]="currencyProvider.format(list.incentive.value, 'Pay ', ' per reply')"></span>
 	</figure>
 	<ion-card-content>
 		<h5>{{list.name}}</h5>

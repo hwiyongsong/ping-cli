@@ -8,7 +8,7 @@
 	    <p class="meta">{{post.createdBy.headline}}</p>
 			<p class="meta">{{post.createdAt}}</p>
 			<ion-note item-end item-top>
-	  		<p class="currency" [innerHTML]="currencyProvider.format(post.bounty.value)"></p>
+	  		<p class="currency" [innerHTML]="currencyProvider.format(post.incentive.value)"></p>
 	  	</ion-note>
   	</ion-item>
   	<ion-item *ngIf="post.organizational">
@@ -18,7 +18,7 @@
 	    <h6 flex-center class="created-by">{{post.createdBy.getCurrentCompany().name}}</h6>
 			<p class="meta">{{post.createdAt}}</p> 
 			<ion-note item-end item-top>
-	  		<p class="currency" [innerHTML]="currencyProvider.format(post.bounty.value)"></p>
+	  		<p class="currency" [innerHTML]="currencyProvider.format(post.incentive.value)"></p>
 	  	</ion-note> 	
   	</ion-item>
 	</ion-card-header>

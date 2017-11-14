@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 
-import { Bounty } from "../domains/bounty";
+import { Incentive } from "../domains/incentive";
 import { Image } from "../domains/image";
 import { List } from "../domains/list";
 
@@ -31,7 +31,7 @@ export class ListProvider {
                                "50+",
                                "https://avatars0.githubusercontent.com/u/424443?s=460&v=4");
     
-    list.bounty = this.createBounty(100);
+    list.incentive = this.createIncentive(100);
     
     return list;
   }
@@ -43,7 +43,7 @@ export class ListProvider {
                                "75+",
                                "https://avatars1.githubusercontent.com/u/6844772?s=88&v=4");
     
-    list.bounty = this.createBounty(50);
+    list.incentive = this.createIncentive(50);
     
     return list;
   }
@@ -55,7 +55,7 @@ export class ListProvider {
                                "150+",
                                "https://avatars1.githubusercontent.com/u/302001?s=88&v=4");
     
-    list.bounty = this.createBounty(30);
+    list.incentive = this.createIncentive(30);
     
     return list;
   }
@@ -67,7 +67,7 @@ export class ListProvider {
                                "200+",
                                "https://avatars1.githubusercontent.com/u/14793288?s=400&v=4");
     
-    list.bounty = this.createBounty(10);
+    list.incentive = this.createIncentive(10);
     
     return list;
   }
@@ -79,7 +79,7 @@ export class ListProvider {
                                "150+",
                                "https://avatars0.githubusercontent.com/u/22736?s=88&v=4");
     
-    list.bounty = this.createBounty(10);
+    list.incentive = this.createIncentive(10);
     
     return list;
   }
@@ -91,7 +91,7 @@ export class ListProvider {
                                "50+",
                                "https://avatars0.githubusercontent.com/u/17126954?s=88&v=4");
     
-    list.bounty = this.createBounty(50);
+    list.incentive = this.createIncentive(50);
     
     return list;
   }
@@ -117,13 +117,13 @@ export class ListProvider {
     return list;
   }
   
-  private createBounty(value: number) {
-    let bounty = new Bounty();
+  private createIncentive(value: number) {
+    let incentive = new Incentive();
     
-    bounty.value = value;
-    bounty.condition = "REPLY";
+    incentive.value = value;
+    incentive.condition = "REPLY";
     
-    return bounty;
+    return incentive;
   }
   
 }

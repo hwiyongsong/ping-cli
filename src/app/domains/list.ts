@@ -1,5 +1,5 @@
-import { Bounty } from "./bounty";
 import { Image } from "./image";
+import { Incentive } from "./incentive";
 
 export class List {
  
@@ -7,7 +7,7 @@ export class List {
   public name: string;
   public description: string;
   public size: string;
-  public bounty: Bounty;
+  public incentive: Incentive;
   public profileImage: Image;
   
 }

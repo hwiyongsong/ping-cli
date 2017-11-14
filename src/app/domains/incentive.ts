@@ -1,4 +1,4 @@
-export class Bounty {
+export class Incentive {
  
   public value: number;
   public viewCount: number;

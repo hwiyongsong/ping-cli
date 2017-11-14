@@ -2,8 +2,8 @@ import { Injectable } from "@angular/core";
 
 import { AccountProvider } from "./account.provider";
 
-import { Bounty } from "../domains/bounty";
 import { Image } from "../domains/image";
+import { Incentive } from "../domains/incentive";
 import { Post } from "../domains/post";
 import { Video } from "../domains/video";
 
@@ -63,7 +63,7 @@ export class PostProvider {
     
     post.image = this.createImage("https://www.isport360.com/wp-content/uploads/2017/01/appstore-icon-mobile-retina.png");
     
-    post.bounty = this.createBounty(10,
+    post.incentive = this.createIncentive(10,
                                     275,
                                     500,
                                     "REGISTER");
@@ -88,7 +88,7 @@ export class PostProvider {
                                   "https://img.youtube.com/vi/P8EoAvWfFnY/0.jpg",
                                   "3:44");
     
-    post.bounty = this.createBounty(2,
+    post.incentive = this.createIncentive(2,
                                     323,
                                     500,
                                     "VIEW");
@@ -107,7 +107,7 @@ export class PostProvider {
     
     post.image = this.createImage("https://tctechcrunch2011.files.wordpress.com/2014/07/symbol.jpg?w=655&zoom=2");
 
-    post.bounty = this.createBounty(25,
+    post.incentive = this.createIncentive(25,
                                     72,
                                     100,
                                     "SURVEY");
@@ -162,18 +162,18 @@ export class PostProvider {
     return image;
   }
   
-  private createBounty(value: number, 
+  private createIncentive(value: number, 
                        viewCount: number,
                        viewLimit: number,
-                       condition: string): Bounty {
-    let bounty = new Bounty();
+                       condition: string): Incentive {
+    let incentive = new Incentive();
     
-    bounty.value = value;
-    bounty.viewCount = viewCount;
-    bounty.viewLimit = viewLimit;
-    bounty.condition = condition
+    incentive.value = value;
+    incentive.viewCount = viewCount;
+    incentive.viewLimit = viewLimit;
+    incentive.condition = condition
     
-    return bounty;
+    return incentive;
   }
   
 }

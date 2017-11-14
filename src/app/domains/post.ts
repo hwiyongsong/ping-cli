@@ -1,6 +1,6 @@
 import { Account } from "./account";
 import { Image } from "./image";
-import { Bounty } from "./bounty";
+import { Incentive } from "./incentive";
 import { Video } from "./video";
 
 export class Post {
@@ -9,7 +9,7 @@ export class Post {
   public title: string;
   public body: string;
   public category: string;
-  public bounty: Bounty;
+  public incentive: Incentive;
   public image: Image;
   public video: Video;
   public organizational: boolean = false;

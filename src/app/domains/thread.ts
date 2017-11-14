@@ -1,5 +1,5 @@
 import { Account } from "./account";
-import { Bounty } from "./bounty";
+import { Incentive } from "./incentive";
 import { Message } from "./message";
 
 export class Thread {
@@ -8,7 +8,7 @@ export class Thread {
   public from: Account;
   public subject: string;
   public category: string;
-  public bounty: Bounty;
+  public incentive: Incentive;
   public createdAt: string;
   public coverMessage: Message;
   public messages: Array<Message> = [];
