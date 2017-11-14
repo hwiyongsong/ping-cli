@@ -29,17 +29,23 @@ export class PostProvider {
     return null;
   }
   
-  getPostsForCommunity(communityUrn: string): Post[] {
-    if (communityUrn == "urn:community:blockchain") {
+  getPostsFor(urn: string): Post[] {
+    if (urn == "urn:community:blockchain") {
       return [
         this.getPostByPostUrn("urn:post:uport-project"),
         this.getPostByPostUrn("urn:post:bit-about-bancor")
       ];
     }
     
-    if (communityUrn == "urn:community:ui") {
+    if (urn == "urn:community:ui") {
       return [
         this.getPostByPostUrn("urn:post:airbnb-survey")
+      ];
+    }
+    
+    if (urn == "urn:community:your-network") {
+      return [
+        this.getPostByPostUrn("urn:post:pingme-job-referral")
       ];
     }
     
@@ -50,6 +56,24 @@ export class PostProvider {
     this.mockPosts.push(this.createUPortProject());
     this.mockPosts.push(this.createBitAboutBancor());
     this.mockPosts.push(this.createAirbnbSurvey());
+    this.mockPosts.push(this.createPingMeJobReferral());
+  }
+  
+  private createPingMeJobReferral(): Post {
+    let post = this.createPost("urn:post:pingme-job-referral",
+                               "Referral bonus for full-stack software engineer at PingMe.",
+                               "<p>Hi friends...I am looking for a solid full-stack software engineer to be part of PingMe.</p> <p>We are offering a <strong>referral bonus of $750</strong> if you can help us find a candidate who converts to a full-time hire.</p> <h6>Job Description</h6> <p>PingMe is looking for a talented full-stack software engineer with strong backend and web development experience to be part of the PingMe platform solutions. Candidate should have a passion for building amazing user experience and a desire to question all assumptions on the status-quo to build a new peer-to-peer attention economy.</p> <h6>Desired Qualifications</h6> <ul> <li>BS/MS degree, preferably in Computer Science or related field.</li> <li>Proven work experience in software development.</li> <li>Competency in designing scalable and performant backend architecture.</li> <li>2+ years experience with Java or similar backend programming language.</li> <li>2+ years experience with web development.</li> <li>Experience with Solidity and smart contract is a plus.</li> <li>Passion for building an open, transparent, peer-to-peer economy.</li> </ul>",
+                               "Referral Bonus",
+                               "Refer a Candidate",
+                               "urn:member:hwi-yong-song",
+                               "Nov 8, 2017");
+    
+    post.incentive = this.createIncentive(750,
+                                    0,
+                                    1,
+                                    "REFERRAL");
+    
+    return post;
   }
   
   private createUPortProject(): Post {

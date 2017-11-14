@@ -6,12 +6,20 @@
 </ion-header>
 
 <ion-content>
-	<ion-section large-top-margin>
+	<ion-section top-margin>
+		<ion-section-header>
+			<h4><sup>Trending</sup>Posts from Your Network</h4>
+		</ion-section-header>
+		<ion-section-content no-padding>
+			<post-block [post]="post" layout="FEED" *ngFor="let post of postProvider.getPostsFor('urn:community:your-network')"></post-block>
+		</ion-section-content>
+	</ion-section>
+	<ion-section xlarge-top-margin>
 		<ion-section-header>
 			<h4><sup>Since you're following</sup>Blockchain Community</h4>
 		</ion-section-header>
 		<ion-section-content no-padding>
-			<post-block [post]="post" layout="FEED" *ngFor="let post of postProvider.getPostsForCommunity('urn:community:blockchain')"></post-block>
+			<post-block [post]="post" layout="FEED" *ngFor="let post of postProvider.getPostsFor('urn:community:blockchain')"></post-block>
 		</ion-section-content>
 	</ion-section>
 	<ion-section xlarge-top-margin>
@@ -19,7 +27,7 @@
 			<h4><sup>Since you're following</sup>UI Design Community</h4>
 		</ion-section-header>
 		<ion-section-content no-padding>
-			<post-block [post]="post" layout="FEED" *ngFor="let post of postProvider.getPostsForCommunity('urn:community:ui')"></post-block>
+			<post-block [post]="post" layout="FEED" *ngFor="let post of postProvider.getPostsFor('urn:community:ui')"></post-block>
 		</ion-section-content>
 	</ion-section>
 	<ion-section xlarge-top-margin>

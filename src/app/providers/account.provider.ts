@@ -52,6 +52,7 @@ export class AccountProvider {
     this.mockAccounts.push(this.createFrankClemmens());
     this.mockAccounts.push(this.createRitaUrbach());
     this.mockAccounts.push(this.createMichaelSena());
+    this.mockAccounts.push(this.createHwiYongSong());
   }
   
   private createScottPredmore(): Account {
@@ -91,6 +92,59 @@ export class AccountProvider {
     account.interests.push(this.createMockInterest("urn:interest:ethereum"));
     account.interests.push(this.createMockInterest("urn:interest:bitcoin"));
     account.interests.push(this.createMockInterest("urn:interest:ted-talk"));
+    
+    return account;
+  }
+  
+  private createHwiYongSong(): Account {
+    let account = this.createMockAccount("urn:member:hwi-yong-song",
+                                         "Hwi Yong",
+                                         "Song",
+                                         "Technical Co-founder at PingMe",
+                                         "Always imagining about how to enact social change, to bring about opportunity and fairness to the public interest.",
+                                         215,
+                                         9475,
+                                         "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/3/000/1ad/294/2a81645.jpg");
+    
+    account.relationship = this.createMockRelationship("2nd",
+                                                       21,
+                                                       "Linkedin",
+                                                       "University of California, Berkeley");
+    
+    account.experiences.push(this.createMockExperience("urn:company:pingme",
+                                                       "Technical Co-founder",
+                                                       "Leading the technical and design effort to build a new decentralized attention market on the Ethereum blockchain.",
+                                                       "Jul 2017",
+                                                       "Present"));
+    
+    account.experiences.push(this.createMockExperience("urn:company:piicked",
+                                                       "Technical Co-founder",
+                                                       "Wearing many hats in designing and building a personalized food app, to help people find healthy food options for their unique dietary profile.",
+                                                       "Apr 2015",
+                                                       "Present"));
+    
+    account.experiences.push(this.createMockExperience("urn:company:linkedin",
+                                                       "Staff Software Engineer",
+                                                       "Team lead for Homepage and Network Updates team. Knowledgeable about all aspects of LinkedIn architecture and responsible for leading many projects/initiatives.",
+                                                       "Apr 2010",
+                                                       "Apr 2015"));
+    
+    account.experiences.push(this.createMockExperience("urn:company:demandtec",
+                                                       "Lead Software Engineer",
+                                                       "Lead developer in the Promotion team. Expert knowledge in system architecture, big data, prediction modeling, and database design/optimization.",
+                                                       "Jun 2006",
+                                                       "Apr 2010"));
+    
+    account.educations.push(this.createMockEducation("urn:school:berkeley",
+                                                     "Bachelor of Science, Electrical Engineering & Computer Science",
+                                                     "",
+                                                     "2000",
+                                                     "2004"));
+    
+    
+    account.interests.push(this.createMockInterest("urn:interest:ethereum"));
+    account.interests.push(this.createMockInterest("urn:interest:ted-talk"));
+    account.interests.push(this.createMockInterest("urn:interest:game-of-thrones"));
     
     return account;
   }

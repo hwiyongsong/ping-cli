@@ -5,6 +5,7 @@ import { CurrencyProvider } from "../../app/providers/currency.provider";
 
 import { Post } from "../../app/domains/post";
 
+import { MemberProfilePage } from "../../pages/member-profile/member-profile.page";
 import { PostDetailPage } from "../../pages/post-detail/post-detail.page";
 
 @Component({
@@ -24,9 +25,15 @@ export class PostBlock {
     // Do nothing.
   }
   
-  public viewPostDetail() {
+  onViewPostDetail() {
     this.navController.push(PostDetailPage, {
       "post": this.post  
+    });
+  }
+  
+  onViewMemberProfile() {
+    this.navController.push(MemberProfilePage, {
+      "account": this.post.createdBy
     });
   }
   

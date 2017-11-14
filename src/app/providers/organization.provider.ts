@@ -38,6 +38,9 @@ export class OrganizationProvider {
     this.mockOrganizations.push(this.createConsensys());
     this.mockOrganizations.push(this.createUPort());
     this.mockOrganizations.push(this.createBancor());
+    this.mockOrganizations.push(this.createPingMe());
+    this.mockOrganizations.push(this.createPiicked());
+    this.mockOrganizations.push(this.createDemandTec());
     this.mockOrganizations.push(this.createBerkeley());
     this.mockOrganizations.push(this.createStanford());
     this.mockOrganizations.push(this.createCarnegieMellon());
@@ -164,6 +167,36 @@ export class OrganizationProvider {
                                        "https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAu_AAAAJDIxM2RhYThmLTdiZjEtNGUwNC05ZjEyLTY5ZjU2MmJkNmFmMQ.png");
   }
 
+  private createPingMe(): Organization {
+    return this.createMockOrganization("urn:company:pingme",
+                                       "PingMe",
+                                       "Decentralized Attention Economy",
+                                       "PingMe aims to bring the currency of attention back to the people.",
+                                       "San Francisco, CA",
+                                       "http://www.pingme.io",
+                                       "https://d3bza9ldbeb18h.cloudfront.net/assets/placeholder-company-b9d0a167b1f7460768517d115285de2337c6e2a84f4285617722efa587c693fc.png");
+  }
+  
+  private createPiicked(): Organization {
+    return this.createMockOrganization("urn:company:piicked",
+                                       "Piicked",
+                                       "Your Personal Eating Guide",
+                                       "Piicked is your personal eating guide, helping you discover food suited for your specific dietary profile.",
+                                       "San Francisco, CA",
+                                       "http://www.piicked.com",
+                                       "https://d3bza9ldbeb18h.cloudfront.net/assets/placeholder-company-b9d0a167b1f7460768517d115285de2337c6e2a84f4285617722efa587c693fc.png");
+  }
+  
+  private createDemandTec(): Organization {
+    return this.createMockOrganization("urn:company:demandtec",
+                                       "DemandTec",
+                                       "Optimizing Retail Pricing",
+                                       "IBM DemandTec offers a network of cloud apps and insights for more than 500 retailers and consumer products companies, providing common solutions to transact, interact, and collaborate on core merchandising and marketing activities.  DemandTec's services enable customers to achieve their sales volume, revenue, shopper loyalty, and profitability objectives.  Approximately 16,000 retailer and manufacturer end-users on DemandTec collaborated on more than five million trade deals to date.  DemandTec software and analytical services utilize a science-based platform to model and understand consumer behavior.  DemandTec customers include leading retailers and consumer products  companies such as Ahold USA, Best Buy, ConAgra Foods, Delhaize America, General Mills, The Home Depot, Monoprix, PETCO, Safeway, Sara Lee, Target, Walmart, and WH Smith.",
+                                       "San Mateo, CA",
+                                       "http://www.demandtec.com",
+                                       "https://media.licdn.com/mpr/mpr/shrinknp_100_100/p/1/000/18f/079/3164028.png");
+  }
+  
   private createBerkeley(): Organization {
     return this.createMockOrganization("urn:school:berkeley",
                                        "University of California, Berkeley",

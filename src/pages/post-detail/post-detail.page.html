@@ -20,8 +20,8 @@
 		</ion-section-header>
 		<ion-section-content>
 			<p tiny-bottom-margin class="meta">{{post.createdAt}} • {{post.category}}</p>
-			<h4>{{post.title}}</h4>
-			<div class="article">			
+			<article>		
+				<h4>{{post.title}}</h4>
 				<figure large-top-margin *ngIf="post.image">
 					<img [src]="post.image.url"/>
 				</figure>
@@ -29,7 +29,7 @@
 					<iframe allowfullscreen [src]="post.video.url | safeurl" frameborder="0" class="video-embed"></iframe>		
 				</figure>
 				<p large-top-margin [innerHTML]="post.body" *ngIf="post.body"></p>
-			</div>
+			</article>
 		</ion-section-content>
 	</ion-section>
 </ion-content>
