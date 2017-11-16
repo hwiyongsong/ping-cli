@@ -18,6 +18,7 @@ export class Account {
   public rating: Rating;
   public connectionSize: number;
   public karmaSize: number;
+  public messagePrice: number = 10;
   public balance: number = 325;
   public relationship: Relationship;
   public experiences: Array<Experience> = [];

@@ -30,7 +30,17 @@
 			<post-block [post]="post" layout="FEED" *ngFor="let post of postProvider.getPostsFor('urn:community:ui')"></post-block>
 		</ion-section-content>
 	</ion-section>
-	<ion-section xlarge-top-margin>
+	<ion-section xlarge-top-margin class="influencers-section">
+		<ion-section-header>
+			<h4><sup>Send a message</sup>Influencers in Blockchain</h4>
+		</ion-section-header>
+		<ion-slides slidesPerView="auto" spaceBetween="8">
+		  <ion-slide *ngFor="let influencer of influencerProvider.mockInfluencers">
+		    <member-block [account]="influencer" layout="COMPACT"></member-block>	
+		  </ion-slide>
+		</ion-slides>
+	</ion-section>
+	<ion-section xlarge-top-margin class="lists-section">
 		<ion-section-header>
 			<h4><sup>Send a message</sup>Popular Lists</h4>
 		</ion-section-header>

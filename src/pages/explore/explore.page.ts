@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 
+import { InfluencerProvider } from "../../app/providers/influencer.provider";
 import { ListProvider } from "../../app/providers/list.provider";
 import { PostProvider } from "../../app/providers/post.provider";
 
@@ -9,7 +10,8 @@ import { PostProvider } from "../../app/providers/post.provider";
 })
 export class ExplorePage {
 
-  constructor(public listProvider:ListProvider,
+  constructor(public influencerProvider: InfluencerProvider,
+              public listProvider:ListProvider,
               public postProvider: PostProvider) {
     // Do nothing.
   }

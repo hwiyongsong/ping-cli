@@ -44,15 +44,31 @@ export class AccountProvider {
   }
   
   private initMockAccounts() {
-    this.mockAccounts.push(this.createScottPredmore());
-    this.mockAccounts.push(this.createRobertConner());
-    this.mockAccounts.push(this.createLilyLapcokova());
-    this.mockAccounts.push(this.createKimKamitani());
-    this.mockAccounts.push(this.createAkashGupta());
-    this.mockAccounts.push(this.createFrankClemmens());
-    this.mockAccounts.push(this.createRitaUrbach());
-    this.mockAccounts.push(this.createMichaelSena());
-    this.mockAccounts.push(this.createHwiYongSong());
+    this.mockAccounts.push(this.createScottPredmore()); // Staff Software Engineer at Linkedin
+    this.mockAccounts.push(this.createHwiYongSong()); // Technical Co-founder at PingMe
+    this.mockAccounts.push(this.createRobertConner()); // HR Manager at Uber
+    this.mockAccounts.push(this.createLilyLapcokova()); // Technical Recruiting Lead at Facebook
+    this.mockAccounts.push(this.createKimKamitani()); // Talent Recruiter at Airbnb
+    this.mockAccounts.push(this.createAkashGupta()); // Head of Global Vehicle Solutions Engineering at Uber
+    this.mockAccounts.push(this.createFrankClemmens()); // Engineering and Product at Uber
+    this.mockAccounts.push(this.createRitaUrbach()); // Marketing Manager at Bancor
+    this.mockAccounts.push(this.createMichaelSena()); // Product Lead at uPort
+    this.mockAccounts.push(this.createGlennWhitman()); // Venture Capitalist, Computer Scientist
+    this.mockAccounts.push(this.createZavainDar()); // VC at Lux Capital
+    this.mockAccounts.push(this.createBobBecker()); // Venture Capitalist at Venture Partners
+    this.mockAccounts.push(this.createTojiTokuda()); // President & CEO at Fusion Ventures
+    this.mockAccounts.push(this.createAnyaHayden()); // VC at Hightland Capital
+    this.mockAccounts.push(this.createReidHoffman()); // Entrepreneur. Product Strategist. Investor.
+    this.mockAccounts.push(this.createJosephLubin()); // Founder at Consensus Systems (ConsenSys)
+    this.mockAccounts.push(this.createJoelEnglander()); // Angel Investor
+    this.mockAccounts.push(this.createLilianaNordbakk()); // Angel Investor at Band of Angels
+    this.mockAccounts.push(this.creatJonBoutelle()); // Angel Investor and Entrepreneur at Independent
+    this.mockAccounts.push(this.creatRyanBethencourt()); // CEO, Investor and Blockchain Innovator
+    this.mockAccounts.push(this.creatConstanceChoi()); // Co-Founder & Director at COALA Foundation
+    this.mockAccounts.push(this.creatDilyaZhanispayeva()); // Co-Founder - Caspian Blockchain Technologies
+    this.mockAccounts.push(this.creatAndreDeCastro()); // CEO and Founder at Blockchain of Things
+    this.mockAccounts.push(this.creatKartikMandaville()); // CEO at SpringRole
+    this.mockAccounts.push(this.creatJosephQuan()); // Cofounder/CEO at Twinechain
   }
   
   private createScottPredmore(): Account {
@@ -63,6 +79,7 @@ export class AccountProvider {
                                          "Passionate about promoting an open and decentralized economy in the modern era.",
                                          115,
                                          5250,
+                                         10,
                                          "https://media.licdn.com/media/AAEAAQAAAAAAAAqtAAAAJDM4MTg0MmQwLTQ4ZTktNDQxZC1hNGI5LWIxOGVmODNiYzEzNw.jpg");
     
     account.experiences.push(this.createMockExperience("urn:company:linkedin",
@@ -104,6 +121,7 @@ export class AccountProvider {
                                          "Always imagining about how to enact social change, to bring about opportunity and fairness to the public interest.",
                                          215,
                                          9475,
+                                         12,
                                          "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/3/000/1ad/294/2a81645.jpg");
     
     account.relationship = this.createMockRelationship("1st",
@@ -157,6 +175,7 @@ export class AccountProvider {
                                          "Building the best teams to build the ultimate self-driving vehicles. Also crazy about robotics and ping pong.",
                                          232,
                                          8923,
+                                         10,
                                          "https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAMVAAAAJDhhNDJlOGY1LTg4NmQtNGFmOC1hMGI2LTRjY2ViMjNhNDZmNQ.jpg");
     
     account.relationship = this.createMockRelationship("2nd",
@@ -203,6 +222,7 @@ export class AccountProvider {
                                          "My passion lies in finding exceptional talent, building candidate and client relationships and thinking outside the box to solve challenges.",
                                          392,
                                          9820,
+                                         10,
                                          "https://media.licdn.com/media/AAEAAQAAAAAAAAboAAAAJGEwMTFhYWU2LTRmODgtNDFlYi1iOGM0LTJhYjRjZjE3YjdlMQ.jpg");
     
     account.relationship = this.createMockRelationship("3rd",
@@ -260,6 +280,7 @@ export class AccountProvider {
                                          "A fun loving talent builder and food warrior in the Silicon Valley.",
                                          168,
                                          8122,
+                                         10,
                                          "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/5/000/1c6/2ca/0ed27c5.jpg");
     
     account.relationship = this.createMockRelationship("2nd",
@@ -307,6 +328,7 @@ export class AccountProvider {
                                          "I enjoy building awesome software and teams to build new products and technology that will make our lives easier and allow us to accomplish more than what we\'re able to do today. <br/><br/>I\'m excited about building highly scalable back-end systems that serve millions of users each day. Just the same, I\'m also excited about building mobile apps and front-end products that delight us each day.",
                                          295,
                                          4504,
+                                         15,
                                          "https://media.licdn.com/media/p/6/005/06c/1ee/39b4187.jpg");
     
     account.relationship = this.createMockRelationship("1st",
@@ -347,6 +369,7 @@ export class AccountProvider {
                                          "Currently leading UberEATS Eater engineering. Responsible for product and software engineering strategy across multiple teams, developing high performing leaders, and most importantly building a diverse and inclusive work culture.",
                                          128,
                                          4594,
+                                         10,
                                          "https://media.licdn.com/media/AAEAAQAAAAAAAAsAAAAAJGFiOGM5NjZiLWI5NTktNDk1Mi1hNzI3LWYzMjA1MjQzMzZiZA.jpg");
     
     account.relationship = this.createMockRelationship("2nd",
@@ -394,6 +417,7 @@ export class AccountProvider {
                                          "Michael Sena manages product spokes and enterprise partnerships at Consensys. Michael brings a diverse background in product management, technology consulting, capital markets, and political economics to the blockchain. In previous roles, he designed and deployed consumer and enterprise technologies for some of the largest organizations in the world, managed a portfolio of international financial securities, and launched a startup. At Consensys, Michael is using these foundational experiences to unlock value on a global scale by building applications for the emerging blockchain economy. He believes that exponential blockchain adoption is only a beautiful Dapp away and is passionate about getting these products into the hands of people.<br/><br/>For business opportunities, please email michael.sena@consensys.net",
                                          187,
                                          4671,
+                                         10,
                                          "https://media.licdn.com/media/AAEAAQAAAAAAAAh6AAAAJDhjNWIxNzhjLWU2NTgtNGIwNy1hNTExLWFiZWU1YWNlMDA5OA.jpg");
   
     account.experiences.push(this.createMockExperience("urn:company:uport",
@@ -434,10 +458,11 @@ export class AccountProvider {
                                          "I am a results driven - business oriented professional who is a fast learner and adopter of new technologies. I am motivated by strategic planning, creative execution and data-driven decisions.",
                                          316,
                                          8936,
+                                         20,
                                          "https://media.licdn.com/media/p/3/005/04b/1af/2b7fe97.jpg");
     
     account.relationship = this.createMockRelationship("2nd",
-                                                       119,
+                                                       19,
                                                        null,
                                                        null);
     
@@ -465,6 +490,310 @@ export class AccountProvider {
     return account;
   }
   
+  private createGlennWhitman(): Account {
+    let account = this.createMockAccount("urn:member:glenn-whitman",
+                                         "Glenn",
+                                         "Whitman",
+                                         "Venture Capitalist, Computer Scientist",
+                                         "",
+                                         598,
+                                         12295,
+                                         50,
+                                         "https://media.licdn.com/media/AAEAAQAAAAAAAATUAAAAJDc5MTIxM2M0LTZiYjEtNGU5MC1hYmRhLTExNWZjYzY2ZWE2MA.jpg");
+    
+    account.relationship = this.createMockRelationship("3rd",
+                                                       12,
+                                                       null,
+                                                       null);
+    
+    return account;
+  }
+  
+  private createZavainDar(): Account {
+    let account = this.createMockAccount("urn:member:zavain-dar",
+                                         "Zavain",
+                                         "Dar",
+                                         "VC at Lux Capital",
+                                         "",
+                                         322,
+                                         9634,
+                                         50,
+                                         "https://media.licdn.com/media/p/5/005/014/3b1/151eb1e.jpg");
+    
+    account.relationship = this.createMockRelationship("3rd",
+                                                       10,
+                                                       null,
+                                                       null);
+    
+    return account;
+  }
+  
+  private createBobBecker(): Account {
+    let account = this.createMockAccount("urn:member:bob-becker",
+                                         "Bob",
+                                         "Becker",
+                                         "Venture Capitalist at Venture Partners",
+                                         "",
+                                         487,
+                                         10349,
+                                         50,
+                                         "https://media.licdn.com/media/p/1/000/18f/1bf/36ce353.jpg");
+    
+    account.relationship = this.createMockRelationship("2nd",
+                                                       22,
+                                                       null,
+                                                       null);
+    
+    return account;
+  }
+  
+  private createTojiTokuda(): Account {
+    let account = this.createMockAccount("urn:member:koji-tokuda",
+                                         "Toji",
+                                         "Tokuda",
+                                         "President & CEO at Fusion Ventures",
+                                         "",
+                                         424,
+                                         9274,
+                                         50,
+                                         "https://media.licdn.com/media/p/1/000/277/3e7/34f7823.jpg");
+    
+    account.relationship = this.createMockRelationship("3rd",
+                                                       13,
+                                                       null,
+                                                       null);
+    
+    return account;
+  }
+  
+  private createAnyaHayden(): Account {
+    let account = this.createMockAccount("urn:member:anya-hayden",
+                                         "Anya",
+                                         "Hayden",
+                                         "VC at Hightland Capital",
+                                         "",
+                                         326,
+                                         8642,
+                                         50,
+                                         "https://media.licdn.com/media/AAEAAQAAAAAAAAhGAAAAJDQxYjlhMWQ3LTBjZjItNDkwNS1hMWJlLTJhYjAwZTZjMzAwNA.jpg");
+    
+    account.relationship = this.createMockRelationship("2nd",
+                                                       32,
+                                                       null,
+                                                       null);
+    
+    return account;
+  }
+  
+  private createReidHoffman(): Account {
+    let account = this.createMockAccount("urn:member:reid-hoffman",
+                                         "Reid",
+                                         "Hoffman",
+                                         "Entrepreneur. Product Strategist. Investor.",
+                                         "",
+                                         648,
+                                         13965,
+                                         250,
+                                         "https://media.licdn.com/media/p/5/000/1bd/26f/349c10e.jpg");
+    
+    account.relationship = this.createMockRelationship("2nd",
+                                                       24,
+                                                       null,
+                                                       null);
+    
+    return account;
+  }
+  
+  private createJosephLubin(): Account {
+    let account = this.createMockAccount("urn:member:joseph-lubin",
+                                         "Joseph",
+                                         "Lubin",
+                                         "Founder at Consensus Systems (ConsenSys)",
+                                         "",
+                                         545,
+                                         12742,
+                                         250,
+                                         "https://media.licdn.com/media/AAEAAQAAAAAAAAvtAAAAJDcwMzk5ZmE3LWViZGQtNGQzMS04ZGUxLTU4MzI0NjY0NzczMQ.jpg");
+    
+    account.relationship = this.createMockRelationship("2nd",
+                                                       24,
+                                                       null,
+                                                       null);
+    
+    return account;
+  }
+  
+  private createJoelEnglander(): Account {
+    let account = this.createMockAccount("urn:member:joel-englander",
+                                         "Joel",
+                                         "Englander",
+                                         "Angel Investor",
+                                         "",
+                                         387,
+                                         9232,
+                                         100,
+                                         "https://media.licdn.com/media/p/2/000/0a4/11d/382a61f.jpg");
+    
+    account.relationship = this.createMockRelationship("2nd",
+                                                       14,
+                                                       null,
+                                                       null);
+    
+    return account;
+  }
+  
+  private createLilianaNordbakk(): Account {
+    let account = this.createMockAccount("urn:member:liliana-nordbakk",
+                                         "Liliana",
+                                         "Nordbakk",
+                                         "Angel Investor at Band of Angels",
+                                         "",
+                                         328,
+                                         7345,
+                                         100,
+                                         "https://media.licdn.com/media/p/3/005/00b/3ec/2dd1c23.jpg");
+    
+    account.relationship = this.createMockRelationship("3rd",
+                                                       7,
+                                                       null,
+                                                       null);
+    
+    return account;
+  }
+  
+  private creatJonBoutelle(): Account {
+    let account = this.createMockAccount("urn:member:jon-boutelle",
+                                         "Jon",
+                                         "Boutelle",
+                                         "Angel Investor and Entrepreneur at Independent",
+                                         "",
+                                         483,
+                                         8313,
+                                         100,
+                                         "https://media.licdn.com/media/p/7/005/0a2/177/061ff31.jpg");
+    
+    account.relationship = this.createMockRelationship("2nd",
+                                                       17,
+                                                       null,
+                                                       null);
+    
+    return account;
+  }
+  
+  private creatRyanBethencourt(): Account {
+    let account = this.createMockAccount("urn:member:ryan-bethencourt",
+                                         "Ryan",
+                                         "Bethencourt",
+                                         "CEO, Investor and Blockchain Innovator",
+                                         "",
+                                         238,
+                                         5342,
+                                         100,
+                                         "https://media.licdn.com/media/AAEAAQAAAAAAAAdiAAAAJDkxNjg0Y2NkLTAzYjYtNDNmMC04ZTVmLWIxZTBhMTA3OTU0Yw.jpg");
+    
+    account.relationship = this.createMockRelationship("2nd",
+                                                       23,
+                                                       null,
+                                                       null);
+    
+    return account;
+  }
+  
+  private creatConstanceChoi(): Account {
+    let account = this.createMockAccount("urn:member:constance-choi",
+                                         "Constance",
+                                         "Choi",
+                                         "Co-Founder & Director at COALA Foundation",
+                                         "",
+                                         321,
+                                         8923,
+                                         40,
+                                         "https://media.licdn.com/media/AAEAAQAAAAAAAAe5AAAAJDhlNjc0ZDk5LWZmYzMtNDFhNy04ZDY4LWViZDdhYjg3MTdmZA.jpg");
+    
+    account.relationship = this.createMockRelationship("3rd",
+                                                       8,
+                                                       null,
+                                                       null);
+    
+    return account;
+  }
+  
+  private creatDilyaZhanispayeva(): Account {
+    let account = this.createMockAccount("urn:member:dilya-zhanispayeva",
+                                         "Dilya",
+                                         "Zhanispayeva",
+                                         "Co-Founder - Caspian Blockchain Technologies",
+                                         "",
+                                         246,
+                                         6741,
+                                         40,
+                                         "https://media.licdn.com/media/AAIA_wDGAAAAAQAAAAAAAA0SAAAAJDI1OTlhYTEyLWUzMTUtNGFhYy1iMmM4LTc2MjU2YjI1MTRmNQ.jpg");
+    
+    account.relationship = this.createMockRelationship("3rd",
+                                                       5,
+                                                       null,
+                                                       null);
+    
+    return account;
+  }
+  
+  private creatAndreDeCastro(): Account {
+    let account = this.createMockAccount("urn:member:andre-de-castro",
+                                         "Andre",
+                                         "de Castro",
+                                         "CEO and Founder at Blockchain of Things",
+                                         "",
+                                         231,
+                                         6382,
+                                         40,
+                                         "https://media.licdn.com/media/AAEAAQAAAAAAAAftAAAAJDViZDlmODQyLTE2YTUtNDU3Yy1hZWQ5LWM2ZWVlZDliYTEzMw.jpg");
+    
+    account.relationship = this.createMockRelationship("2nd",
+                                                       11,
+                                                       null,
+                                                       null);
+    
+    return account;
+  }
+  
+  private creatKartikMandaville(): Account {
+    let account = this.createMockAccount("urn:member:kartik-mandaville",
+                                         "Kartik",
+                                         "Mandaville",
+                                         "Building a protocol for attestations on blockchain, CEO at SpringRole, Advisor at Science Blockchain etc, Kairos Fellow",
+                                         "",
+                                         188,
+                                         5728,
+                                         40,
+                                         "https://media.licdn.com/media/AAEAAQAAAAAAAANzAAAAJGI1NTJkZWU4LWI1NGItNDQ4MC05NzA0LWE5Njk2MWJmYWMyYQ.jpg");
+    
+    account.relationship = this.createMockRelationship("2nd",
+                                                       19,
+                                                       null,
+                                                       null);
+    
+    return account;
+  }
+  
+  private creatJosephQuan(): Account {
+    let account = this.createMockAccount("urn:member:joseph-quan",
+                                         "Joseph",
+                                         "Quan",
+                                         "Cofounder/CEO at Twinechain",
+                                         "",
+                                         194,
+                                         7238,
+                                         40,
+                                         "https://media.licdn.com/media/AAEAAQAAAAAAAAfKAAAAJGFmMTZkNWE5LTc1YjUtNDk0MC1hMDkzLTk1ZGQ2MWI1MWY2Mw.jpg");
+    
+    account.relationship = this.createMockRelationship("2nd",
+                                                       19,
+                                                       null,
+                                                       null);
+    
+    return account;
+  }
+  
   private createMockAccount(accountUrn: string,
                             firstName: string, 
                             lastName: string,
@@ -472,6 +801,7 @@ export class AccountProvider {
                             description: string,
                             connectionSize: number,
                             karmaSize: number,
+                            messagePrice: number,
                             profileImageUrl: string): Account {
     let account = new Account();
     
@@ -482,6 +812,7 @@ export class AccountProvider {
     account.description = description;
     account.connectionSize = connectionSize;
     account.karmaSize = karmaSize;
+    account.messagePrice = messagePrice;
     account.profileImage = new Image();
     account.profileImage.urn = "urn:image:" + StringUtils.generateUUID();
     account.profileImage.url = profileImageUrl;

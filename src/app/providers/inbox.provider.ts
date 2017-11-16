@@ -73,12 +73,12 @@ export class InboxProvider {
     let createdAt = "Sep 19";
     
     let thread = this.createThread(account,
-                                   "Senior Engineer Position at Facebook",
+                                   "Senior Engineer Position at Airbnb",
                                    "Job Opportunity",
                                    createdAt);
 
     thread.coverMessage = this.createMessage(account,
-                                             "Kim from Facebook, Software Engineering\r\n\r\nHi Albert, \r\n\r\nI wanted to follow up on my last two messages and see if you had any interest in discussing opportunities with Facebook. \r\n\r\nI understand if timing might not be right, but either way, I\u2019d still like to connect so that we can keep in contact for the future. \r\n\r\nThank you in advance for your consideration,\r\nKim\r\n\r\nKim Kamitaki\r\nTechnical Recruiter at Facebook",
+                                             "Kim from Airbnb, Software Engineering\r\n\r\nHi Albert, \r\n\r\nI wanted to follow up on my last two messages and see if you had any interest in discussing opportunities with Airbnb. \r\n\r\nI understand if timing might not be right, but either way, I\u2019d still like to connect so that we can keep in contact for the future. \r\n\r\nThank you in advance for your consideration,\r\nKim\r\n\r\nKim Kamitaki\r\nTechnical Recruiter at Airbnb",
                                              createdAt);
     
     thread.incentive = this.createIncentive(10);

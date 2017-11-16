@@ -11,6 +11,7 @@ import { CommunityProvider } from "./providers/community.provider";
 import { CurrencyProvider } from "./providers/currency.provider";
 import { ExperimentProvider } from "./providers/experiment.provider";
 import { InboxProvider } from "./providers/inbox.provider";
+import { InfluencerProvider } from "./providers/influencer.provider";
 import { InterestProvider } from "./providers/interest.provider";
 import { ListProvider } from "./providers/list.provider";
 import { PageProvider } from "./providers/page.provider";
@@ -31,6 +32,7 @@ import { PaymentHistoryPage } from "../pages/payment-history/payment-history.pag
 import { PostDetailPage } from "../pages/post-detail/post-detail.page";
 
 import { ChromeBlock } from "../blocks/chrome/chrome.block";
+import { MemberBlock } from "../blocks/member/member.block";
 import { ListBlock } from "../blocks/list/list.block";
 import { PostBlock } from "../blocks/post/post.block";
 
@@ -58,6 +60,7 @@ let components: Array<any> = [
   
   ChromeBlock,
   ListBlock,
+  MemberBlock,
   PostBlock
 ]
 
@@ -78,6 +81,7 @@ let providers: Array<any> = [
   CurrencyProvider,
   ExperimentProvider,
   InboxProvider,
+  InfluencerProvider,
   InterestProvider,
   ListProvider,
   OrganizationProvider,
