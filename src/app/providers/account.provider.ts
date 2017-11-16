@@ -106,7 +106,7 @@ export class AccountProvider {
                                          9475,
                                          "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/3/000/1ad/294/2a81645.jpg");
     
-    account.relationship = this.createMockRelationship("2nd",
+    account.relationship = this.createMockRelationship("1st",
                                                        21,
                                                        "Linkedin",
                                                        "University of California, Berkeley");

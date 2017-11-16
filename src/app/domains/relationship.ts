@@ -5,4 +5,8 @@ export class Relationship {
   public sharedCompany: string;
   public sharedSchool: string;
   
+  isConnected(): boolean {
+    return this.graphDistance == "1st"; 
+  }
+  
 }

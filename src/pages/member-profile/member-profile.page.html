@@ -14,8 +14,8 @@
 		    </ion-avatar>
 			</ion-item>
 			<ion-buttons>
-  			<button ion-button icon-start outline>Connect</button>
-  			<button ion-button icon-start small-left-margin outline color="secondary">Message for $10</button>
+  			<button ion-button icon-start small-right-margin outline *ngIf="account.relationship && !account.relationship.isConnected()">Connect</button>
+  			<button ion-button icon-start outline color="secondary">Message for $10</button>
   		</ion-buttons>
 		</ion-section-header>
 		<ion-section-content>

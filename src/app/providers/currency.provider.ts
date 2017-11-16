@@ -2,7 +2,6 @@ import { Injectable } from "@angular/core";
 
 import { ExperimentProvider } from "./experiment.provider";
 
-import { NumberUtils } from "../utils/number-utils";
 import { TokenUtils } from "../utils/token-utils";
 
 @Injectable()

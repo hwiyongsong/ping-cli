@@ -4,7 +4,7 @@ export class TokenUtils {
   
   public static BITCOIN_TO_DOLLARS = 5928.95;
   public static ETHER_TO_DOLLARS = 325.90;
-  public static PING_TO_DOLLARS = 0.24;
+  public static PING_TO_DOLLARS = 0.425;
   
   static toBitcoin(dollars: number): number {
     let bitcoins = dollars / TokenUtils.BITCOIN_TO_DOLLARS;
@@ -18,7 +18,7 @@ export class TokenUtils {
   
   static toPing(dollars: number): number {
     let pings = dollars / TokenUtils.PING_TO_DOLLARS;
-    return NumberUtils.round(pings, 2);
+    return NumberUtils.round(pings, 0);
   }
   
 }
