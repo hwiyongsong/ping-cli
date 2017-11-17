@@ -1,0 +1,55 @@
+<ion-header clear>
+  <ion-navbar></ion-navbar>
+</ion-header>
+
+<ion-content #content>
+	<ion-section class="cover-message-section" *ngIf="conversation.coverMessage">
+		<ion-section-header no-top-padding>
+			<ion-item (click)="onViewAccountProfile(conversation.coverMessage.from)">
+				<h4>{{conversation.from.getFullName()}}<sub class="no-wrap">{{conversation.from.headline}}</sub></h4>
+				<ion-avatar item-end *ngIf="conversation.from.profileImage">
+		      <img src="{{conversation.from.profileImage.url}}">
+		      <ion-badge small *ngIf="conversation.from.relationship">{{conversation.from.relationship.graphDistance}}</ion-badge>
+		    </ion-avatar>
+			</ion-item>
+		</ion-section-header>
+		<ion-section-content>
+			<p tiny-bottom-margin class="meta">{{conversation.createdAt}} • {{conversation.category}}</p>
+			<article>
+				<h4>{{conversation.title}}</h4>
+				<p top-margin class="message-body" [innerHTML]="conversation.coverMessage.body" *ngIf="conversation.coverMessage.body"></p>
+				<figure large-top-margin *ngIf="conversation.coverMessage.video">
+					<iframe allowfullscreen [src]="conversation.coverMessage.video.url | safeurl" frameborder="0" class="video-embed"></iframe>		
+				</figure>
+				<p large-top-margin [innerHTML]="conversation.coverMessage.video.caption" *ngIf="conversation.coverMessage.video && conversation.coverMessage.video.caption"></p>					
+			</article>
+		</ion-section-content>
+	</ion-section>
+
+  <ion-section class="messages-section">
+  	<ion-section-content>
+  		<div class="chat-conversation">
+  			<div class="chat-message" [class.left]="message.from.urn != userProvider.currentUser.urn" [class.right]="message.from.urn == userProvider.currentUser.urn" *ngFor="let message of conversation.messages">
+  				<ion-avatar (click)="onViewAccountProfile(message.from)">
+			      <img [src]="message.from.profileImage.url">
+			    </ion-avatar>
+  				<div class="chat-bubble">
+			  		<div class="message-body">{{message.body}}</div>  				
+  					<div class="message-meta">{{message.createdAt}}</div>
+  				</div>
+  			</div>
+  		</div>
+  	</ion-section-content>
+  </ion-section>
+</ion-content>
+
+<ion-footer padding [keyboard-attach]="content">
+  <div *ngIf="!replyable">
+		<button ion-button block class="currency" (click)="onReplyable()" [innerHTML]="currencyProvider.format(conversation.incentive.value, 'Reply for ')" *ngIf="conversation.category != 'Video'"></button>
+		<button ion-button block class="currency" (click)="onViewVideo()" [innerHTML]="currencyProvider.format(conversation.incentive.value, 'View Video for ')" *ngIf="conversation.category == 'Video'"></button>  
+  </div>
+	<div flex *ngIf="replyable">
+	  <ion-textarea autosize [(ngModel)]="reply" placeholder="Write a message..."></ion-textarea>
+    <button ion-button auto-height (click)="onReply()">Reply</button>	
+	</div>
+</ion-footer>

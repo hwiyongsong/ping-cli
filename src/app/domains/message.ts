@@ -1,11 +1,11 @@
-import { Account } from "./account";
 import { Image } from "./image";
+import { User } from "./user";
 import { Video } from "./video";
 
 export class Message {
   
   public urn: string;
-  public from: Account;
+  public from: User;
   public body: string;
   public image: Image;
   public video: Video;

@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 
-import { AccountProvider } from "./account.provider";
+import { UserProvider } from "./user.provider";
 
 import { Image } from "../domains/image";
 import { Incentive } from "../domains/incentive";
@@ -14,7 +14,7 @@ export class PostProvider {
     
   private mockPosts: Array<Post> = [];
   
-  constructor(private accountProvider: AccountProvider) { 
+  constructor(private userProvider: UserProvider) { 
     this.initMockPosts();
   }
   
@@ -155,7 +155,7 @@ export class PostProvider {
     post.body = body;
     post.category = category;
     post.actionText = actionText;
-    post.createdBy = this.accountProvider.getAccountByAccountUrn(createdBy);;
+    post.createdBy = this.userProvider.getUserByUserUrn(createdBy);
     post.createdAt = createdAt;
     
     return post;

@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { NavParams } from "ionic-angular";
 
-import { Account } from "../../app/domains/account";
+import { Organization } from "../../app/domains/organization";
 
 @Component({
   selector: "organization-profile-page",
@@ -9,10 +9,10 @@ import { Account } from "../../app/domains/account";
 })
 export class OrganizationProfilePage {
     
-  public account: Account;
+  public organization: Organization;
 
   constructor(params: NavParams) {
-    this.account = params.get("account");
+    this.organization = params.get("organization");
   }
 
 }

@@ -2,14 +2,13 @@ import { Component } from "@angular/core";
 import { NavController } from "ionic-angular";
 
 import { CurrencyProvider } from "../../app/providers/currency.provider";
-import { InboxProvider } from "../../app/providers/inbox.provider";
+import { MessageProvider } from "../../app/providers/message.provider";
 
-import { MemberProfilePage } from "../member-profile/member-profile.page";
-import { MessageThreadPage } from "../message-thread/message-thread.page";
-import { MyAccountPage } from "../my-account/my-account.page";
+import { UserProfilePage } from "../user-profile/user-profile.page";
+import { MessageConversationPage } from "../message-conversation/message-conversation.page";
 
-import { Account } from "../../app/domains/account";
-import { Thread } from "../../app/domains/thread";
+import { MessageConversation } from "../../app/domains/message-conversation";
+import { User } from "../../app/domains/user";
 
 @Component({
   selector: "message-box-page",
@@ -19,22 +18,18 @@ export class MessageBoxPage {
 
   constructor(private navController: NavController, 
               public currencyProvider: CurrencyProvider,
-              public inboxProvider: InboxProvider) {
+              public messageProvider: MessageProvider) {
   }
   
-  onViewAccountProfile(account: Account) {
-    this.navController.push(MemberProfilePage, {
-      "account": account
+  onViewUserProfile(user: User) {
+    this.navController.push(UserProfilePage, {
+      "user": user
     });
   }
-  
-  onViewMyAccount() {
-    this.navController.push(MyAccountPage);
-  }
 
-  onViewThread(thread: Thread) {
-    this.navController.push(MessageThreadPage, {
-      "thread": thread
+  onViewConversation(conversation: MessageConversation) {
+    this.navController.push(MessageConversationPage, {
+      "conversation": conversation
     }); 
   }
 

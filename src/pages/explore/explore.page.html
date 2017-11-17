@@ -36,7 +36,7 @@
 		</ion-section-header>
 		<ion-slides slidesPerView="auto" spaceBetween="8">
 		  <ion-slide *ngFor="let influencer of influencerProvider.mockInfluencers">
-		    <member-block [account]="influencer" layout="COMPACT"></member-block>	
+		    <user-block [user]="influencer" layout="COMPACT"></user-block>	
 		  </ion-slide>
 		</ion-slides>
 	</ion-section>

@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 
-import { InboxProvider } from "../../app/providers/inbox.provider";
+import { MessageProvider } from "../../app/providers/message.provider";
 import { PageProvider } from "../../app/providers/page.provider";
 
 @Component({
@@ -9,7 +9,7 @@ import { PageProvider } from "../../app/providers/page.provider";
 })
 export class ChromeBlock {
 
-  constructor(public inboxProvider: InboxProvider,
+  constructor(public messageProvider: MessageProvider,
               private pageProvider: PageProvider) {
   }
   

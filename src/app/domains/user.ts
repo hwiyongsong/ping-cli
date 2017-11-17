@@ -2,10 +2,12 @@ import { Education } from "./education";
 import { Experience } from "./experience";
 import { Image } from "./image";
 import { Interest } from "./interest";
-import { Rating } from "./rating";
+import { Organization } from "./organization";
+import { Pricing } from "./pricing";
 import { Relationship } from "./relationship";
+import { Wallet } from "./wallet";
 
-export class Member {
+export class User {
   
   public urn: string;
   public firstName: string;
@@ -13,7 +15,10 @@ export class Member {
   public headline: string;
   public description: string;
   public profileImage: Image;
-  public rating: Rating;
+  public connectionSize: number;
+  public karmaSize: number;
+  public pricing: Pricing;
+  public wallet: Wallet;
   public relationship: Relationship;
   public experiences: Array<Experience> = [];
   public educations: Array<Education> = [];
@@ -21,6 +26,15 @@ export class Member {
   
   getFullName() {
     return this.firstName + " " + this.lastName; 
+  }
+  
+  getCurrentCompany(): Organization {
+    if (this.experiences.length > 0) {
+      let currentExperience = this.experiences[0];
+      return currentExperience.company;
+    }
+    
+    return null;
   }
   
 }

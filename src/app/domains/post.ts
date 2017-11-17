@@ -1,6 +1,6 @@
-import { Account } from "./account";
 import { Image } from "./image";
 import { Incentive } from "./incentive";
+import { User } from "./user";
 import { Video } from "./video";
 
 export class Post {
@@ -14,7 +14,7 @@ export class Post {
   public video: Video;
   public organizational: boolean = false;
   public actionText: string;
-  public createdBy: Account;
+  public createdBy: User;
   public createdAt: string;
   
   getExcerpt() {

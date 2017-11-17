@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 
-import { AccountProvider } from "../../app/providers/account.provider";
+import { UserProvider } from "../../app/providers/user.provider";
 
 @Component({
   selector: "my-account-page",
@@ -8,7 +8,7 @@ import { AccountProvider } from "../../app/providers/account.provider";
 })
 export class MyAccountPage {
 
-  constructor(public accountProvider: AccountProvider) {
+  constructor(public userProvider: UserProvider) {
     // Do nothing.
   }
 

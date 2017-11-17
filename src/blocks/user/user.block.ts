@@ -2,16 +2,16 @@ import { Component, Input } from "@angular/core";
 
 import { CurrencyProvider } from "../../app/providers/currency.provider";
 
-import { Account } from "../../app/domains/account";
+import { User } from "../../app/domains/user";
 
 @Component({
-  selector: "member-block",
-  templateUrl: "member.block.html"
+  selector: "user-block",
+  templateUrl: "user.block.html"
 })
-export class MemberBlock {
+export class UserBlock {
 
   @Input()
-  public account: Account;
+  public user: User;
   
   @Input()
   public layout: string;

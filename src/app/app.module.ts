@@ -6,35 +6,35 @@ import { Keyboard } from "@ionic-native/keyboard";
 import { SplashScreen } from "@ionic-native/splash-screen";
 import { StatusBar } from "@ionic-native/status-bar";
 
-import { AccountProvider } from "./providers/account.provider";
 import { CommunityProvider } from "./providers/community.provider";
 import { CurrencyProvider } from "./providers/currency.provider";
 import { ExperimentProvider } from "./providers/experiment.provider";
-import { InboxProvider } from "./providers/inbox.provider";
 import { InfluencerProvider } from "./providers/influencer.provider";
 import { InterestProvider } from "./providers/interest.provider";
 import { ListProvider } from "./providers/list.provider";
+import { MessageProvider } from "./providers/message.provider";
 import { PageProvider } from "./providers/page.provider";
 import { OrganizationProvider } from "./providers/organization.provider";
 import { PostProvider } from "./providers/post.provider";
+import { TransactionProvider } from "./providers/transaction.provider";
+import { UserProvider } from "./providers/user.provider";
 
 import { MyApp } from "./app.component";
 import { MainPage } from "../pages/main.page";
 import { ConfigurationPage } from "../pages/configuration/configuration.page";
 import { ExplorePage } from "../pages/explore/explore.page";
-import { MemberProfilePage } from "../pages/member-profile/member-profile.page";
-import { MessageFormPage } from "../pages/message-form/message-form.page";
 import { MessageBoxPage } from "../pages/message-box/message-box.page";
-import { MessageThreadPage } from "../pages/message-thread/message-thread.page";
+import { MessageConversationPage } from "../pages/message-conversation/message-conversation.page";
 import { MyAccountPage } from "../pages/my-account/my-account.page";
 import { OrganizationProfilePage } from "../pages/organization-profile/organization-profile.page";
 import { PaymentHistoryPage } from "../pages/payment-history/payment-history.page";
 import { PostDetailPage } from "../pages/post-detail/post-detail.page";
+import { UserProfilePage } from "../pages/user-profile/user-profile.page";
 
 import { ChromeBlock } from "../blocks/chrome/chrome.block";
-import { MemberBlock } from "../blocks/member/member.block";
 import { ListBlock } from "../blocks/list/list.block";
 import { PostBlock } from "../blocks/post/post.block";
+import { UserBlock } from "../blocks/user/user.block";
 
 import { AutoFocusDirective } from "./directives/autofocus.directive";
 import { ElasticHeaderDirective } from "./directives/elastic-header.directive";
@@ -49,19 +49,18 @@ let components: Array<any> = [
   MainPage,
   ConfigurationPage,
   ExplorePage,
-  MemberProfilePage,
-  MessageFormPage,
   MessageBoxPage,
-  MessageThreadPage,
+  MessageConversationPage,
   MyAccountPage,
   OrganizationProfilePage,
   PaymentHistoryPage,
   PostDetailPage,
+  UserProfilePage,
   
   ChromeBlock,
   ListBlock,
-  MemberBlock,
-  PostBlock
+  PostBlock,
+  UserBlock
 ]
 
 let directives: Array<any> = [
@@ -76,17 +75,18 @@ let pipes: Array<any> = [
 ]
 
 let providers: Array<any> = [
-  AccountProvider,
   CommunityProvider,
   CurrencyProvider,
   ExperimentProvider,
-  InboxProvider,
   InfluencerProvider,
   InterestProvider,
   ListProvider,
+  MessageProvider,
+  UserProvider,
   OrganizationProvider,
   PageProvider,
   PostProvider,
+  TransactionProvider,
   Keyboard,
   StatusBar,
   SplashScreen,

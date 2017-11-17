@@ -1,10 +1,10 @@
 import { Component } from "@angular/core";
 import { MenuController, NavParams } from "ionic-angular";
 
-import { AccountProvider } from "../app/providers/account.provider";
 import { CurrencyProvider } from "../app/providers/currency.provider";
-import { InboxProvider } from "../app/providers/inbox.provider";
+import { MessageProvider } from "../app/providers/message.provider";
 import { PageProvider } from "../app/providers/page.provider";
+import { UserProvider } from "../app/providers/user.provider";
 
 import { ConfigurationPage } from "./configuration/configuration.page";
 import { ExplorePage } from "./explore/explore.page";
@@ -20,9 +20,9 @@ export class MainPage {
     
   constructor(params: NavParams,
               private menuController: MenuController,
-              public accountProvider: AccountProvider,
               public currencyProvider: CurrencyProvider,
-              public inboxProvider: InboxProvider,
+              public messageProvider: MessageProvider,
+              public userProvider: UserProvider,
               pageProvider: PageProvider) {
     this.rootPage = params.get("page") || ExplorePage;
     

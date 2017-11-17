@@ -1,0 +1,10 @@
+<ion-card class="compact">
+	<figure aspect-1-1> 
+		<img [src]="user.profileImage.url"/>
+		<span class="currency" [innerHTML]="currencyProvider.format(user.pricing.messagePrice, 'Pay ', ' per reply')"></span>
+	</figure>
+	<ion-card-content>
+		<h5>{{user.getFullName()}}</h5>
+		<p small-top-margin class="excerpt" *ngIf="user.headline">{{user.headline}}</p>
+	</ion-card-content>
+</ion-card>

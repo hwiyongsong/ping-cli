@@ -1,7 +1,7 @@
 $chat-bubble-background-left: color($colors, secondary);
 $chat-bubble-background-right: color($colors, light);
 
-.chat-thread {
+.chat-conversation {
 	.chat-message {
 		position: relative;
 		margin-bottom: $medium-space;
@@ -75,7 +75,7 @@ $chat-bubble-background-right: color($colors, light);
 	}
 }
 
-.message-subject {
+.message-title {
 	text-overflow: clip;
 	white-space: normal;
 }

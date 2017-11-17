@@ -1,24 +1,24 @@
 import { Component, ViewChild } from "@angular/core";
 import { Content, NavController, NavParams } from "ionic-angular";
 
-import { AccountProvider } from "../../app/providers/account.provider";
 import { CurrencyProvider } from "../../app/providers/currency.provider";
+import { UserProvider } from "../../app/providers/user.provider";
 
-import { MemberProfilePage } from "../member-profile/member-profile.page";
+import { UserProfilePage } from "../user-profile/user-profile.page";
 
-import { Account } from "../../app/domains/account";
 import { Message } from "../../app/domains/message";
-import { Thread } from "../../app/domains/thread";
+import { MessageConversation } from "../../app/domains/message-conversation";
+import { User } from "../../app/domains/user";
 
 import { StringUtils } from "../../app/utils/string-utils";
 
 @Component({
-  selector: "message-thread-page",
-  templateUrl: "message-thread.page.html",
+  selector: "message-conversation-page",
+  templateUrl: "message-conversation.page.html",
 })
-export class MessageThreadPage {
+export class MessageConversationPage {
 
-  public thread: Thread;
+  public conversation: MessageConversation;
   public reply: string;
   public replyable: boolean = false;
   
@@ -26,15 +26,15 @@ export class MessageThreadPage {
   
   constructor(params: NavParams,
               private navController: NavController,
-              public accountProvider: AccountProvider,
-              public currencyProvider: CurrencyProvider) {
-    this.thread = params.get("thread");
-    this.replyable = this.thread.messages.length > 0;
+              public currencyProvider: CurrencyProvider,
+              public userProvider: UserProvider) {
+    this.conversation = params.get("conversation");
+    this.replyable = this.conversation.messages.length > 0;
   }
   
-  onViewAccountProfile(account: Account) {
-    this.navController.push(MemberProfilePage, {
-      "account": account
+  onViewUserProfile(user: User) {
+    this.navController.push(UserProfilePage, {
+      "user": user
     });
   }
   
@@ -42,11 +42,11 @@ export class MessageThreadPage {
     if (this.reply) {
       let message = new Message();
       message.urn = "urn:message:" + StringUtils.generateUUID();
-      message.from = this.accountProvider.currentAccount;
+      message.from = this.userProvider.currentUser;
       message.body = this.reply;
       message.createdAt = "A moment ago";
       
-      this.thread.addMessage(message);
+      this.conversation.addMessage(message);
       this.clearReply();
       
       setTimeout(() => {

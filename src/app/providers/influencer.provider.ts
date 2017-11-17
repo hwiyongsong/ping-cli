@@ -1,24 +1,24 @@
 import { Injectable } from "@angular/core";
 
-import { AccountProvider } from "./account.provider";
+import { UserProvider } from "./user.provider";
 
-import { Account } from "../domains/account";
+import { User } from "../domains/user";
 
 @Injectable()
 export class InfluencerProvider {
     
-  private mockInfluencers: Array<Account> = [];
+  private mockInfluencers: Array<User> = [];
   
-  constructor(private accountProvider: AccountProvider) { 
+  constructor(private userProvider: UserProvider) { 
     this.initInfluencers();
   }
   
   private initInfluencers() {
-    this.mockInfluencers.push(this.accountProvider.getAccountByAccountUrn("urn:member:joseph-lubin"));
-    this.mockInfluencers.push(this.accountProvider.getAccountByAccountUrn("urn:member:reid-hoffman"));
-    this.mockInfluencers.push(this.accountProvider.getAccountByAccountUrn("urn:member:ryan-bethencourt"));
-    this.mockInfluencers.push(this.accountProvider.getAccountByAccountUrn("urn:member:constance-choi"));
-    this.mockInfluencers.push(this.accountProvider.getAccountByAccountUrn("urn:member:andre-de-castro"));
+    this.mockInfluencers.push(this.userProvider.getUserByUserUrn("urn:member:joseph-lubin"));
+    this.mockInfluencers.push(this.userProvider.getUserByUserUrn("urn:member:reid-hoffman"));
+    this.mockInfluencers.push(this.userProvider.getUserByUserUrn("urn:member:ryan-bethencourt"));
+    this.mockInfluencers.push(this.userProvider.getUserByUserUrn("urn:member:constance-choi"));
+    this.mockInfluencers.push(this.userProvider.getUserByUserUrn("urn:member:andre-de-castro"));
   }
   
 }

@@ -2,11 +2,11 @@
   <ion-content padding class="main-menu">
   	<ion-item no-lines>  	
  			<ion-avatar item-start large>
- 				<img [src]="accountProvider.currentAccount.profileImage.url"/>
+ 				<img [src]="userProvider.currentUser.profileImage.url"/>
  			</ion-avatar>
- 			<h4>{{accountProvider.currentAccount.getFullName()}}</h4>
- 			<p class="currency" [innerHTML]="currencyProvider.format(accountProvider.currentAccount.balance)"></p>
-  		<p class="meta">{{accountProvider.currentAccount.formatKarmaSize()}} karma</p>
+ 			<h4>{{userProvider.currentUser.getFullName()}}</h4>
+ 			<p class="currency" [innerHTML]="currencyProvider.format(userProvider.currentUser.wallet.balance)"></p>
+  		<p class="meta">{{userProvider.currentUser.karmaSize}} karma</p>
   	</ion-item>
     <ion-list class="actions">
       <button ion-item (click)="onViewExplore()">
@@ -16,7 +16,7 @@
         My Network
       </button>
       <button ion-item (click)="onViewMessages()">
-        Messages <ion-badge>{{inboxProvider.currentInbox.threads.length}}</ion-badge>
+        Messages <ion-badge>{{messageProvider.currentInbox.conversations.length}}</ion-badge>
       </button>
       <button ion-item (click)="onViewSettings()">
         Settings

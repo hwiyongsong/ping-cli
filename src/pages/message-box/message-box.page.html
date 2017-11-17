@@ -3,21 +3,21 @@
 </ion-header>
 
 <ion-content>
-	<ion-section small-top-margin class="threads-section">
+	<ion-section small-top-margin class="conversations-section">
 		<ion-section-header>
 			<h2 flex uppercase>Messages</h2>		
 		</ion-section-header>
 		<ion-section-content>
 			<ion-list>
-			  <ion-item class="thread" *ngFor="let thread of inboxProvider.currentInbox.threads">
-			    <ion-avatar item-start (click)="onViewAccountProfile(thread.from)">
-			      <img src="{{thread.from.profileImage.url}}">
+			  <ion-item class="conversation" *ngFor="let conversation of messageProvider.currentInbox.conversations">
+			    <ion-avatar item-start (click)="onViewUserProfile(conversation.from)">
+			      <img src="{{conversation.from.profileImage.url}}">
 			    </ion-avatar>
-		    	<h6 flex class="message-from" (click)="onViewThread(thread)">{{thread.from.firstName}} {{thread.from.lastName}}</h6>
-			    <p skinny class="message-subject" (click)="onViewThread(thread)">{{thread.subject}}</p>
-			    <p class="meta">{{thread.category}} • {{thread.createdAt}}</p>   
+		    	<h6 flex class="conversation-from" (click)="onViewConversation(conversation)">{{conversation.from.firstName}} {{conversation.from.lastName}}</h6>
+			    <p skinny class="conversation-title" (click)="onViewConversation(conversation)">{{conversation.title}}</p>
+			    <p class="meta">{{conversation.category}} • {{conversation.createdAt}}</p>   
 			  	<ion-note item-end item-top>
-			  		<p class="currency" [innerHTML]="currencyProvider.format(thread.incentive.value)"></p>
+			  		<p class="currency" [innerHTML]="currencyProvider.format(conversation.incentive.value)"></p>
 			  	</ion-note>
 			  </ion-item>
 			</ion-list>		

@@ -5,7 +5,7 @@ import { CurrencyProvider } from "../../app/providers/currency.provider";
 
 import { Post } from "../../app/domains/post";
 
-import { MemberProfilePage } from "../member-profile/member-profile.page";
+import { UserProfilePage } from "../user-profile/user-profile.page";
 
 @Component({
   selector: "post-detail-page",
@@ -21,9 +21,9 @@ export class PostDetailPage {
     this.post = params.get("post");
   }
   
-  onViewMemberProfile() {
-    this.navController.push(MemberProfilePage, {
-      "account": this.post.createdBy
+  onViewUserProfile() {
+    this.navController.push(UserProfilePage, {
+      "user": this.post.createdBy
     });
   }
   
