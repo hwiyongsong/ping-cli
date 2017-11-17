@@ -1,24 +1,26 @@
-<ion-menu [content]="mainContent">
+<ion-menu [content]="mainContent" type="overlay">
   <ion-content padding class="main-menu">
   	<ion-item no-lines>  	
  			<ion-avatar item-start large>
  				<img [src]="userProvider.currentUser.profileImage.url"/>
  			</ion-avatar>
  			<h4>{{userProvider.currentUser.getFullName()}}</h4>
- 			<p class="currency" [innerHTML]="currencyProvider.format(userProvider.currentUser.wallet.balance)"></p>
   		<p class="meta">{{userProvider.currentUser.karmaSize}} karma</p>
   	</ion-item>
-    <ion-list class="actions">
-      <button ion-item (click)="onViewExplore()">
-        Explore
+ 		<button ion-item top-margin class="wallet-button" (click)="onViewWallet()">
+ 			<p class="currency" [innerHTML]="currencyProvider.format(userProvider.currentUser.wallet.balance)"></p>
+ 		</button>
+    <ion-list small-top-margin no-lines class="actions">
+      <button ion-item detail-none (click)="onViewExplore()">
+      	Explore
       </button>
-      <button ion-item (click)="onViewMyNetwork()">
+      <button ion-item detail-none (click)="onViewMyNetwork()">
         My Network
       </button>
-      <button ion-item (click)="onViewMessages()">
-        Messages <ion-badge>{{messageProvider.currentInbox.conversations.length}}</ion-badge>
+      <button ion-item detail-none (click)="onViewMessages()">
+      	Messages <ion-badge item-end>{{messageProvider.currentInbox.conversations.length}}</ion-badge>
       </button>
-      <button ion-item (click)="onViewSettings()">
+      <button ion-item detail-none (click)="onViewSettings()">
         Settings
       </button>
     </ion-list>

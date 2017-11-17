@@ -9,6 +9,7 @@ import { UserProvider } from "../app/providers/user.provider";
 import { ConfigurationPage } from "./configuration/configuration.page";
 import { ExplorePage } from "./explore/explore.page";
 import { MessageBoxPage } from "./message-box/message-box.page";
+import { WalletPage } from "./wallet/wallet.page";
 
 @Component({
   selector: "main-page",
@@ -41,8 +42,8 @@ export class MainPage {
     this.open(MessageBoxPage);
   }
   
-  onViewPaymentsReceived() {
-    alert("Looks like that's a mock...");
+  onViewWallet() {
+    this.open(WalletPage);
   }
 
   onViewSettings() {

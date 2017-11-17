@@ -1,15 +1,25 @@
 main-page {
 	ion-content.main-menu {
 		.currency {
-			font-size: 1.7rem;
+			font-size: 1.6rem;
+		}
+		
+		button.wallet-button {
+			border-top: $hairlines-width solid $border-color;
 		}
 		
 		ion-list.actions {
-			margin-top: $medium-space;
-			
 			button {
 				font-weight: 300;
 				font-size: 1.7rem;
+				
+				ion-label.label-ios {
+					display: flex;
+					align-items: center;
+					margin-top: 0;
+					margin-bottom: 0;
+					min-height: 50px;
+				}
 			}
 		}
 	}

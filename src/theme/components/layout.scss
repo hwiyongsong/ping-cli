@@ -3,6 +3,10 @@
 	align-items: center;
 }
 
+[no-margin] {
+	margin: 0 !important;
+}
+
 [no-top-margin] {
   margin-top: 0 !important;
 }
@@ -81,6 +85,10 @@
 
 [right-margin] {
 	margin-right: $medium-space !important;
+}
+
+[no-padding] {
+	padding: 0 !important;
 }
 
 [small-padding] {

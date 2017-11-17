@@ -27,9 +27,9 @@ import { MessageBoxPage } from "../pages/message-box/message-box.page";
 import { MessageConversationPage } from "../pages/message-conversation/message-conversation.page";
 import { MyAccountPage } from "../pages/my-account/my-account.page";
 import { OrganizationProfilePage } from "../pages/organization-profile/organization-profile.page";
-import { PaymentHistoryPage } from "../pages/payment-history/payment-history.page";
 import { PostDetailPage } from "../pages/post-detail/post-detail.page";
 import { UserProfilePage } from "../pages/user-profile/user-profile.page";
+import { WalletPage } from "../pages/wallet/wallet.page";
 
 import { ChromeBlock } from "../blocks/chrome/chrome.block";
 import { ListBlock } from "../blocks/list/list.block";
@@ -53,9 +53,9 @@ let components: Array<any> = [
   MessageConversationPage,
   MyAccountPage,
   OrganizationProfilePage,
-  PaymentHistoryPage,
   PostDetailPage,
   UserProfilePage,
+  WalletPage,
   
   ChromeBlock,
   ListBlock,
