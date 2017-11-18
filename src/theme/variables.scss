@@ -50,6 +50,7 @@ $list-border-color:												$border-color;
 $list-ios-header-letter-spacing:					$letter-spacing-base;
 
 // ITEM
+$list-ios-activated-background-color:			color($colors, light);
 $item-ios-avatar-size:                    60px;
 $item-ios-body-text-font-size:            $font-size-base;
 $item-ios-padding-top:                    $medium-space;
