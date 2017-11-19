@@ -1,12 +1,13 @@
-<ion-card class="feed" (click)="onViewPostDetail()">
+<ion-card class="feed" (click)="onViewPostDetail()" *ngIf="post">
+	<ion-card-meta *ngIf="post.reason"><p [innerHTML]="post.reason" class="meta"></p></ion-card-meta>
 	<ion-card-header>
 		<ion-item *ngIf="!post.organizational">
-	  	<ion-avatar item-start (click)="onViewMemberProfile(); $event.stopPropagation()">
+	  	<ion-avatar item-start (click)="onViewUserProfile(); $event.stopPropagation()">
 			  <img [src]="post.createdBy.profileImage.url">
 			</ion-avatar>  	
 	    <h6 flex-center class="created-by">{{post.createdBy.getFullName()}}</h6>
 	    <p class="meta">{{post.createdBy.headline}}</p>
-			<p class="meta">{{post.createdAt}}</p>
+			<p class="meta">{{post.createdAt}}</p> 
 			<ion-note item-end item-top>
 	  		<p class="currency" [innerHTML]="currencyProvider.format(post.incentive.value)"></p>
 	  	</ion-note>
@@ -22,10 +23,14 @@
 	  	</ion-note> 	
   	</ion-item>
 	</ion-card-header>
-	<ion-card-content>
+	<figure *ngIf="post.image">
+		<img [src]="post.image.url"/>
+	</figure>
+	<ion-card-content> 
 		<ion-item>
-			<h5 small-bottom-margin no-wrap><sup *ngIf="post.category">{{post.category}}</sup>{{post.title}}</h5>
-			<p no-wrap class="excerpt" [innerHTML]="post.getExcerpt()"></p>		
+			<p class="topic" *ngIf="post.category">{{post.category}}</p>
+			<h5 small-bottom-margin no-wrap>{{post.title}}</h5>
+			<p no-wrap class="excerpt" [innerHTML]="post.getExcerpt()"></p>
 			<ion-note item-end item-top *ngIf="post.video">
 				<figure radius class="video-thumbnail">
 					<img [src]="post.video.thumbnailUrl"/>

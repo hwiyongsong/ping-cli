@@ -56,19 +56,19 @@ export class PostProvider {
     this.mockPosts.push(this.createUPortProject());
     this.mockPosts.push(this.createBitAboutBancor());
     this.mockPosts.push(this.createAirbnbSurvey());
-    this.mockPosts.push(this.createPingMeJobReferral());
+    this.mockPosts.push(this.createPingMeJobReferral()); 
   }
   
   private createPingMeJobReferral(): Post {
     let post = this.createPost("urn:post:pingme-job-referral",
-                               "Referral bonus for full-stack software engineer at PingMe.",
-                               "<p>Hi friends...I am looking for a solid full-stack software engineer to be part of PingMe.</p> <p>We are offering a <strong>referral bonus of $750</strong> if you can help us find a candidate who converts to a full-time hire.</p> <h6>Job Description</h6> <p>PingMe is looking for a talented full-stack software engineer with strong backend and web development experience to be part of the PingMe platform solutions. Candidate should have a passion for building amazing user experience and a desire to question all assumptions on the status-quo to build a new peer-to-peer attention economy.</p> <h6>Desired Qualifications</h6> <ul> <li>BS/MS degree, preferably in Computer Science or related field.</li> <li>Proven work experience in software development.</li> <li>Competency in designing scalable and performant backend architecture.</li> <li>2+ years experience with Java or similar backend programming language.</li> <li>2+ years experience with web development.</li> <li>Experience with Solidity and smart contract is a plus.</li> <li>Passion for building an open, transparent, peer-to-peer economy.</li> </ul>",
+                               "Referral bonus for senior software engineer at PingMe.",
+                               "<p>Hi friends...I am looking for a solid full-stack senior software engineer to be part of PingMe.</p> <p>We are offering a <strong>referral bonus of $1500</strong> if you can help us find a candidate who converts to a full-time hire.</p> <h6>Job Description</h6> <p>PingMe is looking for a talented full-stack software engineer with strong backend and web development experience to be part of the PingMe platform solutions. Candidate should have a passion for building amazing user experience and a desire to question all assumptions on the status-quo to build a new peer-to-peer attention economy.</p> <h6>Desired Qualifications</h6> <ul> <li>BS/MS degree, preferably in Computer Science or related field.</li> <li>Proven work experience in software development.</li> <li>Competency in designing scalable and performant backend architecture.</li> <li>2+ years experience with Java or similar backend programming language.</li> <li>2+ years experience with web development.</li> <li>Experience with Solidity and smart contract is a plus.</li> <li>Passion for building an open, transparent, peer-to-peer economy.</li> </ul>",
                                "Referral Bonus",
                                "Refer a Candidate",
                                "urn:member:hwi-yong-song",
                                "Nov 8, 2017");
     
-    post.incentive = this.createIncentive(750,
+    post.incentive = this.createIncentive(1500,
                                     0,
                                     1,
                                     "REFERRAL");
@@ -85,14 +85,12 @@ export class PostProvider {
                                "urn:member:michael-sena",
                                "Nov 5, 2017");
     
-    post.image = this.createImage("https://www.isport360.com/wp-content/uploads/2017/01/appstore-icon-mobile-retina.png");
+    post.image = this.createImage("https://cdn-images-1.medium.com/max/1200/1*6r1_9DSAr7FyZX3Uj2GLvQ.png");
     
     post.incentive = this.createIncentive(10,
                                     275,
                                     500,
                                     "REGISTER");
-    
-    post.organizational = true;
     
     return post;
   }
@@ -129,7 +127,7 @@ export class PostProvider {
                                "urn:member:kim-kamitani",
                                "Nov 2, 2017");
     
-    post.image = this.createImage("https://tctechcrunch2011.files.wordpress.com/2014/07/symbol.jpg?w=655&zoom=2");
+    post.image = this.createImage("https://cdn.dribbble.com/users/692322/screenshots/3086680/airbnb-ui_1x.png");
 
     post.incentive = this.createIncentive(25,
                                     72,

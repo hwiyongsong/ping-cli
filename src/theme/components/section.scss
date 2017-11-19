@@ -22,3 +22,13 @@ ion-section {
     }
   }
 }
+
+ion-section.frame {
+	border-bottom: 10px solid color($colors, light);
+	
+	ion-section-content {
+		ion-card {
+			border-top: $hairlines-width solid $border-color;		
+		}
+	}
+}

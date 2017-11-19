@@ -385,9 +385,9 @@ export class UserProvider {
     user.pricing = this.createMockPricing(10);
     
     user.relationship = this.createMockRelationship("2nd",
-                                                       33,
-                                                       "Linkedin",
-                                                       null);
+                                                    33,
+                                                    "Linkedin",
+                                                    null);
     
     user.experiences.push(this.createMockExperience("urn:company:uber",
                                                        "Senior Engineering Manager",
@@ -426,12 +426,17 @@ export class UserProvider {
                                    "Michael",
                                    "Sena",
                                    "Product Lead at uPort",
-                                   "Michael Sena manages product spokes and enterprise partnerships at Consensys. Michael brings a diverse background in product management, technology consulting, capital markets, and political economics to the blockchain. In previous roles, he designed and deployed consumer and enterprise technologies for some of the largest organizations in the world, managed a portfolio of international financial securities, and launched a startup. At Consensys, Michael is using these foundational experiences to unlock value on a global scale by building applications for the emerging blockchain economy. He believes that exponential blockchain adoption is only a beautiful Dapp away and is passionate about getting these products into the hands of people.<br/><br/>For business opportunities, please email michael.sena@consensys.net",
+                                   "Michael Sena manages product spokes and enterprise partnerships at Consensys. Michael brings a diverse background in product management, technology consulting, capital markets, and political economics to the blockchain.",
                                    187,
                                    4671,
                                    "https://media.licdn.com/media/AAEAAQAAAAAAAAh6AAAAJDhjNWIxNzhjLWU2NTgtNGIwNy1hNTExLWFiZWU1YWNlMDA5OA.jpg");
 
     user.pricing = this.createMockPricing(10);
+    
+    user.relationship = this.createMockRelationship("2nd",
+                                                    11,
+                                                    null,
+                                                    null);
     
     user.experiences.push(this.createMockExperience("urn:company:uport",
                                                        "Product Lead",

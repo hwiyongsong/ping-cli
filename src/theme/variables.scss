@@ -44,6 +44,11 @@ $toolbar-ios-button-font-size:						1.8rem;
 $toolbar-ios-height:											50px;
 $toolbar-ios-padding:                     0 $medium-space;
 $toolbar-ios-title-text-color:						color($colors, dark);
+$toolbar-md-height:												0;
+$toolbar-md-padding:											0;
+
+// SEGMENT
+$segment-button-md-font-size:							1.4rem;
 
 // LIST
 $list-border-color:												$border-color;
@@ -67,12 +72,14 @@ $item-ios-thumbnail-size:									60px;
 $grid-padding-width:                      0;
 
 // CARD
-$card-ios-box-shadow:                     0 0px 10px #e4e4e4;
-$card-ios-margin-start:										$medium-space;
-$card-ios-margin-end:											$medium-space;
+$card-ios-box-shadow:                     none;
+$card-ios-margin-top:                     0;
+$card-ios-margin-bottom:                  0;
+$card-ios-margin-start:										0;
+$card-ios-margin-end:											0;
 
 // SEARCH
-$searchbar-md-input-box-shadow:						0 0px 10px #e4e4e4; 
+$searchbar-md-input-box-shadow:						none;
  
 // ALERT
 $alert-ios-border-radius:									$border-radius;
@@ -103,6 +110,7 @@ $alert-ios-message-empty-padding-bottom:	$small-space;
 @import "./components/note";
 @import "./components/searchbar";
 @import "./components/section";
+@import "./components/segment";
 @import "./components/tag";
 @import "./components/text";
 @import "./components/thumbnail";

@@ -1,0 +1,17 @@
+abook-block {
+	position: relative;
+	display: block;
+	margin-top: $tiny-space;
+	padding: 32px; 
+	text-align: center;
+  background-image: url("http://il8.picdn.net/shutterstock/videos/12332321/thumb/1.jpg");
+  background-position: top left;
+  
+  h3 {
+  	color: white;
+  }
+  
+  p {
+  	color: white;
+  }
+}

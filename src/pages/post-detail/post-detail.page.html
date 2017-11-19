@@ -5,7 +5,7 @@
 <ion-content>
 	<ion-section>
 		<ion-section-header no-top-padding>
-			<ion-item *ngIf="!post.organizational" (click)="onViewMemberProfile()">
+			<ion-item *ngIf="!post.organizational" (click)="onViewUserProfile()">
 		    <h4 flex-center class="created-by">{{post.createdBy.getFullName()}}<sub>{{post.createdBy.headline}}</sub></h4>		
 		  	<ion-avatar item-end>
 				  <img [src]="post.createdBy.profileImage.url">

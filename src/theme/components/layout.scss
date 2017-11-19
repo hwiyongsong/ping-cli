@@ -187,6 +187,18 @@
   padding-right: $large-space !important;
 }
 
+[separator] {
+  border-bottom: $hairlines-width solid $border-color;
+}
+
+[top-border] {
+	border-top: $hairlines-width solid $border-color;
+}
+
+[bottom-border] {
+	border-bottom: $hairlines-width solid $border-color;
+}
+
 [radius] {
 	overflow: hidden;
 	border-radius: $border-radius;

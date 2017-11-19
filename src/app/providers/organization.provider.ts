@@ -154,7 +154,7 @@ export class OrganizationProvider {
                                        "uPort is the leading blockchain identity platform. We are building a self-sovereign identity platform that provides users with a central place to to establish a complete digital identity and authenticate themselves wherever uPort is accepted. We are built on the Ethereum blockchain and are currently being incubated at ConsenSys.",
                                        "Brooklyn, New York",
                                        "http://uport.me",
-                                       "https://pbs.twimg.com/profile_images/767715333377523712/10QF-QIE.jpg");
+                                       "http://is4.mzstatic.com/image/thumb/Purple118/v4/b6/7d/95/b67d9593-c295-91ac-14d9-80689c8a0cd1/source/175x175bb.jpg");
   }
   
   private createBancor(): Organization {

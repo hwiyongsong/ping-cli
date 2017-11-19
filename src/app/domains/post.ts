@@ -14,13 +14,14 @@ export class Post {
   public video: Video;
   public organizational: boolean = false;
   public actionText: string;
+  public reason: string;
   public createdBy: User;
   public createdAt: string;
   
   getExcerpt() {
     if (this.body && this.body.length > 150) {
       let limit = (this.video == null) ? 150 : 100;
-      return this.body.replace("<br/>", "").substring(0, limit) + "...";
+      return this.body.replace(/(<p[^>]+?>|<p>|<strong>|<\/strong>|<\/p>)/img, "").substring(0, limit) + "...";
     }
     
     return null;

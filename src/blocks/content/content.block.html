@@ -1,0 +1,4 @@
+<div *ngIf="content">
+	<abook-block *ngIf="content.urn.startsWith('urn:abook:')"></abook-block>
+	<post-block [post]="content" [layout]="layout" *ngIf="content.urn.startsWith('urn:post:')"></post-block>
+</div>

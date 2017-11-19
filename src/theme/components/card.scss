@@ -1,7 +1,6 @@
 ion-card.card-ios {
   position: relative;
   text-align: left;
-  border: $hairlines-width solid color($colors, gray);
 
   ion-col {
     padding: 0;
@@ -34,6 +33,16 @@ ion-card.card-ios {
   h6 {
     font-size: $h6-font-size;
   }
+  
+  ion-card-meta {
+		display: block;
+		padding: 10px $medium-space;
+		border-bottom: $hairlines-width solid $border-color;
+		
+		p {
+			margin-bottom: 0;
+		}
+	}
 }
 
 ion-card.card-ios.compact {

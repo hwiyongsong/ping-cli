@@ -111,7 +111,7 @@ span[ion-text] {
 }
 
 strong, [strong] {
-  font-weight: 700 !important;
+  font-weight: 500 !important;
 }
 
 small {
@@ -182,15 +182,22 @@ b {
   text-overflow: ellipsis;
 }
 
-p.bounty {
-	font-size: 1.7rem !important;
-	color: color($colors, primary) !important;
+.topic {
+	font-weight: 500 !important;
+  font-size: 1.2rem !important;
+  letter-spacing: 0.025em;
+  color: color($colors, dark-gray) !important;
+  text-transform: uppercase;
 }
 
 .excerpt, .excerpt * {
 	font-weight: 300 !important;
 	font-size: 1.4rem !important;
 	color: color($colors, dark-gray) !important; 
+	
+	p {
+		display: inline;
+	}
 }
 
 .no-wrap, [no-wrap] {
