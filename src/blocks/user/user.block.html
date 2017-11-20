@@ -1,10 +1,10 @@
-<ion-card class="compact">
+<ion-card class="compact" (click)="onViewUserProfile()">
 	<figure aspect-1-1> 
 		<img [src]="user.profileImage.url"/>
-		<span class="message-price" [innerHTML]="currencyProvider.format(user.pricing.messagePrice, '', ' per reply')" *ngIf="showPricing"></span>
+		<span class="message-price" [innerHTML]="currencyProvider.format(user.pricing.messagePrice, '', ' per reply')" *ngIf="showPricing == 'true'"></span>
 	</figure>
 	<ion-card-content>
-		<h5>{{user.getFullName()}}</h5>
+		<h6>{{user.getFullName()}}</h6>
 		<p class="meta" *ngIf="user.headline">{{user.headline}}</p>
 	</ion-card-content>
 </ion-card>

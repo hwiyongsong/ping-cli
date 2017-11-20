@@ -14,7 +14,7 @@ h1, h2, h3, h4, h5, h6 {
   sup {
   	display: block;
     width: 100%;
-  	top: 0;
+  	top: 2px;
   	font-weight: 500;
     line-height: $line-height-base;
     color: color($colors, dark-gray);
@@ -185,8 +185,8 @@ b {
 .topic {
 	font-weight: 500 !important;
   font-size: 1.2rem !important;
-  letter-spacing: 0.025em;
-  color: color($colors, dark-gray) !important;
+  letter-spacing: 0.02em;
+  color: color($colors, primary) !important;
   text-transform: uppercase;
 }
 

@@ -19,7 +19,7 @@ export class UserProvider {
     
   public currentUser: User;
   private mockUsers: Array<User> = [];
-  private mockRecentlyContacted: Array<User> = [];
+  private mockAngelInvestors: Array<User> = [];
   private mockJobOpportunities: Array<User> = [];
   private mockBlockchainInfluencers: Array<User> = [];
   
@@ -27,9 +27,9 @@ export class UserProvider {
               private organizationProvider: OrganizationProvider) { 
     this.initMockUsers();
     this.initCurrentUser();
-    this.initRecentlyContacted();
-    this.initMockJobOpportunities();
+    this.initAngelInvestors();
     this.initMockBlockchainInfluencers();
+    this.initMockJobOpportunities();
   }
   
   getUserByUserUrn(userUrn: string): User {
@@ -84,12 +84,11 @@ export class UserProvider {
     this.mockUsers.push(this.creatJosephQuan()); // Cofounder/CEO at Twinechain
   }
   
-  private initRecentlyContacted() {
-    this.mockRecentlyContacted.push(this.getUserByUserUrn("urn:member:rita-urbach"));
-    this.mockRecentlyContacted.push(this.getUserByUserUrn("urn:member:michael-sena"));
-    this.mockRecentlyContacted.push(this.getUserByUserUrn("urn:member:dilya-zhanispayeva"));
-    this.mockRecentlyContacted.push(this.getUserByUserUrn("urn:member:anya-hayden"));
-    this.mockRecentlyContacted.push(this.getUserByUserUrn("urn:member:joseph-quan"));
+  private initAngelInvestors() {
+    this.mockAngelInvestors.push(this.getUserByUserUrn("urn:member:joel-englander"));
+    this.mockAngelInvestors.push(this.getUserByUserUrn("urn:member:liliana-nordbakk"));
+    this.mockAngelInvestors.push(this.getUserByUserUrn("urn:member:ryan-bethencourt"));
+    this.mockAngelInvestors.push(this.getUserByUserUrn("urn:member:jon-boutelle"));
   }
   
   private initMockJobOpportunities() {
@@ -102,9 +101,9 @@ export class UserProvider {
   private initMockBlockchainInfluencers() {
     this.mockBlockchainInfluencers.push(this.getUserByUserUrn("urn:member:joseph-lubin"));
     this.mockBlockchainInfluencers.push(this.getUserByUserUrn("urn:member:reid-hoffman"));
-    this.mockBlockchainInfluencers.push(this.getUserByUserUrn("urn:member:ryan-bethencourt"));
-    this.mockBlockchainInfluencers.push(this.getUserByUserUrn("urn:member:constance-choi"));
     this.mockBlockchainInfluencers.push(this.getUserByUserUrn("urn:member:andre-de-castro"));
+    this.mockBlockchainInfluencers.push(this.getUserByUserUrn("urn:member:constance-choi"));
+    this.mockBlockchainInfluencers.push(this.getUserByUserUrn("urn:member:kartik-mandaville"));
   }
   
   private createScottPredmore(): User {
@@ -568,7 +567,7 @@ export class UserProvider {
                                    "Zavain",
                                    "Dar",
                                    "VC at Lux Capital",
-                                   "",
+                                   "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> </p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
                                    322,
                                    9634,
                                    "https://media.licdn.com/media/p/5/005/014/3b1/151eb1e.jpg");
@@ -588,7 +587,7 @@ export class UserProvider {
                                    "Bob",
                                    "Becker",
                                    "Venture Capitalist at Venture Partners",
-                                   "",
+                                   "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> </p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
                                    487,
                                    10349,
                                    "https://media.licdn.com/media/p/1/000/18f/1bf/36ce353.jpg");
@@ -608,7 +607,7 @@ export class UserProvider {
                                    "Toji",
                                    "Tokuda",
                                    "President & CEO at Fusion Ventures",
-                                   "",
+                                   "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> </p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
                                    424,
                                    9274,
                                    "https://media.licdn.com/media/p/1/000/277/3e7/34f7823.jpg");
@@ -628,7 +627,7 @@ export class UserProvider {
                                    "Anya",
                                    "Hayden",
                                    "VC at Hightland Capital",
-                                   "",
+                                   "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> </p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
                                    326,
                                    8642,
                                    "https://media.licdn.com/media/AAEAAQAAAAAAAAhGAAAAJDQxYjlhMWQ3LTBjZjItNDkwNS1hMWJlLTJhYjAwZTZjMzAwNA.jpg");
@@ -648,7 +647,7 @@ export class UserProvider {
                                    "Reid",
                                    "Hoffman",
                                    "Entrepreneur. Product Strategist. Investor.",
-                                   "",
+                                   "<p>All aspects of consumer internet and software. Focus is on product development, innovation, business strategy, and finance, but includes general management, operations, business operations, business development, talent management, and marketing.</p> </p>Strong experience in both seed-stage companies (paypal, linkedin, facebook, zynga, last.fm, flickr) and growth companies (mozilla, linkedin, zynga, paypal.)</p>",
                                    495,
                                    11942,
                                    "https://media.licdn.com/media/p/5/000/1bd/26f/349c10e.jpg");
@@ -668,7 +667,7 @@ export class UserProvider {
                                    "Joseph",
                                    "Lubin",
                                    "Founder at Consensus Systems (ConsenSys)",
-                                   "",
+                                   "<p>Joseph Lubin’s career has involved various posts in the fields of technology and finance and in their intersection.</p> <p>Subsequent to graduating cum laude with a degree in Electrical Engineering and Computer Science from Princeton, he worked as research staff in the Robotics Lab at Princeton and then at Vision Applications, Inc., a private research firm, in the fields of autonomous mobile robotics, machine vision and artificial neural networks.</p> <p>His next project was the development of an autonomous music composition tool with tomandandy music.</p> <p>Joseph worked as a software engineer and consultant on various projects, eventually being tipped for the role of Director of the New York office of Blacksmith, a Virginia-based software consulting firm.</p> <p>Software engineering, finance and cryptography were central during employment with Goldman Sachs, eMagine’s consulting work on the Identrus project, and the founding and operation of a set of hedge funds run with a partner.</p> <p>Switching gears, Joseph moved to Kingston, Jamaica to work on a set of projects in the music industry. Two years into the music project, Joseph co-founded the Ethereum Project, and has been working on Ethereum and more recently ConsenSys since January 2014.</p> <p>ConsenSys began as a blockchain production studio building decentralized applications, mostly on Ethereum, and continues on this track, but has expanded its activities since inception. Many of those components are core elements that can be used to construct larger solutions as well as being standalone solutions in their own right. Since ConsenSys began operations before the Ethereum ecosystem existed, ConsenSys has also built core infrastructure elements like Ethereum clients, testing frameworks, rapid application development frameworks, and Integrated Development Environments. ConsenSys Enterprise, the professional services arm, works with various enterprises to help them formulate their blockchain strategy and develop business processes for them on private or consortium blockchains, as well as on the public Ethereum network.</p>",
                                    472,
                                    12255,
                                    "https://media.licdn.com/media/AAEAAQAAAAAAAAvtAAAAJDcwMzk5ZmE3LWViZGQtNGQzMS04ZGUxLTU4MzI0NjY0NzczMQ.jpg");
@@ -708,12 +707,12 @@ export class UserProvider {
                                    "Joel",
                                    "Englander",
                                    "Angel Investor",
-                                   "",
+                                   "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> </p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
                                    387,
                                    9232,
                                    "https://media.licdn.com/media/p/2/000/0a4/11d/382a61f.jpg");
   
-    user.pricing = this.createMockPricing(10);
+    user.pricing = this.createMockPricing(50);
     
     user.relationship = this.createMockRelationship("2nd",
                                                        14,
@@ -728,12 +727,12 @@ export class UserProvider {
                                    "Liliana",
                                    "Nordbakk",
                                    "Angel Investor at Band of Angels",
-                                   "",
+                                   "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> </p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
                                    328,
                                    7345,
                                    "https://media.licdn.com/media/p/3/005/00b/3ec/2dd1c23.jpg");
   
-    user.pricing = this.createMockPricing(10);
+    user.pricing = this.createMockPricing(50);
     
     user.relationship = this.createMockRelationship("3rd",
                                                        7,
@@ -748,12 +747,12 @@ export class UserProvider {
                                    "Jon",
                                    "Boutelle",
                                    "Angel Investor and Entrepreneur at Independent",
-                                   "",
+                                   "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> </p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
                                    483,
                                    8313,
                                    "https://media.licdn.com/media/p/7/005/0a2/177/061ff31.jpg");
   
-    user.pricing = this.createMockPricing(10);
+    user.pricing = this.createMockPricing(50);
     
     user.relationship = this.createMockRelationship("2nd",
                                                        17,
@@ -768,12 +767,12 @@ export class UserProvider {
                                    "Ryan",
                                    "Bethencourt",
                                    "CEO, Investor and Blockchain Innovator",
-                                   "",
+                                   "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> </p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
                                    238,
                                    5342,
                                    "https://media.licdn.com/media/AAEAAQAAAAAAAAdiAAAAJDkxNjg0Y2NkLTAzYjYtNDNmMC04ZTVmLWIxZTBhMTA3OTU0Yw.jpg");
   
-    user.pricing = this.createMockPricing(100);
+    user.pricing = this.createMockPricing(50);
     
     user.relationship = this.createMockRelationship("2nd",
                                                        23,
@@ -788,7 +787,7 @@ export class UserProvider {
                                    "Constance",
                                    "Choi",
                                    "Co-Founder & Director at COALA Foundation",
-                                   "",
+                                   "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> </p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
                                    321,
                                    8923,
                                    "https://media.licdn.com/media/AAEAAQAAAAAAAAe5AAAAJDhlNjc0ZDk5LWZmYzMtNDFhNy04ZDY4LWViZDdhYjg3MTdmZA.jpg");
@@ -808,7 +807,7 @@ export class UserProvider {
                                    "Dilya",
                                    "Zhanispayeva",
                                    "Co-Founder - Caspian Blockchain Technologies",
-                                   "",
+                                   "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> </p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
                                    246,
                                    6741,
                                    "https://media.licdn.com/media/AAIA_wDGAAAAAQAAAAAAAA0SAAAAJDI1OTlhYTEyLWUzMTUtNGFhYy1iMmM4LTc2MjU2YjI1MTRmNQ.jpg");
@@ -828,7 +827,7 @@ export class UserProvider {
                                    "Andre",
                                    "de Castro",
                                    "CEO and Founder at Blockchain of Things",
-                                   "",
+                                   "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> </p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
                                    231,
                                    6382,
                                    "https://media.licdn.com/media/AAEAAQAAAAAAAAftAAAAJDViZDlmODQyLTE2YTUtNDU3Yy1hZWQ5LWM2ZWVlZDliYTEzMw.jpg");
@@ -847,8 +846,8 @@ export class UserProvider {
     let user = this.createMockUser("urn:member:kartik-mandaville",
                                    "Kartik",
                                    "Mandaville",
-                                   "Building a protocol for attestations on blockchain, CEO at SpringRole, Advisor at Science Blockchain etc, Kairos Fellow",
-                                   "",
+                                   "CEO at SpringRole, Advisor at Science Blockchain",
+                                   "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> </p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
                                    188,
                                    5728,
                                    "https://media.licdn.com/media/AAEAAQAAAAAAAANzAAAAJGI1NTJkZWU4LWI1NGItNDQ4MC05NzA0LWE5Njk2MWJmYWMyYQ.jpg");
@@ -868,7 +867,7 @@ export class UserProvider {
                                    "Joseph",
                                    "Quan",
                                    "Cofounder/CEO at Twinechain",
-                                   "",
+                                   "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> </p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
                                    194,
                                    7238,
                                    "https://media.licdn.com/media/AAEAAQAAAAAAAAfKAAAAJGFmMTZkNWE5LTc1YjUtNDk0MC1hMDkzLTk1ZGQ2MWI1MWY2Mw.jpg");

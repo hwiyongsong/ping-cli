@@ -16,7 +16,7 @@ export class ContentBlock {
   public index: number;
   
   @Input()
-  public showPricing: boolean;
+  public showPricing: boolean = false;
   
   @Output()
   public notify: EventEmitter<string> = new EventEmitter<string>();

@@ -1,8 +1,11 @@
 import { Component, Input } from "@angular/core";
+import { NavController } from "ionic-angular";
 
 import { CurrencyProvider } from "../../app/providers/currency.provider";
 
 import { User } from "../../app/domains/user";
+
+import { UserProfilePage } from "../../pages/user-profile/user-profile.page";
 
 @Component({
   selector: "user-block",
@@ -19,8 +22,15 @@ export class UserBlock {
   @Input()
   public showPricing: boolean = false;
   
-  constructor(public currencyProvider: CurrencyProvider) {
+  constructor(private navController: NavController,
+              public currencyProvider: CurrencyProvider) {
     // Do nothing.
+  }
+  
+  onViewUserProfile() {
+    this.navController.push(UserProfilePage, {
+      "user": this.user
+    });
   }
   
 }
