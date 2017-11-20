@@ -23,11 +23,6 @@ export class SlidesBlock {
   ngAfterViewInit() {
     this.slides.slidesOffsetBefore = 16;
     this.slides.slidesOffsetAfter = 16;
-    
-    // HACK: Sometimes the offset is not reflected, so manually nudge the content.
-    setTimeout(() => {
-      this.slides.slideTo(0, 0);
-    }, 400);
   }
 
 }

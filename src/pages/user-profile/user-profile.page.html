@@ -7,28 +7,30 @@
 		<ion-section-header no-top-padding>
 			<ion-item no-lines>
 				<h2>{{user.getFullName()}}<sub class="no-wrap">{{user.headline}}</sub></h2>
-				<p small-top-margin class="meta">232 connections • 10,422 karma</p>
+				<p small-top-margin class="meta">{{user.formatConnectionSize()}} connections • {{user.formatKarmaSize()}} karma</p>
 				<ion-avatar large item-end *ngIf="user.profileImage">
 		      <img src="{{user.profileImage.url}}">
 		      <ion-badge *ngIf="user.relationship && user.relationship.graphDistance">{{user.relationship.graphDistance}}</ion-badge>
 		    </ion-avatar>
 			</ion-item>
 			<ion-buttons>
-  			<button ion-button icon-start small-right-margin outline *ngIf="user.relationship && !user.relationship.isConnected()">Connect</button>
-  			<button ion-button icon-start outline color="secondary">Message for $10</button>
+  			<button ion-button icon-start tiny-right-margin outline *ngIf="user.relationship && !user.relationship.isConnected()">Connect</button>
+  			<button ion-button icon-start outline color="secondary" [innerHTML]="currencyProvider.format(user.pricing.messagePrice, 'Message for ')"></button>
   		</ion-buttons>
 		</ion-section-header>
 		<ion-section-content>
-			<p class="lead" [innerHtml]="user.description"></p>
-			<ul bottom-padding class="relationship" *ngIf="user.relationship">
-  			<li *ngIf="user.relationship.sharedConnectionSize">You both share <a>{{user.relationship.sharedConnectionSize}} common connections</a>.</li>
-  			<li *ngIf="user.relationship.sharedCompany">You both worked at <a>{{user.relationship.sharedCompany}}</a>.</li>
-  			<li *ngIf="user.relationship.sharedSchool">You both are alumni of <a>{{user.relationship.sharedSchool}}</a>.</li>
-  		</ul>
+			<article>
+				<p [innerHtml]="user.description"></p>
+				<ul class="relationship" *ngIf="user.relationship">
+	  			<li *ngIf="user.relationship.sharedConnectionSize">You both share <a>{{user.relationship.sharedConnectionSize}} common connections</a>.</li>
+	  			<li *ngIf="user.relationship.sharedCompany">You both worked at <a>{{user.relationship.sharedCompany}}</a>.</li>
+	  			<li *ngIf="user.relationship.sharedSchool">You both are alumni of <a>{{user.relationship.sharedSchool}}</a>.</li>
+	  		</ul>			
+			</article>
 		</ion-section-content>
 	</ion-section>
 
-  <ion-section class="experiences" *ngIf="user.experiences">
+  <ion-section class="experiences" *ngIf="user.experiences.length > 0">
   	<ion-section-content>
 	  	<h4>Experience</h4>
   		<ion-list>
@@ -44,7 +46,7 @@
   	</ion-section-content>
   </ion-section>
 
-  <ion-section class="education" *ngIf="user.educations">
+  <ion-section class="education" *ngIf="user.educations.length > 0">
   	<ion-section-content>
   		<h4>Education</h4>
   		<ion-list>
@@ -61,7 +63,7 @@
   	</ion-section-content>
   </ion-section>
 
-  <ion-section class="interests">
+  <ion-section class="interests" *ngIf="user.interests.length > 0">
   	<ion-section-content>
   		<h4 small-bottom-margin>Interests</h4>
   		<ion-thumbnail *ngFor="let interest of user.interests">

@@ -7,6 +7,8 @@ import { Pricing } from "./pricing";
 import { Relationship } from "./relationship";
 import { Wallet } from "./wallet";
 
+import { NumberUtils } from "../utils/number-utils";
+
 export class User {
   
   public urn: string;
@@ -26,6 +28,14 @@ export class User {
   
   getFullName() {
     return this.firstName + " " + this.lastName; 
+  }
+  
+  formatConnectionSize(): string {
+    return NumberUtils.format(this.connectionSize); 
+  }
+  
+  formatKarmaSize(): string {
+    return NumberUtils.format(this.karmaSize); 
   }
   
   getCurrentCompany(): Organization {

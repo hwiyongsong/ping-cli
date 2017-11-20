@@ -1,6 +1,6 @@
 import { User } from "./user";
 
-export class TransactionRecord {
+export class Transaction {
 
   public urn: string;
   public sender: User;

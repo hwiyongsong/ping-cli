@@ -1,15 +1,15 @@
-import { TransactionRecord } from "./transaction-record";
+import { Transaction } from "./transaction";
 
 export class TransactionHistory {
 
-  public records: Array<TransactionRecord> = [];
+  public transactions: Array<Transaction> = [];
   
   getTotal(): number {
     let total = 0;
     
-    for (let record of this.records) {
-      if (record.amount) {
-        total += record.amount; 
+    for (let transaction of this.transactions) {
+      if (transaction.amount) {
+        total += transaction.amount; 
       }
     }
     
