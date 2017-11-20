@@ -16,6 +16,9 @@ export class UserBlock {
   @Input()
   public layout: string;
   
+  @Input()
+  public showPricing: boolean = false;
+  
   constructor(public currencyProvider: CurrencyProvider) {
     // Do nothing.
   }

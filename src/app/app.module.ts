@@ -9,7 +9,6 @@ import { StatusBar } from "@ionic-native/status-bar";
 import { CommunityProvider } from "./providers/community.provider";
 import { CurrencyProvider } from "./providers/currency.provider";
 import { ExperimentProvider } from "./providers/experiment.provider";
-import { InfluencerProvider } from "./providers/influencer.provider";
 import { InterestProvider } from "./providers/interest.provider";
 import { ListProvider } from "./providers/list.provider";
 import { MessageProvider } from "./providers/message.provider";
@@ -38,6 +37,7 @@ import { ExpandableHeaderBlock } from "../blocks/expandable-header/expandable-he
 import { FeedBlock } from "../blocks/feed/feed.block";
 import { ListBlock } from "../blocks/list/list.block";
 import { PostBlock } from "../blocks/post/post.block";
+import { SlidesBlock } from "../blocks/slides/slides.block";
 import { UserBlock } from "../blocks/user/user.block";
 
 import { AutoFocusDirective } from "./directives/autofocus.directive";
@@ -68,6 +68,7 @@ let components: Array<any> = [
   FeedBlock,
   ListBlock,
   PostBlock,
+  SlidesBlock,
   UserBlock
 ]
 
@@ -86,7 +87,6 @@ let providers: Array<any> = [
   CommunityProvider,
   CurrencyProvider,
   ExperimentProvider,
-  InfluencerProvider,
   InterestProvider,
   ListProvider,
   MessageProvider,

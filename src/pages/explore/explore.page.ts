@@ -1,8 +1,8 @@
 import { Component } from "@angular/core";
 
-import { InfluencerProvider } from "../../app/providers/influencer.provider";
 import { ListProvider } from "../../app/providers/list.provider";
 import { PostProvider } from "../../app/providers/post.provider";
+import { UserProvider } from "../../app/providers/user.provider";
 
 import { Feed } from "../../app/domains/feed";
 import { Post } from "../../app/domains/post";
@@ -16,9 +16,9 @@ export class ExplorePage {
   public feed: Feed;
   public segment: string = "SEND";
 
-  constructor(public influencerProvider: InfluencerProvider,
-              public listProvider:ListProvider,
-              public postProvider: PostProvider) {
+  constructor(public listProvider:ListProvider,
+              public postProvider: PostProvider,
+              public userProvider: UserProvider) {
     this.feed = this.createMockFeed();
   }
   

@@ -9,10 +9,6 @@ figure {
   	line-height: 1;
   }
 
-  &[radius] {
-    border-radius: $tiny-space;
-  }
-
   &[aspect-16-9] {
     position: relative;
     overflow: hidden;

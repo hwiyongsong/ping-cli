@@ -19,11 +19,17 @@ export class UserProvider {
     
   public currentUser: User;
   private mockUsers: Array<User> = [];
+  private mockRecentlyContacted: Array<User> = [];
+  private mockJobOpportunities: Array<User> = [];
+  private mockBlockchainInfluencers: Array<User> = [];
   
   constructor(private interestProvider: InterestProvider,
               private organizationProvider: OrganizationProvider) { 
     this.initMockUsers();
     this.initCurrentUser();
+    this.initRecentlyContacted();
+    this.initMockJobOpportunities();
+    this.initMockBlockchainInfluencers();
   }
   
   getUserByUserUrn(userUrn: string): User {
@@ -39,6 +45,10 @@ export class UserProvider {
   
   getUsers(): Array<User> {
     return this.mockUsers; 
+  }
+  
+  getBlockchainInfluencers(): Array<User> {
+    return this.mockBlockchainInfluencers;
   }
   
   private initCurrentUser() {
@@ -71,6 +81,29 @@ export class UserProvider {
     this.mockUsers.push(this.creatAndreDeCastro()); // CEO and Founder at Blockchain of Things
     this.mockUsers.push(this.creatKartikMandaville()); // CEO at SpringRole
     this.mockUsers.push(this.creatJosephQuan()); // Cofounder/CEO at Twinechain
+  }
+  
+  private initRecentlyContacted() {
+    this.mockRecentlyContacted.push(this.getUserByUserUrn("urn:member:rita-urbach"));
+    this.mockRecentlyContacted.push(this.getUserByUserUrn("urn:member:michael-sena"));
+    this.mockRecentlyContacted.push(this.getUserByUserUrn("urn:member:dilya-zhanispayeva"));
+    this.mockRecentlyContacted.push(this.getUserByUserUrn("urn:member:anya-hayden"));
+    this.mockRecentlyContacted.push(this.getUserByUserUrn("urn:member:joseph-quan"));
+  }
+  
+  private initMockJobOpportunities() {
+    this.mockJobOpportunities.push(this.getUserByUserUrn("urn:member:robert-conner"));
+    this.mockJobOpportunities.push(this.getUserByUserUrn("urn:member:frank-clemmens"));
+    this.mockJobOpportunities.push(this.getUserByUserUrn("urn:member:lily-lapcokova"));
+    this.mockJobOpportunities.push(this.getUserByUserUrn("urn:member:kim-kamitani"));
+  }
+  
+  private initMockBlockchainInfluencers() {
+    this.mockBlockchainInfluencers.push(this.getUserByUserUrn("urn:member:joseph-lubin"));
+    this.mockBlockchainInfluencers.push(this.getUserByUserUrn("urn:member:reid-hoffman"));
+    this.mockBlockchainInfluencers.push(this.getUserByUserUrn("urn:member:ryan-bethencourt"));
+    this.mockBlockchainInfluencers.push(this.getUserByUserUrn("urn:member:constance-choi"));
+    this.mockBlockchainInfluencers.push(this.getUserByUserUrn("urn:member:andre-de-castro"));
   }
   
   private createScottPredmore(): User {
@@ -559,7 +592,7 @@ export class UserProvider {
                                    10349,
                                    "https://media.licdn.com/media/p/1/000/18f/1bf/36ce353.jpg");
   
-    user.pricing = this.createMockPricing(10);
+    user.pricing = this.createMockPricing(40);
     
     user.relationship = this.createMockRelationship("2nd",
                                                        22,
@@ -579,7 +612,7 @@ export class UserProvider {
                                    9274,
                                    "https://media.licdn.com/media/p/1/000/277/3e7/34f7823.jpg");
   
-    user.pricing = this.createMockPricing(10);
+    user.pricing = this.createMockPricing(40);
     
     user.relationship = this.createMockRelationship("3rd",
                                                        13,
@@ -599,7 +632,7 @@ export class UserProvider {
                                    8642,
                                    "https://media.licdn.com/media/AAEAAQAAAAAAAAhGAAAAJDQxYjlhMWQ3LTBjZjItNDkwNS1hMWJlLTJhYjAwZTZjMzAwNA.jpg");
   
-    user.pricing = this.createMockPricing(10);
+    user.pricing = this.createMockPricing(40);
     
     user.relationship = this.createMockRelationship("2nd",
                                                        32,
@@ -619,7 +652,7 @@ export class UserProvider {
                                    13965,
                                    "https://media.licdn.com/media/p/5/000/1bd/26f/349c10e.jpg");
   
-    user.pricing = this.createMockPricing(10);
+    user.pricing = this.createMockPricing(250);
     
     user.relationship = this.createMockRelationship("2nd",
                                                        24,
@@ -639,7 +672,7 @@ export class UserProvider {
                                    12742,
                                    "https://media.licdn.com/media/AAEAAQAAAAAAAAvtAAAAJDcwMzk5ZmE3LWViZGQtNGQzMS04ZGUxLTU4MzI0NjY0NzczMQ.jpg");
   
-    user.pricing = this.createMockPricing(10);
+    user.pricing = this.createMockPricing(250);
     
     user.relationship = this.createMockRelationship("2nd",
                                                        24,
@@ -719,7 +752,7 @@ export class UserProvider {
                                    5342,
                                    "https://media.licdn.com/media/AAEAAQAAAAAAAAdiAAAAJDkxNjg0Y2NkLTAzYjYtNDNmMC04ZTVmLWIxZTBhMTA3OTU0Yw.jpg");
   
-    user.pricing = this.createMockPricing(10);
+    user.pricing = this.createMockPricing(100);
     
     user.relationship = this.createMockRelationship("2nd",
                                                        23,
@@ -739,7 +772,7 @@ export class UserProvider {
                                    8923,
                                    "https://media.licdn.com/media/AAEAAQAAAAAAAAe5AAAAJDhlNjc0ZDk5LWZmYzMtNDFhNy04ZDY4LWViZDdhYjg3MTdmZA.jpg");
   
-    user.pricing = this.createMockPricing(10);
+    user.pricing = this.createMockPricing(40);
     
     user.relationship = this.createMockRelationship("3rd",
                                                        8,
@@ -759,7 +792,7 @@ export class UserProvider {
                                    6741,
                                    "https://media.licdn.com/media/AAIA_wDGAAAAAQAAAAAAAA0SAAAAJDI1OTlhYTEyLWUzMTUtNGFhYy1iMmM4LTc2MjU2YjI1MTRmNQ.jpg");
   
-    user.pricing = this.createMockPricing(10);
+    user.pricing = this.createMockPricing(40);
     
     user.relationship = this.createMockRelationship("3rd",
                                                        5,
@@ -779,7 +812,7 @@ export class UserProvider {
                                    6382,
                                    "https://media.licdn.com/media/AAEAAQAAAAAAAAftAAAAJDViZDlmODQyLTE2YTUtNDU3Yy1hZWQ5LWM2ZWVlZDliYTEzMw.jpg");
   
-    user.pricing = this.createMockPricing(10);
+    user.pricing = this.createMockPricing(40);
     
     user.relationship = this.createMockRelationship("2nd",
                                                        11,
@@ -819,7 +852,7 @@ export class UserProvider {
                                    7238,
                                    "https://media.licdn.com/media/AAEAAQAAAAAAAAfKAAAAJGFmMTZkNWE5LTc1YjUtNDk0MC1hMDkzLTk1ZGQ2MWI1MWY2Mw.jpg");
   
-    user.pricing = this.createMockPricing(10);
+    user.pricing = this.createMockPricing(20);
     
     user.relationship = this.createMockRelationship("2nd",
                                                        19,

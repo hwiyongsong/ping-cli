@@ -1,4 +1,6 @@
 <div *ngIf="content">
 	<abook-block *ngIf="content.urn.startsWith('urn:abook:')"></abook-block>
+	<list-block [list]="content" [layout]="layout" [showPricing]="showPricing" *ngIf="content.urn.startsWith('urn:list:')"></list-block>	
 	<post-block [post]="content" [layout]="layout" *ngIf="content.urn.startsWith('urn:post:')"></post-block>
+	<user-block [user]="content" [layout]="layout" [showPricing]="showPricing" *ngIf="content.urn.startsWith('urn:member:')"></user-block>	
 </div>

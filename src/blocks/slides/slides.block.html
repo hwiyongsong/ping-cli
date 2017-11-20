@@ -1,0 +1,5 @@
+<ion-slides slidesPerView="auto" spaceBetween="8">
+  <ion-slide *ngFor="let content of contents">
+    <content-block [content]="content" layout="COMPACT" [showPricing]="showPricing"></content-block>
+  </ion-slide>
+</ion-slides>

@@ -1,17 +1,14 @@
 list-block {
 	figure {
-		span.currency {
+		span.message-price {
 			position: absolute;
-			bottom: 100px;
+			bottom: 0;
 			left: 0;
-			padding: 10px;
-			background: black;
+			padding: $small-space;
+			background: color($colors, secondary);
+			font-weight: 500;
+	  	font-size: 1.2rem !important;
 			color: white;
 		}
-	}
-	
-	ion-card-content {
-		margin-top: -100px; 
-		background: white;
 	}
 }

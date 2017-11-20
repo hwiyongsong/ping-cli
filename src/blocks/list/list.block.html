@@ -1,7 +1,7 @@
 <ion-card class="compact">
-	<figure>
+	<figure aspect-1-1>
 		<img [src]="list.profileImage.url"/>
-		<span class="currency" [innerHTML]="currencyProvider.format(list.incentive.value, 'Pay ', ' per reply')"></span>
+		<span class="message-price" [innerHTML]="currencyProvider.format(list.incentive.value, '', ' per reply')" *ngIf="showPricing"></span>
 	</figure>
 	<ion-card-content>
 		<h5>{{list.name}}</h5>
