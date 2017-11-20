@@ -75,17 +75,17 @@ $chat-bubble-background-right: color($colors, light);
 	}
 }
 
-.message-title {
+.conversation-title, .message-title {
 	text-overflow: clip;
 	white-space: normal;
 }
 
-.message-body {
+.conversation-body, .message-body {
 	word-wrap: break-word;
   white-space: pre-line;
 }
 
-.message-meta { 
+.conversation-meta, .message-meta { 
 	margin-top: $tiny-space; 
 	font-size: 1.3rem;
 	font-weight: 300;

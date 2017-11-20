@@ -7,10 +7,7 @@
 			</ion-avatar>  	
 	    <h6 flex-center class="created-by">{{post.createdBy.getFullName()}}</h6>
 	    <p class="meta">{{post.createdBy.headline}}</p>
-			<p class="meta">{{post.createdAt}}</p> 
-			<ion-note item-end item-top>
-	  		<p class="currency" [innerHTML]="currencyProvider.format(post.incentive.value)"></p>
-	  	</ion-note>
+			<p class="meta">{{post.createdAt}}</p>
   	</ion-item>
   	<ion-item *ngIf="post.organizational">
 	  	<ion-thumbnail item-start>
@@ -18,9 +15,6 @@
 			</ion-thumbnail>  	
 	    <h6 flex-center class="created-by">{{post.createdBy.getCurrentCompany().name}}</h6>
 			<p class="meta">{{post.createdAt}}</p> 
-			<ion-note item-end item-top>
-	  		<p class="currency" [innerHTML]="currencyProvider.format(post.incentive.value)"></p>
-	  	</ion-note> 	
   	</ion-item>
 	</ion-card-header>
 	<figure *ngIf="post.image">
@@ -38,5 +32,6 @@
 				</figure>
 			</ion-note>
 		</ion-item>
+		<button ion-button class="action-button" [innerHTML]="currencyProvider.format(post.incentive.value, post.actionText + ' for ')"></button>	
 	</ion-card-content>
 </ion-card>

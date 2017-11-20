@@ -34,6 +34,7 @@ import { WalletPage } from "../pages/wallet/wallet.page";
 import { AbookBlock } from "../blocks/abook/abook.block";
 import { ChromeBlock } from "../blocks/chrome/chrome.block";
 import { ContentBlock } from "../blocks/content/content.block";
+import { ExpandableHeaderBlock } from "../blocks/expandable-header/expandable-header.block";
 import { FeedBlock } from "../blocks/feed/feed.block";
 import { ListBlock } from "../blocks/list/list.block";
 import { PostBlock } from "../blocks/post/post.block";
@@ -63,6 +64,7 @@ let components: Array<any> = [
   AbookBlock,
   ChromeBlock,
   ContentBlock,
+  ExpandableHeaderBlock,
   FeedBlock,
   ListBlock,
   PostBlock,

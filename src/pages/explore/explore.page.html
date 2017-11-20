@@ -1,5 +1,7 @@
 <ion-header clear>
-	<chrome-block></chrome-block>
+	<expandable-header-block [scrollArea]="exploreContent" headerHeight="50">	
+		<chrome-block></chrome-block>
+	</expandable-header-block>
 	<ion-toolbar mode="md">
     <ion-segment [(ngModel)]="segment" mode="md">
       <ion-segment-button value="DISCOVER">Discover</ion-segment-button>
@@ -8,7 +10,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content fullscreen #exploreContent>
 	<div [ngSwitch]="segment">
 		<div *ngSwitchCase="'DISCOVER'">
 			<feed-block [feed]="feed"></feed-block>			

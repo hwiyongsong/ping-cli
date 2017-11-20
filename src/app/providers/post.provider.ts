@@ -127,7 +127,7 @@ export class PostProvider {
                                "urn:member:kim-kamitani",
                                "Nov 2, 2017");
     
-    post.image = this.createImage("https://cdn.dribbble.com/users/692322/screenshots/3086680/airbnb-ui_1x.png");
+    post.image = this.createImage("https://cdn-images-1.medium.com/max/1600/1*Cd-s2RiqJqhmMSJQf4ne5A.png");
 
     post.incentive = this.createIncentive(25,
                                     72,

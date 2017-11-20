@@ -14,7 +14,7 @@ import { Post } from "../../app/domains/post";
 export class ExplorePage {
     
   public feed: Feed;
-  public segment: string = "DISCOVER";
+  public segment: string = "SEND";
 
   constructor(public influencerProvider: InfluencerProvider,
               public listProvider:ListProvider,
