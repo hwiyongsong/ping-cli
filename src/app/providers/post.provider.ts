@@ -53,10 +53,11 @@ export class PostProvider {
   }
   
   private initMockPosts() {
+    this.mockPosts.push(this.createPingMeJobReferral()); 
     this.mockPosts.push(this.createUPortProject());
     this.mockPosts.push(this.createBitAboutBancor());
     this.mockPosts.push(this.createAirbnbSurvey());
-    this.mockPosts.push(this.createPingMeJobReferral()); 
+    this.mockPosts.push(this.createLunchWithGuyKawasaki());
   }
   
   private createPingMeJobReferral(): Post {
@@ -114,6 +115,23 @@ export class PostProvider {
                                     323,
                                     500,
                                     "VIEW");
+    
+    return post;
+  }
+  
+  private createLunchWithGuyKawasaki() {
+    let post = this.createPost("urn:post:lunch-guy-kawasaki",
+                               "Lunch with Guy Kawasaki",
+                               "<p>I would love to meet up with some of the brightest minds in Silicon Valley and share thoughts about the latest trends in the tech industry.</p> <p>Let's have lunch at a quiet spot in Mountain View, and exchange ideas about innovation, entrepreneurship, social media, and marketing.</p> <p>Seats are limited to 6 people. Send me a message about why you want to join along with your bid, and let's see if you get selected.</p>",
+                               "Event (2 seats available)",
+                               "Bid for Seat",
+                               "urn:member:guy-kawasaki",
+                               "Nov 3, 2017");
+    
+    post.incentive = this.createIncentive(150,
+                                          2,
+                                          6,
+                                          "EVENT");
     
     return post;
   }

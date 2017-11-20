@@ -29,7 +29,8 @@ export class ExplorePage {
     feed.push(this.getPingMeJobReferralPost());
     feed.push(this.getUportProjectPost());
     feed.push(this.getBitAboutBancorPost());
-    feed.push(this.getAirbnbSurveyPost()); 
+    feed.push(this.getLunchWithGuyKawasakiPost());
+    feed.push(this.getAirbnbSurveyPost());
     
     return feed;
   }
@@ -55,6 +56,12 @@ export class ExplorePage {
   private getBitAboutBancorPost(): Post {
     let post = this.postProvider.getPostByPostUrn("urn:post:bit-about-bancor");
     post.reason = "Since you're following <strong>Blockchain</strong>";
+    return post;
+  }
+
+  private getLunchWithGuyKawasakiPost(): Post {
+    let post = this.postProvider.getPostByPostUrn("urn:post:lunch-guy-kawasaki");
+    post.reason = "<strong>Trending</strong> in your network";
     return post;
   }
 

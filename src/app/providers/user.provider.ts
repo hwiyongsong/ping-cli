@@ -72,6 +72,7 @@ export class UserProvider {
     this.mockUsers.push(this.createAnyaHayden()); // VC at Hightland Capital
     this.mockUsers.push(this.createReidHoffman()); // Entrepreneur. Product Strategist. Investor.
     this.mockUsers.push(this.createJosephLubin()); // Founder at Consensus Systems (ConsenSys)
+    this.mockUsers.push(this.createGuyKawasaki()); // Chief evangelist + keynote speaker
     this.mockUsers.push(this.createJoelEnglander()); // Angel Investor
     this.mockUsers.push(this.createLilianaNordbakk()); // Angel Investor at Band of Angels
     this.mockUsers.push(this.creatJonBoutelle()); // Angel Investor and Entrepreneur at Independent
@@ -648,8 +649,8 @@ export class UserProvider {
                                    "Hoffman",
                                    "Entrepreneur. Product Strategist. Investor.",
                                    "",
-                                   648,
-                                   13965,
+                                   495,
+                                   11942,
                                    "https://media.licdn.com/media/p/5/000/1bd/26f/349c10e.jpg");
   
     user.pricing = this.createMockPricing(250);
@@ -668,8 +669,8 @@ export class UserProvider {
                                    "Lubin",
                                    "Founder at Consensus Systems (ConsenSys)",
                                    "",
-                                   545,
-                                   12742,
+                                   472,
+                                   12255,
                                    "https://media.licdn.com/media/AAEAAQAAAAAAAAvtAAAAJDcwMzk5ZmE3LWViZGQtNGQzMS04ZGUxLTU4MzI0NjY0NzczMQ.jpg");
   
     user.pricing = this.createMockPricing(250);
@@ -678,6 +679,26 @@ export class UserProvider {
                                                        24,
                                                        null,
                                                        null);
+    
+    return user;
+  }
+  
+  private createGuyKawasaki(): User {
+    let user = this.createMockUser("urn:member:guy-kawasaki",
+                                   "Guy",
+                                   "Kawasaki",
+                                   "Chief Evangelist & Keynote Speaker",
+                                   "<p>Guy possesses an extensive knowledge of innovation, entrepreneurship, social media, and marketing. First and foremost, he is an evangelist. The term comes from a Greek word that means \"bringing the good news.\"</p><p>That's what he does--whether it was the good news of Macintosh or currently the good news of Canva, an online graphics-design firm. He aligns with companies and causes that empower people, foster democracy, and make the world a meritocracy.</p><p>In addition to his work at Canva, he is a writer (thirteen books), speaker, Mercedes brand ambassador, and executive fellow at the Haas School of Business at UC Berkeley.</p> ",
+                                   436,
+                                   11934,
+                                   "https://media.licdn.com/media/AAEAAQAAAAAAAAf_AAAAJDVjZjAzNzQxLWViMDktNGQ4My05MzA2LTg0NDc1NDk0MDA4Nw.jpg");
+    
+    user.pricing = this.createMockPricing(250);
+    
+    user.relationship = this.createMockRelationship("2nd",
+                                                     16,
+                                                     null,
+                                                     null);
     
     return user;
   }
