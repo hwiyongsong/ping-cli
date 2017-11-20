@@ -14,7 +14,7 @@ h1, h2, h3, h4, h5, h6 {
   sup {
   	display: block;
     width: 100%;
-  	top: 2px;
+  	top: 3px;
   	font-weight: 500;
     line-height: $line-height-base;
     color: color($colors, dark-gray);
@@ -163,7 +163,7 @@ b {
   font-size: 1.5rem !important;
 }
 
-.meta {
+.meta { 
 	font-weight: 300 !important;
   font-size: 1.4rem !important;
   color: color($colors, dark-gray) !important; 

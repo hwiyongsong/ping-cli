@@ -16,25 +16,25 @@
 			<feed-block [feed]="feed"></feed-block>			
 		</div>
 		<div *ngSwitchCase="'SEND'">
-			<ion-section xlarge-bottom-margin class="influencers-section">
+			<ion-section class="influencers-section">
 				<ion-section-header>
 					<h4><sup>Start a conversation</sup>Influencers in Blockchain</h4>
 				</ion-section-header>
 				<slides-block [contents]="userProvider.mockBlockchainInfluencers" showPricing="true"></slides-block>
 			</ion-section>
-			<ion-section xlarge-bottom-margin class="recently-contacted-section">
+			<ion-section large-top-margin class="recently-contacted-section">
 				<ion-section-header>
 					<h4><sup>Start a conversation</sup>Angel Investors in Silicon Valley</h4>
 				</ion-section-header> 
 				<slides-block [contents]="userProvider.mockAngelInvestors" showPricing="true"></slides-block>
 			</ion-section>
-			<ion-section xlarge-bottom-margin class="job-opportunities-section">
+			<ion-section large-top-margin class="job-opportunities-section">
 				<ion-section-header>
 					<h4><sup>Introduce yourself</sup>Job Opportunities</h4>
 				</ion-section-header>
 				<slides-block [contents]="userProvider.mockJobOpportunities" showPricing="true"></slides-block>
 			</ion-section>
-			<ion-section class="lists-section">
+			<ion-section large-top-margin class="lists-section">
 				<ion-section-header>
 					<h4><sup>Reach a community</sup>Popular Lists</h4>
 				</ion-section-header>

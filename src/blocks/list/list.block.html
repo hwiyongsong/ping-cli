@@ -4,7 +4,7 @@
 		<span class="message-price" [innerHTML]="currencyProvider.format(list.incentive.value, '', ' per reply')" *ngIf="showPricing"></span>
 	</figure>
 	<ion-card-content>
-		<h5>{{list.name}}</h5>
+		<h6>{{list.name}}</h6>
 		<p small-top-margin class="excerpt" *ngIf="list.description">{{list.description}}</p>
 	</ion-card-content>
 </ion-card>
