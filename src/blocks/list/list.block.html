@@ -1,4 +1,4 @@
-<ion-card class="compact">
+<ion-card class="compact" (click)="onViewListDetail()">
 	<figure aspect-1-1>
 		<img [src]="list.profileImage.url"/>
 		<span class="message-price" [innerHTML]="currencyProvider.format(list.incentive.value, '', ' per reply')" *ngIf="showPricing"></span>

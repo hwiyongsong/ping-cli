@@ -1,0 +1,30 @@
+<ion-header clear>
+  <ion-navbar></ion-navbar>
+</ion-header>
+
+<ion-content>
+	<ion-section>
+		<ion-section-header>
+			<ion-item no-lines>
+				<h2>{{list.name}}<sub>{{list.size}} members</sub></h2>
+				<p top-margin no-wrap class="description" [innerHTML]="list.description"></p>
+				<ion-thumbnail large item-top item-end *ngIf="list.profileImage">
+		      <img src="{{list.profileImage.url}}">
+		    </ion-thumbnail>
+			</ion-item>
+			<ion-buttons>
+  			<button ion-button outline [innerHTML]="currencyProvider.format(list.incentive.value, 'Message for ', ' per reply')"></button>
+  		</ion-buttons>
+		</ion-section-header>
+		<ion-grid class="users">
+	 		<ion-row wrap>
+	 			<ion-col col-6 *ngFor="let user of list.users">
+	 				<user-block [user]="user"></user-block>	
+	 			</ion-col>
+	 		</ion-row>
+	 	</ion-grid>
+	 	<ion-section-content>
+		 	<h5>And {{list.size}} members</h5>	 	
+	 	</ion-section-content>
+	</ion-section>
+</ion-content>

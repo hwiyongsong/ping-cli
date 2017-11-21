@@ -9,3 +9,12 @@ ion-thumbnail {
 		height: 100% !important;
 	}
 }
+
+ion-thumbnail[large] {
+ 	width: $item-ios-thumbnail-size + 32;
+ 	height: $item-ios-thumbnail-size + 32;
+ 	
+ 	ion-badge {
+ 		font-size: 1.4rem;
+ 	}	
+}

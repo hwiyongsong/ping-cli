@@ -552,7 +552,7 @@ export class UserProvider {
                                    12295,
                                    "https://media.licdn.com/media/AAEAAQAAAAAAAATUAAAAJDc5MTIxM2M0LTZiYjEtNGU5MC1hYmRhLTExNWZjYzY2ZWE2MA.jpg");
   
-    user.pricing = this.createMockPricing(10);
+    user.pricing = this.createMockPricing(100);
     
     user.relationship = this.createMockRelationship("3rd",
                                                        12,
@@ -572,7 +572,7 @@ export class UserProvider {
                                    9634,
                                    "https://media.licdn.com/media/p/5/005/014/3b1/151eb1e.jpg");
   
-    user.pricing = this.createMockPricing(10);
+    user.pricing = this.createMockPricing(100);
     
     user.relationship = this.createMockRelationship("3rd",
                                                        10,
@@ -592,7 +592,7 @@ export class UserProvider {
                                    10349,
                                    "https://media.licdn.com/media/p/1/000/18f/1bf/36ce353.jpg");
   
-    user.pricing = this.createMockPricing(40);
+    user.pricing = this.createMockPricing(100);
     
     user.relationship = this.createMockRelationship("2nd",
                                                        22,
@@ -612,7 +612,7 @@ export class UserProvider {
                                    9274,
                                    "https://media.licdn.com/media/p/1/000/277/3e7/34f7823.jpg");
   
-    user.pricing = this.createMockPricing(40);
+    user.pricing = this.createMockPricing(100);
     
     user.relationship = this.createMockRelationship("3rd",
                                                        13,
@@ -632,7 +632,7 @@ export class UserProvider {
                                    8642,
                                    "https://media.licdn.com/media/AAEAAQAAAAAAAAhGAAAAJDQxYjlhMWQ3LTBjZjItNDkwNS1hMWJlLTJhYjAwZTZjMzAwNA.jpg");
   
-    user.pricing = this.createMockPricing(40);
+    user.pricing = this.createMockPricing(100);
     
     user.relationship = this.createMockRelationship("2nd",
                                                        32,

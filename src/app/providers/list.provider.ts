@@ -1,5 +1,7 @@
 import { Injectable } from "@angular/core";
 
+import { UserProvider } from "./user.provider";
+
 import { Incentive } from "../domains/incentive";
 import { Image } from "../domains/image";
 import { List } from "../domains/list";
@@ -11,7 +13,7 @@ export class ListProvider {
     
   public mockLists: Array<List> = [];
   
-  constructor() { 
+  constructor(private userProvider: UserProvider) { 
     this.initLists();
   }
   
@@ -32,6 +34,13 @@ export class ListProvider {
                                "https://avatars0.githubusercontent.com/u/424443?s=460&v=4");
     
     list.incentive = this.createIncentive(100);
+    
+    list.push(this.userProvider.getUserByUserUrn("urn:member:glenn-whitman"));
+    list.push(this.userProvider.getUserByUserUrn("urn:member:zavain-dar"));
+    list.push(this.userProvider.getUserByUserUrn("urn:member:bob-becker"));
+    list.push(this.userProvider.getUserByUserUrn("urn:member:koji-tokuda"));
+    list.push(this.userProvider.getUserByUserUrn("urn:member:anya-hayden"));
+    list.push(this.userProvider.getUserByUserUrn("urn:member:ryan-bethencourt"));
     
     return list;
   }

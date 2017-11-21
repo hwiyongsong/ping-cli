@@ -22,6 +22,7 @@ import { MyApp } from "./app.component";
 import { MainPage } from "../pages/main.page";
 import { ConfigurationPage } from "../pages/configuration/configuration.page";
 import { ExplorePage } from "../pages/explore/explore.page";
+import { ListDetailPage } from "../pages/list-detail/list-detail.page";
 import { MessageBoxPage } from "../pages/message-box/message-box.page";
 import { MessageConversationPage } from "../pages/message-conversation/message-conversation.page";
 import { MyAccountPage } from "../pages/my-account/my-account.page";
@@ -53,6 +54,7 @@ let components: Array<any> = [
   MainPage,
   ConfigurationPage,
   ExplorePage,
+  ListDetailPage,
   MessageBoxPage,
   MessageConversationPage,
   MyAccountPage,
