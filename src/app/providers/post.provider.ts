@@ -88,7 +88,7 @@ export class PostProvider {
     
     post.image = this.createImage("https://cdn-images-1.medium.com/max/1200/1*6r1_9DSAr7FyZX3Uj2GLvQ.png");
     
-    post.incentive = this.createIncentive(10,
+    post.incentive = this.createIncentive(15,
                                     275,
                                     500,
                                     "REGISTER");

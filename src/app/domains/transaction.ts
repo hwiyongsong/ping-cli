@@ -7,8 +7,10 @@ export class Transaction {
   public recipient: User;
   public description: string;
   public amount: number;
-  public status: string;
   public createdAt: string;
-  public settledAt: string;
+  
+  getAddress(): string {
+    return this.urn.substring(16); // Ignore "urn:transaction:" which is 16 characters long.
+  }
   
 }

@@ -5,7 +5,31 @@
 <ion-content>
 	<ion-section>
 		<ion-section-header>
-			<h2>Wallet</h2>
+			<ion-item>
+				<h5>Ethereum Wallet</h5>
+				<p class="meta">{{userProvider.currentUser.wallet.address}}</p> 
+				<p class="wallet-balance currency" [innerHTML]="currencyProvider.format(userProvider.currentUser.wallet.balance)"></p>
+				<ion-buttons small-bottom-margin>
+					<button ion-button outline>View on Etherscan</button>
+					<button ion-button outline color="secondary">Transfer Funds</button>
+				</ion-buttons>		
+			</ion-item>
 		</ion-section-header>
+		<ion-section-content>
+			<p small-top-margin small-bottom-margin>{{transactionProvider.getTransactionHistory().size()}} transactions found.</p>
+			<ion-list class="transaction-history">
+				<ion-item class="transaction" *ngFor="let transaction of transactionProvider.getTransactionHistory().transactions">
+					<ion-avatar small item-start item-top>
+						<img [src]="transaction.sender.profileImage.url"/>
+					</ion-avatar>
+					<h6 no-wrap *ngIf="transaction.sender.urn != userProvider.currentUser.urn">{{transaction.sender.getFullName()}} paid you.</h6>
+					<h6 no-wrap *ngIf="transaction.sender.urn == userProvider.currentUser.urn">You paid {{transaction.recipient.getFullName()}}.</h6>
+					<p no-wrap class="description">{{transaction.description}}</p>
+					<p class="meta">{{transaction.createdAt}}</p>
+					<ion-note item-end item-top class="currency" *ngIf="transaction.sender.urn != userProvider.currentUser.urn" [innerHTML]="currencyProvider.format(transaction.amount)"></ion-note>
+					<ion-note item-end item-top class="currency withdraw" *ngIf="transaction.sender.urn == userProvider.currentUser.urn" [innerHTML]="currencyProvider.format(transaction.amount, '(', ')')"></ion-note>
+				</ion-item>
+			</ion-list>
+		</ion-section-content>
 	</ion-section>
 </ion-content>

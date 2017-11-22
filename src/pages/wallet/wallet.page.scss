@@ -1,0 +1,14 @@
+wallet-page {
+	.item-ios .wallet-balance.currency {
+		padding: $small-space 0;
+		font-size: 2.0rem;
+	}
+	
+	ion-list.transaction-history {
+		ion-item.item-ios.transaction {
+			ion-note.note-ios.currency.withdraw {
+				color: color($colors, danger); 
+			}
+		}
+	}
+}
