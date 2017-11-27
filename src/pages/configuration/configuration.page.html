@@ -10,10 +10,10 @@
 		<ion-section-content>
 			<ion-list>
 				<ion-item>
-					<ion-label>Token Type</ion-label>
+					<ion-label>PNG Token</ion-label>
 					<ion-select [(ngModel)]="experimentProvider.tokenExperiment" mode="md">
-				    <ion-option value="UTILITY">Utility</ion-option>
-				    <ion-option value="LICENSE">License</ion-option>
+				    <ion-option value="INCENTIVE">Incentive Token</ion-option>
+				    <ion-option value="LICENSE">License Token</ion-option>
 				  </ion-select>
 				</ion-item>
 				<ion-item *ngIf="experimentProvider.tokenExperiment == 'LICENSE'">

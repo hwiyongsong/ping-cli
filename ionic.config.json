@@ -1,6 +1,6 @@
 {
   "name": "ping-cli",
-  "app_id": "",
+  "app_id": "05f4d73d",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}

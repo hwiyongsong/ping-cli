@@ -12,7 +12,7 @@ export class CurrencyProvider {
   }
   
   toTokens(value: number): string {
-    if (this.experimentProvider.tokenExperiment == "UTILITY") {
+    if (this.experimentProvider.tokenExperiment == "INCENTIVE") {
       let pings = TokenUtils.toPing(value);
       return pings + " PNG";
     }
@@ -39,7 +39,7 @@ export class CurrencyProvider {
   format(value: number, prefix: string = "", suffix: string = ""): string {
     let dollars = "$" + value;
     
-    if (this.experimentProvider.tokenExperiment == "UTILITY") {
+    if (this.experimentProvider.tokenExperiment == "INCENTIVE") {
       let pings = TokenUtils.toPing(value);
       return prefix + pings + " PNG <span class='dollars'>• " + dollars + "<span>" + suffix;
     }
