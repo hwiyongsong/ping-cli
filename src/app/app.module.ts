@@ -26,8 +26,10 @@ import { ListDetailPage } from "../pages/list-detail/list-detail.page";
 import { MessageBoxPage } from "../pages/message-box/message-box.page";
 import { MessageConversationPage } from "../pages/message-conversation/message-conversation.page";
 import { MyAccountPage } from "../pages/my-account/my-account.page";
+import { NetworkPage } from "../pages/network/network.page";
 import { OrganizationProfilePage } from "../pages/organization-profile/organization-profile.page";
 import { PostDetailPage } from "../pages/post-detail/post-detail.page";
+import { SettingsPage } from "../pages/settings/settings.page";
 import { UserProfilePage } from "../pages/user-profile/user-profile.page";
 import { WalletPage } from "../pages/wallet/wallet.page";
 
@@ -58,8 +60,10 @@ let components: Array<any> = [
   MessageBoxPage,
   MessageConversationPage,
   MyAccountPage,
+  NetworkPage,
   OrganizationProfilePage,
   PostDetailPage,
+  SettingsPage,
   UserProfilePage,
   WalletPage,
   

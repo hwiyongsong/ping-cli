@@ -9,6 +9,8 @@ import { UserProvider } from "../app/providers/user.provider";
 import { ConfigurationPage } from "./configuration/configuration.page";
 import { ExplorePage } from "./explore/explore.page";
 import { MessageBoxPage } from "./message-box/message-box.page";
+import { NetworkPage } from "./network/network.page";
+import { SettingsPage } from "./settings/settings.page";
 import { WalletPage } from "./wallet/wallet.page";
 
 @Component({
@@ -35,7 +37,7 @@ export class MainPage {
   }
     
   onViewMyNetwork() {
-   alert("Looks like that's a mock...");
+   this.open(NetworkPage);
   }
 
   onViewMessages() {
@@ -47,7 +49,7 @@ export class MainPage {
   }
 
   onViewSettings() {
-    alert("Looks like that's a mock...");
+    this.open(SettingsPage);
   }
   
   onViewConfiguration() {
